@@ -20,10 +20,6 @@ function Home() {
       <Teaser image="https://res.cloudinary.com/daj2fsogl/image/upload/v1607550394/second-hand/Screenshot_2020-12-09_at_22.46.16_web6iw.png" title="Shop" subtitle="Check out the newest shops"/>
       <h4>Discover all the shops</h4>
       <ShopList />
-      <AddProduct/>
-      <Category />
-      <AddShop />
-      <Category />
       <Category />
       <Category />
 

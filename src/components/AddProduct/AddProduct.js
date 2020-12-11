@@ -82,6 +82,30 @@ class AddProduct extends Component {
 
 	};
 
+	handleFileUpload = (e) => {
+		console.log("The file to be uploaded is: ", e.target.files);
+		const file = e.target.files[0];
+	
+		const uploadData = new FormData();
+		// image => this name has to be the same as in the model since we pass
+		// req.body to .create() method when creating a new project in '/api/projects' POST route
+		uploadData.append("image", file);
+	
+		axios
+		  .post("http://localhost:5000/api/upload", uploadData, {
+			withCredentials: true,
+		  })
+		  .then((response) => {
+			console.log("response is: ", response);
+			// after the console.log we can see that response carries 'secure_url' which we can use to update the state
+			this.setState({ image: response.data.secure_url });
+		  })
+		  .catch((err) => {
+			console.log("Error while uploading the file: ", err);
+		  });
+	  };
+	
+
 	render() {
 		const {
 			brand,
@@ -203,8 +227,7 @@ class AddProduct extends Component {
 						type="file"
 						name="image"
 						placeholder="Image"
-						value={image}
-						onChange={this.handleChange}
+						onChange={this.handleFileUpload}
 					/>
 					<button onClick={this.handleFormSubmit}>Submit</button>
 				</form>
