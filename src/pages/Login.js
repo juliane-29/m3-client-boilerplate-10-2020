@@ -2,6 +2,18 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { withAuth } from './../context/auth-context';
 
+import styled from 'styled-components'
+
+const Input = styled.input`
+  border: 0.5px solid #EBF0FF;
+  width: 90vw;
+  height: 5vh;
+  color: #9098B1;
+  font-family: Poppins;
+  font-size: 12px;
+  font-weight: regular;
+  border-radius: 5px;
+`
 
 
 class Login extends Component {
@@ -30,9 +42,9 @@ class Login extends Component {
 
         <form onSubmit={this.handleFormSubmit}>
           <label>Username:</label>
-          <input type="text" name="username" value={username} onChange={this.handleChange} placeholder="Username"/>
+          <Input type="text" name="username" value={username} onChange={this.handleChange} placeholder="Username"/>
           <label>Password:</label>
-          <input type="password" name="password" value={password} onChange={this.handleChange} placeholder="Password"/>
+          <Input type="password" name="password" value={password} onChange={this.handleChange} placeholder="Password"/>
           <input type="submit" value="Login" />
         </form>
         <p>Don't have an account?</p>

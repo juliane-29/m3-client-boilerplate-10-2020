@@ -1,4 +1,5 @@
 html, body {
+  font-family: Poppins;
   margin: 0;
   padding: 0;
 }
@@ -11,6 +12,7 @@ nav.navbar {
   display: flex;
   padding: 0px 20px;
   background: #686de0; 
+  font-family: Poppins;
 }
 
 button.navbar-button {
@@ -27,8 +29,35 @@ button.navbar-button {
 
 h1 {
   font-size: 32px;
+  font-family: Poppins;
+}
+
+h2 {
+  font-size: 24px;
+  font-family: Poppins;
+}
+
+h3 {
+  font-size: 20px;
+  font-family: Poppins;
+}
+
+h4 {
+  font-size: 18px;
+  font-family: Poppins;
+}
+
+h5 {
+  font-size: 14px;
+  font-family: Poppins;
+}
+
+h6 {
+  font-size: 12px;
+  font-family: Poppins;
 }
 
 p {
-  font-size: 12px
+  font-size: 12px;
+  font-family: Poppins; 
 }
