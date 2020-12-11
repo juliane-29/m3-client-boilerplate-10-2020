@@ -24,3 +24,11 @@ button.navbar-button {
   color: white;
   text-decoration: none;
 }
+
+h1 {
+  font-size: 32px;
+}
+
+p {
+  font-size: 12px
+}

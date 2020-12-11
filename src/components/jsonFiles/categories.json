@@ -1,0 +1,22 @@
+[
+    {
+        "name": "Shirts",
+        "icon": "https://www.flaticon.com/svg/static/icons/svg/2965/2965318.svg"
+    },
+    {
+        "name": "Shoes",
+        "icon": "https://www.flaticon.com/svg/static/icons/svg/2043/2043907.svg"
+      },
+      {
+        "name": "Bags",
+        "icon": "https://www.flaticon.com/svg/static/icons/svg/687/687259.svg"
+      },
+      {
+        "name": "Dresses",
+        "icon": "https://www.flaticon.com/svg/static/icons/svg/1785/1785255.svg"
+      },
+      {
+        "name": "Jackets",
+        "icon": "https://www.flaticon.com/svg/static/icons/svg/3126/3126039.svg"
+      }
+  ]

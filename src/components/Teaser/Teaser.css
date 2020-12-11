@@ -1,0 +1,21 @@
+.teaser {
+    width: 90vw;
+    height: 30vh;
+    border-radius: 5%;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+
+}
+
+.teaser h1 {
+    color: white;
+    font-size: 24px;
+}
+
+.teaser p {
+    color: white;
+    font-size: 24px;
+}
+
+

@@ -1,0 +1,21 @@
+.container{
+    display: flex;
+    justify-content: center;
+    align-content: flex-start;
+    overflow: hidden;
+    padding: 0px;
+    margin-left: 0;
+    margin-right: 0; 
+}
+#splashimage  {
+    opacity: 0.4; 
+    height: 100vh; 
+    overflow: hidden;
+
+}
+  #logo {
+      height: 250px;
+      position: absolute;
+      bottom: 0; 
+      padding:10px;
+    }

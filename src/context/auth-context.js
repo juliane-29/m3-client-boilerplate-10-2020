@@ -12,13 +12,11 @@ class AuthProvider extends React.Component {
   }
 
   componentDidMount () {
-    authService.me()
-     .then((user) => this.setState({ isLoggedIn: true, user: user, isLoading: false }))
-     .catch((err) => this.setState({ isLoggedIn: false, user: null, isLoading: false }));
+    this.me()
   }
 
-  signup = (username, password) => {
-    authService.signup( username, password )
+  signup = (username, password, email) => {
+    authService.signup( username, password, email )
       .then((user) => this.setState({ isLoggedIn: true, user }) )
       .catch((err) => {
         this.setState({ isLoggedIn: false, user: null });
@@ -39,15 +37,25 @@ class AuthProvider extends React.Component {
       .catch((err) => console.log(err));
   }
 
+  me = () => {
+    authService.me()
+    .then( (user) => {
+      this.setState( { isLoggedIn: true, user: user, isLoading: false } )
+    })
+    .catch( (err) => {
+      this.setState( { isLoggedIn: false, user: null, isLoading: false } )
+    })
+   }
+
 
   render() {
     const { isLoggedIn, isLoading, user } = this.state;
-    const { signup, login, logout } = this;
+    const { signup, login, logout, me } = this;
 
     if (isLoading) return <p>Loading</p>;
 
     return(
-      <Provider value={{ isLoggedIn, isLoading, user, signup, login, logout }}  >
+      <Provider value={{ isLoggedIn, isLoading, user, signup, login, logout, me }}  >
         {this.props.children}
       </Provider>
     )
@@ -64,7 +72,7 @@ const withAuth = (WrappedComponent) => {
       return(
         <Consumer>
           { (value) => {
-            const { isLoggedIn, isLoading, user, signup, login, logout } = value;
+            const { isLoggedIn, isLoading, user, signup, login, logout, me } = value;
 
             return (<WrappedComponent 
                       {...this.props}
@@ -74,6 +82,7 @@ const withAuth = (WrappedComponent) => {
                       signup={signup} 
                       login={login} 
                       logout={logout}
+                      me={me}
                     />)
 
           } }

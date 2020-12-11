@@ -8,11 +8,11 @@ class AuthService {
     });
   }
 
-  signup( username, password ) {
+  signup( username, password, email ) {
     const pr = this.auth
-      .post("/auth/signup", { username, password })
-      .then((response) => response.data);
-      // .then(({ data }) => data); // Shorter way of `.then((response) => response.data);`
+      .post("/auth/signup", { username, password, email })
+      .then(({ data }) => data);
+    // .then((response) => response.data);
 
     return pr;
   }
@@ -27,7 +27,7 @@ class AuthService {
 
   logout() {
     const pr = this.auth
-      .get("/auth/logout")
+      .get("/auth/logout", {})
       .then((response) => response.data);
 
     return pr;
@@ -40,6 +40,9 @@ class AuthService {
 
     return pr;
   }
+
+
+
 }
 
 
