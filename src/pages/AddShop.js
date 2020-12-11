@@ -18,9 +18,8 @@ class AddShop extends Component {
 	zipCode: "",
 	city: "",
 	country: "",
-	backgroundImage: "",
 	worldwideShipping: "",
-    logo: "",
+	logo: "",
 	user: this.props.user
 	}
 
@@ -48,9 +47,8 @@ class AddShop extends Component {
 			zipCode,
 			city,
 			country,
-			backgroundImage,
+			logo, 
 			worldwideShipping,
-			logo
 		} = this.state;
 		axios
 		.post("http://localhost:5000/api/shops", 
@@ -67,17 +65,39 @@ class AddShop extends Component {
 			zipCode,
 			city,
 			country,
-			backgroundImage,
 			logo,
 			userId},{withCredentials: true})
 		.then((createdShop) =>{
 			console.log(createdShop)
-			this.setState({ firstName: "", description: ""}, () => {
+			this.setState({ firstName: "", description: "", logo: ""}, () => {
 				this.props.me()
 			});	
 		})
 		.catch((error) => console.log(error));
 	}
+
+	handleFileUpload = (e) => {
+		console.log("The file to be uploaded is: ", e.target.files);
+		const file = e.target.files[0];
+	
+		const uploadData = new FormData();
+		// image => this name has to be the same as in the model since we pass
+		// req.body to .create() method when creating a new project in '/api/projects' POST route
+		uploadData.append("image", file);
+	
+		axios
+		  .post("http://localhost:5000/api/upload", uploadData, {
+			withCredentials: true,
+		  })
+		  .then((response) => {
+			console.log("response is: ", response);
+			// after the console.log we can see that response carries 'secure_url' which we can use to update the state
+			this.setState({ logo: response.data.secure_url });
+		  })
+		  .catch((err) => {
+			console.log("Error while uploading the file: ", err);
+		  });
+	  };
 
 	render() {
 		const {
@@ -203,20 +223,13 @@ class AddShop extends Component {
 				onChange={this.handleChange}
 				/>	
 
-				<input
-				type="file"
-				placeholder="Backgroundimage"
-				name="backgroundImage"
-				value={backgroundImage}
-				onChange={this.handleChange}
-				/>	
+
 
 				<input
 				type="file"
 				placeholder="Logo"
 				name="logo"
-				value={logo}
-				onChange={this.handleChange}
+				onChange={this.handleFileUpload}
 				/>	
 
 		<button onClick={this.handleFormSubmit}>Submit</button>
