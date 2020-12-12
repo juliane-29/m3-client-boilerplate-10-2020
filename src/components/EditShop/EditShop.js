@@ -19,20 +19,8 @@ class EditShop extends Component {
 	state = {
 		shopName: "",
 		firstName: "",
-		lastName: "",
-		email: "",
-		phoneNumber: "",
-		description: "",
-		instagramAccount: "",
-		facebookAccount: "",
-		typeOfShop: "",
-		address: "",
-		zipCode: "",
-		city: "",
-		country: "",
-		worldwideShipping: "",
-		logo: "",
-		user: this.props.user,
+        lastName: "", 
+        user: this.props.user
 	};
 
 	handleFormSubmit = (event) => {
@@ -57,7 +45,7 @@ class EditShop extends Component {
 		const { id } = this.props.match.params; // made available by withRouter()
 
 		axios
-			.put(`http://localhost:5000/api/projects/${id}`, {
+			.put(`http://localhost:5000/api/shop/${id}`, {
 				shopName,
 				firstName,
 				lastName,

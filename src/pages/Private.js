@@ -2,15 +2,19 @@ import React, { Component } from "react";
 import { withAuth } from './../context/auth-context';
 import Teaser from './../components/Teaser/Teaser';
 import Category from './../components/Category/Category';
+import styled from "styled-components";
 
 
+const Heading5 = styled.h5 `
+ margin: 20px 25px
+`
 
 class Private extends Component {
   render() {
     return (
       <div>
-        <h3>Private Route</h3>
-        <h4>Welcome {this.props.user && this.props.user.username}</h4>
+        <h3></h3>
+        <Heading5>Welcome back, {this.props.user && this.props.user.username}</Heading5>
         {/* 
         <h2>Welcome {this.props.user ? this.props.user.username : null }</h2> 
         */}

@@ -55,7 +55,8 @@ h4 {
 h5 {
   font-size: 14px;
   font-family: Poppins;
-  color: #223263
+  color: #9098B1;
+  font-weight: bold; 
 
 }
 
@@ -69,6 +70,6 @@ h6 {
 p {
   font-size: 12px;
   font-family: Poppins; 
-  color: #223263
+  color: #223263;
 
 }

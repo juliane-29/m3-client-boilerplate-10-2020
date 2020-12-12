@@ -1,64 +1,83 @@
-import React, { Component } from 'react';
-import { withAuth } from './../context/auth-context';
-import AddProduct from '../components/AddProduct/AddProduct';
-import EditShop from '../components/EditShop/EditShop';
+import React, { Component } from "react";
+import { withAuth } from "./../context/auth-context";
 
-import AddShop from './AddShop';
+import AddProduct from "../components/AddProduct/AddProduct";
+import EditShop from "../components/EditShop/EditShop";
+import AddShop from "./AddShop";
+import ShopDetail from "./ShopDetail";
 
-import ShopDetail from './ShopDetail';
+import styled from "styled-components";
 
+const Image = styled.p`
+	height: 40px;
+	border-radius: 50%;
+`;
+
+const Line = styled.hr`
+	width: 90vw;
+	color: #ebf0ff;
+`;
 
 class Account extends Component {
-    state = {
-    
-        isDisplayed: false,  
-        isDisplayedAddProduct: false,
-        isDisplayedAccountDetails: false,
-    }
+	state = {
+		isDisplayed: false,
+		isDisplayedAddProduct: false,
+		isDisplayedAccountDetails: false,
+	};
 
-    showForm = () => {
-        this.setState({
-            isDisplayed: !this.state.isDisplayed
-        })
-    }
+	showForm = () => {
+		this.setState({
+			isDisplayed: !this.state.isDisplayed,
+		});
+	};
 
-    showAddProduct = () =>{
-        this.setState({
-            isDisplayedAddProduct: !this.state.isDisplayedAccountDetails
-        })
-    }
+	showFormProduct = () => {
+		this.setState({
+			isDisplayedAddProduct: !this.state.isDisplayedAddProduct,
+		});
+	};
 
-    showAccountDetails = () =>{
-        this.setState({
-            isDisplayedAccountDetails: !this.state.isDisplayedAddProduct
-        })
-    }
 
-    render() {
-        return (
-            <div>
-            <p onClick={this.showAccountDetails}>Edit Profile</p>            
-            {this.state.isDisplayedAccountDetails ? 
-            <p>Product</p>
-            : null}
-            <div>
-            </div>
-            <div>
-            {this.props.user.shopOwner ? <p onClick={this.showForm}>Show my shop</p> : <p onClick={this.showForm}>Open Shop</p>}
-            {this.state.isDisplayed ?
-                <AddShop/>
-                : null}
-            </div>
-            <div>
-            {this.props.user.shopOwner ? <p onClick={this.showAddProduct} >Upload Product</p> : null}
-            {this.state.isDisplayedAddProduct ?
-                <AddProduct/>
-                : null}
-            </div>
-            
-            </div>
-        )
-    }
+	showAccountDetails = () => {
+		this.setState({
+			isDisplayedAccountDetails: !this.state.isDisplayedAccountDetails,
+		});
+	};
+
+	render() {
+		return (
+			<div>
+                <div>
+					{this.props.user && this.props.user.image ? (
+						<Image src={this.props.user.image} />
+					) : null}
+					{this.state.isDisplayed ? <AddShop /> : null}
+				</div>
+				<p>{this.props.user && this.props.user.username}</p>
+				<Line></Line>
+				<p onClick={this.showAccountDetails}>Edit Profile</p>
+				{this.state.isDisplayedAccountDetails ? <p>Product</p> : null}
+				<Line></Line>
+
+				<div>
+					{this.props.user.shopOwner ? (
+						<p onClick={this.showForm}>Show my shop</p>
+					) : (
+						<p onClick={this.showForm}>Open Shop</p>
+					)}
+					{this.state.isDisplayed ? <AddShop /> : null}
+				</div>
+				<Line></Line>
+
+				<div>
+					{this.props.user.shopOwner ? (
+						<p onClick={this.showFormProduct}>Upload Product</p>
+					) : null}
+					{this.state.isDisplayedAddProduct ? <AddProduct /> : null}
+				</div>
+			</div>
+		);
+	}
 }
 
 export default withAuth(Account);

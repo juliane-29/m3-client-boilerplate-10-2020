@@ -11,8 +11,7 @@ border: 2.5px solid #EBF0FF;
   font-size: 12px;
   font-weight: regular;
   border-radius: 5px;
-  margin: 10px 0px 10px 0px; `
-
+`
 
 class Searchbar extends Component {
     state = {
@@ -29,7 +28,7 @@ handleInput = (event) => {
 
     render() {
         return (
-            <div className="container">
+            <div className="">
             <Search
                 type="text"
                 className="search-bar"
