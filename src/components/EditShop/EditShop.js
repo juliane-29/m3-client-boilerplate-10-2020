@@ -50,10 +50,11 @@ class EditShop extends Component {
 			city,
 			country
 		} = this.state;
-		const { id } = this.props.match.params; // made available by withRouter()
+        const  id  = this.props.user.shop; // made available by withRouter()
+        
 
 		axios
-			.put(`http://localhost:5000/api/shop/${id}`, {
+			.put(`http://localhost:5000/api/shops/${id}`, {
 				shopName,
 				firstName,
                 lastName,
@@ -69,7 +70,7 @@ class EditShop extends Component {
 			    country
 			})
 			.then(() => {
-				this.props.getTheProject();
+                console.log('Shop was edited')
 			})
 			.catch((err) => console.log(err));
 	};
