@@ -43,7 +43,8 @@ class AddShop extends Component {
 	country: "",
 	worldwideShipping: "",
 	logo: "",
-	user: this.props.user
+	user: this.props.user,
+	isDisplayed: true
 	}
 
 	handleChange = (event) => {
@@ -92,7 +93,7 @@ class AddShop extends Component {
 			userId},{withCredentials: true})
 		.then((createdShop) =>{
 			console.log(createdShop)
-			this.setState({ firstName: "", description: "", logo: ""}, () => {
+			this.setState({ firstName: "", description: "", logo: "", isDisplayed: !isDisplayed}, () => {
 				this.props.me()
 			});	
 		})

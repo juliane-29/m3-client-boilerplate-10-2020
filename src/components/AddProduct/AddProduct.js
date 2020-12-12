@@ -290,7 +290,7 @@ class AddProduct extends Component {
 					/>
 					<Button onClick={this.handleFormSubmit}>Submit</Button>
 				</form>
-				</div>) : (<SuccessfullUpload/>)}
+				</div>) : (<SuccessfullUpload type="Product" verb="uploaded"/>)}
 			</div>
 		);
 	}
