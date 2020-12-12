@@ -16,9 +16,6 @@ import ShopDetail from "./pages/ShopDetail";
 
 import AddShop from "./pages/AddShop";
 
-
-
-
 import AnonRoute from "./components/AnonRoute";
 import PrivateRoute from "./components/PrivateRoute";
 

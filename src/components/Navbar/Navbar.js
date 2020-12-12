@@ -2,44 +2,36 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { withAuth } from '../../context/auth-context';
 import "./Navbar.css";
+import styled from "styled-components";
 
+const NavLinkText = styled.div`
+  color: #9098B1;
+  font-family: Poppins;
+  font-size: 10px;
+  font-weight: regular;
+  border-radius: 5px;
+  margin: 0px 0px 0px 0px; 
+
+`
 
 class Navbar extends Component {
   render() {
     // const { user, logout, isLoggedin } = this.props;
     return (
-    <nav className="navbar fixed-bottom navbar-light bg-dark">
-        <Link to={'/'} id='home-btn'>
-          <img className="icon-nav" alt="homepage-icon" src="/home_icon.png"/><p>Home</p>
+    <nav className="navbar fixed-bottom navbar-light bg-light container">
+        <Link to={'/'} className='home-btn'>
+          <div><img className="icon-nav" alt="homepage-icon" src="/home_icon.png"/></div><NavLinkText>Home</NavLinkText>
         </Link>
-        <Link to={'/account'} id='home-btn'>
-          <img className="icon-nav" alt="user-icon" src="/user_icon.png"/><p>Account</p>
+        <Link to={'/account'} className='home-btn'>
+          <div><img className="icon-nav" alt="user-icon" src="/user_icon.png"/></div><NavLinkText>Account</NavLinkText>
         </Link>
-        <Link to={'/private'} id='home-btn'>
-          <img className="icon-nav" alt="user-icon" src="/user_icon.png"/><p>Explore</p>
+        <Link to={'/private'} className='home-btn'>
+          <div><img className="icon-nav" alt="user-icon" src="/search_icon.png"/></div><NavLinkText>Explore</NavLinkText>
         </Link>
         {this.props.user && this.props.user.shopOwner ? 
-        (<Link to={'/add-product'} id="home-btn"><img className="icon-nav" alt="user-icon" src="/user_icon.png"/><p>Add Product</p></Link>) 
-        : (<Link to={'/open-shop'} id="home-btn"><img className="icon-nav" alt="user-icon" src="/user_icon.png"/><p>Open Shop</p></Link>)}
-        {this.props.isLoggedIn ? (
-          <>
-            <p>username: {this.props.user && this.props.user.username}</p>
-            <button onClick={this.props.logout}>Logout</button>
-          </>
-        ) : (
-          <>{/**/}
-            <Link to="/login">
-              <button className="navbar-button">Login</button>{' '}
-            </Link>
-            <br />
-            <Link to="/signup">
-              <button className="navbar-button">Sign Up</button>{' '}
-            </Link>
-            <Link to="/private">
-              <button className="navbar-button">Private</button>{' '}
-            </Link>
-          </>
-        )}
+        (<Link to={'/add-product'} id="home-btn"><img className="icon-nav" alt="user-icon" src="/user_icon.png"/><NavLinkText>Add Product</NavLinkText></Link>) 
+        : (<Link to={'/open-shop'} id="home-btn"><img className="icon-nav" alt="user-icon" src="/cart_icon.png"/><NavLinkText>Open Shop</NavLinkText></Link>)}
+        
       </nav>
     );
   }

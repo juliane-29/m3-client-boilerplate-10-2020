@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { withAuth } from './../context/auth-context';
 import AddProduct from '../components/AddProduct/AddProduct';
+import EditShop from '../components/EditShop/EditShop';
+
 import AddShop from './AddShop';
 
 import ShopDetail from './ShopDetail';

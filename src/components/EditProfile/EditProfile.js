@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import axios from "axios";
-import { withAuth } from '../context/auth-context';
+import { withAuth } from '../../context/auth-context';
 
 class EditProfile extends Component {
     state = {

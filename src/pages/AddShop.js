@@ -264,7 +264,6 @@ class AddShop extends Component {
 
 			<Category/>
 				<Category/>
-				<Category/>
 			</div>
 		)
 	}
