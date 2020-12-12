@@ -51,7 +51,7 @@ class Account extends Component {
 					{this.props.user && this.props.user.image ? (
 						<Image src={this.props.user.image} />
 					) : null}
-					{this.state.isDisplayed ? <AddShop /> : null}
+					
 				</div>
 				<p>{this.props.user && this.props.user.username}</p>
 				<Line></Line>
@@ -61,11 +61,11 @@ class Account extends Component {
 
 				<div>
 					{this.props.user.shopOwner ? (
-						<p onClick={this.showForm}>Show my shop</p>
+						<p onClick={this.showForm}>Edit my shop</p>
 					) : (
 						<p onClick={this.showForm}>Open Shop</p>
 					)}
-					{this.state.isDisplayed ? <AddShop /> : null}
+					{this.state.isDisplayed ? <EditShop /> : null}
 				</div>
 				<Line></Line>
 
@@ -75,6 +75,17 @@ class Account extends Component {
 					) : null}
 					{this.state.isDisplayedAddProduct ? <AddProduct /> : null}
 				</div>
+                
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+
+
+                
+
 			</div>
 		);
 	}

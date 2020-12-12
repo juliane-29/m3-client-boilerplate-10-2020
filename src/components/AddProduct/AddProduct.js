@@ -8,6 +8,7 @@ import patterns from "../jsonFiles/pattern.json";
 import genders from "../jsonFiles/gender.json";
 import { withAuth } from '../../context/auth-context';
 import styled from 'styled-components'
+import SuccessfullUpload from "../SuccessfulUpload/SuccessfullUpload"
 
 import "./AddProduct.css";
 
@@ -22,7 +23,6 @@ const Input = styled.input`
   border-radius: 5px;
   margin: 10px 0px 10px 0px; 
 `
-
 
 const Textarea = styled.textarea`
 	border: 2.5px solid #EBF0FF;
@@ -51,6 +51,20 @@ const Select = styled.select`
 	}
 `
 
+const Button = styled.button`
+  background-color: #D2D2CF;
+  width: 90vw;
+  height: 6vh;
+  border: 1px solid #D2D2CF; 
+  font-size: 14px; 
+  color: white; 
+  font-family: Poppins; 
+`
+
+const Heading5 = styled.h5 `
+ margin: 20px 25px
+`
+
 class AddProduct extends Component {
 	state = {
 		brand: "",
@@ -71,6 +85,7 @@ class AddProduct extends Component {
 		materials,
 		patterns,
 		genders,
+		isDisplayed: true
 	};
 	handleChange = (event) => {
 		const { name, value } = event.target;
@@ -96,7 +111,8 @@ class AddProduct extends Component {
 			material,
 			pattern,
 			image,
-			gender
+			gender,
+			isDisplayed
 		} = this.state;
 		axios
 			.post("http://localhost:5000/api/products", {
@@ -117,7 +133,8 @@ class AddProduct extends Component {
 			})
 			.then((createdProduct) => {
 				console.log("createdProduct", createdProduct);
-				this.setState({ brand: "", description: "" });
+				this.setState({ brand: "", description: "", isDisplayed: !isDisplayed});
+				
 			})
 			.catch((error) => console.log(error));
 
@@ -163,8 +180,9 @@ class AddProduct extends Component {
 			gender
 		} = this.state;
 		return (
-			<div>
-				<h1>Upload a product</h1>
+			<div>{this.state.isDisplayed ? 
+				(<div>
+				<h4>Upload a product</h4>
 				<form onSubmit={this.handleFormSubmit}>
 					<Input
 						type="text"
@@ -270,8 +288,9 @@ class AddProduct extends Component {
 						placeholder="Image"
 						onChange={this.handleFileUpload}
 					/>
-					<button onClick={this.handleFormSubmit}>Submit</button>
+					<Button onClick={this.handleFormSubmit}>Submit</Button>
 				</form>
+				</div>) : (<SuccessfullUpload/>)}
 			</div>
 		);
 	}

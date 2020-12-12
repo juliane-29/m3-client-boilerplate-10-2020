@@ -4,8 +4,6 @@ import { withAuth } from './../context/auth-context';
 import styled from 'styled-components'
 import Category from './../components/Category/Category';
 
-
-
 const Input = styled.input`
   border: 0.5px solid #EBF0FF;
   width: 90vw;
@@ -27,8 +25,6 @@ const Button = styled.button`
   color: white; 
   font-family: Poppins; 
 `
-
-
 
 class AddShop extends Component {
 	state = {
@@ -262,8 +258,6 @@ class AddShop extends Component {
 		<Button onClick={this.handleFormSubmit}>Submit</Button>
 			</form>
 
-			<Category/>
-				<Category/>
 			</div>
 		)
 	}
