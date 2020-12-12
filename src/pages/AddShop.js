@@ -1,6 +1,33 @@
 import React, { Component } from 'react'
 import axios from "axios";
 import { withAuth } from './../context/auth-context';
+import styled from 'styled-components'
+import Category from './../components/Category/Category';
+
+
+
+const Input = styled.input`
+  border: 0.5px solid #EBF0FF;
+  width: 90vw;
+  height: 5vh;
+  color: #9098B1;
+  font-family: Poppins;
+  font-size: 12px;
+  font-weight: regular;
+  border-radius: 5px;
+  margin: 10px 0px 10px 0px; 
+`
+
+const Button = styled.button`
+  background-color: #D2D2CF;
+  width: 90vw;
+  height: 6vh;
+  border: 1px solid #D2D2CF; 
+  font-size: 14px; 
+  color: white; 
+  font-family: Poppins; 
+`
+
 
 
 class AddShop extends Component {
@@ -119,30 +146,30 @@ class AddShop extends Component {
 		} = this.state;
 		return (
 			<div>
-			<h1>Open a shop</h1>
+			<h4>Open a shop</h4>
 			<form onSubmit={this.handleFormSubmit}>
-				<input
+				<Input
 				type="text"
 				placeholder="Name of the shop"
 				name="shopName"
 				value={shopName}
 				onChange={this.handleChange}
 				/>			
-				<input
+				<Input
 				type="text"
 				placeholder="First Name"
 				name="firstName"
 				value={firstName}
 				onChange={this.handleChange}
 				/>
-				<input
+				<Input
 				type="text"
 				placeholder="Last Name"
 				name="lastName"
 				value={lastName}
 				onChange={this.handleChange}
 				/>	
-				<input
+				<Input
 				type="text"
 				placeholder="Email"
 				name="email"
@@ -151,7 +178,7 @@ class AddShop extends Component {
 					/>	
 
 
-				<input
+				<Input
 				type="text"
 				placeholder="Phone Number"
 				name="phoneNumber"
@@ -159,7 +186,7 @@ class AddShop extends Component {
 				onChange={this.handleChange}
 				/>	
 
-				<input
+				<Input
 				type="text"
 				placeholder="Description"
 				name="description"
@@ -167,7 +194,7 @@ class AddShop extends Component {
 				onChange={this.handleChange}
 				/>	
 
-				<input
+				<Input
 				type="text"
 				placeholder="Instagram"
 				name="instagramAccount"
@@ -175,7 +202,7 @@ class AddShop extends Component {
 				onChange={this.handleChange}
 				/>	
 
-				<input
+				<Input
 				type="text"
 				placeholder="Facebook"
 				name="facebookAccount"
@@ -183,7 +210,7 @@ class AddShop extends Component {
 				onChange={this.handleChange}
 				/>	
 
-				<input
+				<Input
 				type="text"
 				placeholder="Type of Shop"
 				name="typeOfShop"
@@ -191,7 +218,7 @@ class AddShop extends Component {
 				onChange={this.handleChange}
 				/>	
 
-				<input
+				<Input
 				type="text"
 				placeholder="Address"
 				name="address"
@@ -199,7 +226,7 @@ class AddShop extends Component {
 				onChange={this.handleChange}
 				/>	
 
-				<input
+				<Input
 				type="text"
 				placeholder="Zip"
 				name="zipCode"
@@ -207,7 +234,7 @@ class AddShop extends Component {
 				onChange={this.handleChange}
 				/>	
 
-				<input
+				<Input
 				type="text"
 				placeholder="City"
 				name="city"
@@ -215,7 +242,7 @@ class AddShop extends Component {
 				onChange={this.handleChange}
 				/>
 				
-				<input
+				<Input
 				type="text"
 				placeholder="Country"
 				name="country"
@@ -232,8 +259,12 @@ class AddShop extends Component {
 				onChange={this.handleFileUpload}
 				/>	
 
-		<button onClick={this.handleFormSubmit}>Submit</button>
+		<Button onClick={this.handleFormSubmit}>Submit</Button>
 			</form>
+
+			<Category/>
+				<Category/>
+				<Category/>
 			</div>
 		)
 	}

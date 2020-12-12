@@ -7,8 +7,49 @@ import materials from "../jsonFiles/material.json";
 import patterns from "../jsonFiles/pattern.json";
 import genders from "../jsonFiles/gender.json";
 import { withAuth } from '../../context/auth-context';
+import styled from 'styled-components'
 
 import "./AddProduct.css";
+
+const Input = styled.input`
+  border: 2.5px solid #EBF0FF;
+  width: 90vw;
+  height: 5vh;
+  color: #9098B1;
+  font-family: Poppins;
+  font-size: 12px;
+  font-weight: regular;
+  border-radius: 5px;
+  margin: 10px 0px 10px 0px; 
+`
+
+
+const Textarea = styled.textarea`
+	border: 2.5px solid #EBF0FF;
+	width: 90vw;
+	color: #9098B1;
+	font-weight: regular;
+	font-size: 12px;
+	font-family: Poppins;
+	margin: 10px 0px 10px 0px; 
+`
+
+const Select = styled.select`
+	border: 2.5px solid #EBF0FF;
+   	font-family: Poppins;
+  	font-size: 12px;
+	font-weight: regular;
+	width: 90vw;
+	height: 5vh;
+	margin: 10px 0px 10px 0px; 
+  
+	option {
+		font-size: 12px;
+		font-family: Poppins;
+		color: #9098B1;
+		font-weight: regular;
+	}
+`
 
 class AddProduct extends Component {
 	state = {
@@ -125,41 +166,41 @@ class AddProduct extends Component {
 			<div>
 				<h1>Upload a product</h1>
 				<form onSubmit={this.handleFormSubmit}>
-					<input
+					<Input
 						type="text"
 						placeholder="Brand"
 						name="brand"
 						value={brand}
 						onChange={this.handleChange}
 					/>
-					<textarea
+					<Textarea
 						placeholder="Description"
 						name="description"
 						value={description}
 						onChange={this.handleChange}
 					/>
-					<input
+					<Input
 						type="number"
 						placeholder="Price"
 						name="price"
 						value={price}
 						onChange={this.handleChange}
 					/>
-					<input
+					<Input
 						type="number"
 						placeholder="List Price"
 						name="listPrice"
 						value={listPrice}
 						onChange={this.handleChange}
 					/>
-					<input
+					<Input
 						type="number"
 						placeholder="Shipping"
 						name="shippingCost"
 						value={shippingCost}
 						onChange={this.handleChange}
 					/>
-					<select name="size" value={size} onChange={this.handleChange}>
+					<Select name="size" value={size} onChange={this.handleChange}>
 						<option value={size}>{size}</option>
 						{sizes.map((sizeObj, index) => {
 							return (
@@ -168,9 +209,9 @@ class AddProduct extends Component {
 								</option>
 							);
 						})}
-					</select>
+					</Select>
 
-					<select
+					<Select
 						name="condition"
 						value={condition}
 						onChange={this.handleChange}
@@ -183,17 +224,17 @@ class AddProduct extends Component {
 								</option>
 							);
 						})}
-					</select>
-					<select name="color" value={color} onChange={this.handleChange}>
+					</Select>
+					<Select name="color" value={color} onChange={this.handleChange}>
 						<option value={color}>{color}</option>
 						{colors.map((colorObj, index) => {
 							return (
 								<option value={`${colorObj.color}`}>{colorObj.color}</option>
 							);
 						})}
-					</select>
+					</Select>
 
-					<select name="material" value={material} onChange={this.handleChange}>
+					<Select name="material" value={material} onChange={this.handleChange}>
 						<option value={material}>{material}</option>
 						{materials.map((materialObj, index) => {
 							return (
@@ -202,9 +243,9 @@ class AddProduct extends Component {
 								</option>
 							);
 						})}
-					</select>
+					</Select>
 
-					<select name="pattern" value={pattern} onChange={this.handleChange}>
+					<Select name="pattern" value={pattern} onChange={this.handleChange}>
 						<option value={pattern}>{pattern}</option>
 						{patterns.map((patternObj, index) => {
 							return (
@@ -213,16 +254,16 @@ class AddProduct extends Component {
 								</option>
 							);
 						})}
-					</select>
+					</Select>
 
-					<select name="gender" value={gender} onChange={this.handleChange}>
+					<Select name="gender" value={gender} onChange={this.handleChange}>
 						<option value={gender}>{gender}</option>
 						{genders.map((genderObj, index) => {
 							return (
 								<option value={`${genderObj.name}`}>{genderObj.name}</option>
 							);
 						})}
-					</select>
+					</Select>
 					<input
 						type="file"
 						name="image"
