@@ -20,6 +20,16 @@ class EditShop extends Component {
 		shopName: "",
 		firstName: "",
         lastName: "", 
+        email: "", 
+	    phoneNumber: "",
+		description: "",
+		instagramAccount: "",
+		facebookAccount: "",
+		typeOfShop: "",
+		address: "",
+		zipCode: "",
+		city: "",
+		country: "",
         user: this.props.user
 	};
 
@@ -28,8 +38,8 @@ class EditShop extends Component {
 		const {
 			shopName,
 			firstName,
-			lastName,
-			email,
+            lastName,
+            email, 
 			phoneNumber,
 			description,
 			instagramAccount,
@@ -38,9 +48,7 @@ class EditShop extends Component {
 			address,
 			zipCode,
 			city,
-			country,
-			worldwideShipping,
-			logo,
+			country
 		} = this.state;
 		const { id } = this.props.match.params; // made available by withRouter()
 
@@ -48,19 +56,17 @@ class EditShop extends Component {
 			.put(`http://localhost:5000/api/shop/${id}`, {
 				shopName,
 				firstName,
-				lastName,
-				email,
-				phoneNumber,
-				description,
-				instagramAccount,
-				facebookAccount,
-				typeOfShop,
-				address,
-				zipCode,
-				city,
-				country,
-				worldwideShipping,
-				logo,
+                lastName,
+                email, 
+			    phoneNumber,
+			    description,
+			    instagramAccount,
+			    facebookAccount,
+			    typeOfShop,
+			    address,
+			    zipCode,
+			    city,
+			    country
 			})
 			.then(() => {
 				this.props.getTheProject();
@@ -74,9 +80,125 @@ class EditShop extends Component {
 	};
 
 	render() {
+        const {
+			shopName,
+			firstName,
+            lastName,
+            email, 
+			phoneNumber,
+			description,
+			instagramAccount,
+			facebookAccount,
+			typeOfShop,
+			address,
+			zipCode,
+			city,
+			country
+        } = this.state
 		return (
 			<div>
-				<p>Hallo</p>
+				<h4>Edit Shop</h4>
+                <form onSubmit={this.handleFormSubmit}>
+                <Input
+				type="text"
+				placeholder="Name of the shop"
+				name="shopName"
+				value={shopName}
+				onChange={this.handleChange}
+				/>
+
+				<Input
+				type="text"
+				placeholder="First Name"
+				name="firstName"
+				value={firstName}
+				onChange={this.handleChange}
+				/>
+
+				<Input
+				type="text"
+				placeholder="Last Name"
+				name="lastName"
+				value={lastName}
+				onChange={this.handleChange}
+				/>	
+
+                <Input
+				type="text"
+				placeholder="Email"
+				name="email"
+				value={email}
+				onChange={this.handleChange}
+				/>	
+
+
+				<Input
+				type="text"
+				placeholder="Phone Number"
+				name="phoneNumber"
+				value={phoneNumber}
+				onChange={this.handleChange}
+				/>	
+
+				<Input
+				type="text"
+				placeholder="Description"
+				name="description"
+				value={description}
+				onChange={this.handleChange}
+				/>	
+
+				<Input
+				type="text"
+				placeholder="Instagram"
+				name="instagramAccount"
+				value={instagramAccount}
+				onChange={this.handleChange}
+				/>	
+
+				<Input
+				type="text"
+				placeholder="Facebook"
+				name="facebookAccount"
+				value={facebookAccount}
+				onChange={this.handleChange}
+				/>	
+
+				<Input
+				type="text"
+				placeholder="Type of Shop"
+				name="typeOfShop"
+				value={typeOfShop}
+				onChange={this.handleChange}
+				/>	
+
+				<Input
+				type="text"
+				placeholder="Address"
+				name="address"
+				value={address}
+				onChange={this.handleChange}
+				/>	
+
+				<Input
+				type="text"
+				placeholder="Zip"
+				name="zipCode"
+				value={zipCode}
+				onChange={this.handleChange}
+				/>	
+
+				<Input
+				type="text"
+				placeholder="City"
+				name="city"
+				value={city}
+				onChange={this.handleChange}
+				/>
+
+                <input type="submit" value="Edit Shop" />
+
+                </form>
 			</div>
 		);
 	}
