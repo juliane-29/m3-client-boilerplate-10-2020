@@ -11,7 +11,8 @@ const Heading5 = styled.h5 `
 `
 
 
-function Home() {
+class Home extends React.Component () {
+  render () {
   return (
     <div> 
       <Searchbar/>
@@ -30,6 +31,7 @@ function Home() {
 
     </div>
   )
+}
 }
 
 export default Home;

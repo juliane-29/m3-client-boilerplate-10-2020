@@ -30,6 +30,7 @@ class ShopList extends Component {
             <Link to={`/shop/${shopObj._id}`}>
             <div>{shopObj.shopName}</div>
             <div>{shopObj.logo}</div>
+            <div>{shopObj.products.length}</div>
             </Link>
             </div>
             )
