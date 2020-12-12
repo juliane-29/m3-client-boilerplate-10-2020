@@ -16,6 +16,16 @@ const Input = styled.input`
 	margin: 10px 0px 10px 0px;
 `;
 
+const Button = styled.input`
+  background-color: #D2D2CF;
+  width: 90vw;
+  height: 6vh;
+  border: 1px solid #D2D2CF; 
+  font-size: 14px; 
+  color: white; 
+  font-family: Poppins; 
+`
+
 class Login extends Component {
 	state = { username: "", password: "" };
 
@@ -60,7 +70,7 @@ class Login extends Component {
 						onChange={this.handleChange}
 						placeholder="Password"
 					/>
-					<input type="submit" value="Login" />
+					<Button type="submit" value="Login" />
 				</form>
 				<p>Don't have an account?</p>
 				<Link to={"/signup"}> Signup</Link>

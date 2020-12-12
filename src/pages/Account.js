@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { withAuth } from './../context/auth-context';
 import AddProduct from '../components/AddProduct/AddProduct';
 import AddShop from './AddShop';
+
 import ShopDetail from './ShopDetail';
 
 
@@ -34,20 +35,20 @@ class Account extends Component {
     render() {
         return (
             <div>
-            <button onClick={this.showAccountDetails}>Edit Profile</button>            
+            <p onClick={this.showAccountDetails}>Edit Profile</p>            
             {this.state.isDisplayedAccountDetails ? 
-            <p>Profile Edit Component</p>
+            <p>Product</p>
             : null}
             <div>
             </div>
             <div>
-            {this.props.user.shopOwner ? <button onClick={this.showForm}>Show my shop</button> : <button onClick={this.showForm}>Open Shop</button>}
+            {this.props.user.shopOwner ? <p onClick={this.showForm}>Show my shop</p> : <p onClick={this.showForm}>Open Shop</p>}
             {this.state.isDisplayed ?
                 <AddShop/>
                 : null}
             </div>
             <div>
-            {this.props.user.shopOwner ? <button onClick={this.showAddProduct} >Upload Product</button> : null}
+            {this.props.user.shopOwner ? <p onClick={this.showAddProduct} >Upload Product</p> : null}
             {this.state.isDisplayedAddProduct ?
                 <AddProduct/>
                 : null}

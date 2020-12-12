@@ -2,7 +2,6 @@ import React from 'react'
 import Teaser from './../components/Teaser/Teaser';
 import Category from './../components/Category/Category';
 import AddProduct from '../components/AddProduct/AddProduct';
-import AddShop from './AddShop';
 import Searchbar from '../components/Searchbar/Searchbar';
 import ShopList from '../components/ShopList/ShopList';
 import ListPage from '../components/ListPage/ListPage'

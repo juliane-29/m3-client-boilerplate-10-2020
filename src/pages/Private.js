@@ -9,8 +9,8 @@ class Private extends Component {
   render() {
     return (
       <div>
-        <h1>Private Route</h1>
-        <h2>Welcome {this.props.user && this.props.user.username}</h2>
+        <h3>Private Route</h3>
+        <h4>Welcome {this.props.user && this.props.user.username}</h4>
         {/* 
         <h2>Welcome {this.props.user ? this.props.user.username : null }</h2> 
         */}
