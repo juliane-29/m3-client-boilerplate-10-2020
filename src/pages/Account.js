@@ -1,5 +1,8 @@
 import React, { Component } from "react";
 import { withAuth } from "./../context/auth-context";
+import { Link } from 'react-router-dom';
+import axios from "axios";
+
 
 import AddProduct from "../components/AddProduct/AddProduct";
 import EditShop from "../components/EditShop/EditShop";
@@ -42,7 +45,22 @@ class Account extends Component {
 		this.setState({
 			isDisplayedAccountDetails: !this.state.isDisplayedAccountDetails,
 		});
-	};
+    };
+    
+    deleteShop = () => {
+        const id  = this.props.user.shop
+        console.log('id', id)
+
+        axios.delete(`http://localhost:5000/api/shops/${id}`)
+        .then((foundShop) => {
+            this.props.history.push('/')
+            console.log('Successfully deleted', foundShop)
+        })
+        .catch((err) => {
+            console.log('err', err)
+        })
+
+    }
 
 	render() {
 		return (
@@ -68,10 +86,27 @@ class Account extends Component {
 					{this.state.isDisplayed ? <EditShop /> : null}
 				</div>
 				<Line></Line>
+
+                <div>
+					{this.props.user.shopOwner ? (
+						<Link to={`/shop/${this.props.user.shop}`}><p>View your shop</p></Link>
+					) : (null
+					)}
+				</div>
+				<Line></Line>
                 
 				<div>
 					{this.props.user.shopOwner ? (
 						<p onClick={this.showFormProduct}>Upload Product</p>
+					) : null}
+					{this.state.isDisplayedAddProduct ? <AddProduct /> : null}
+				</div>
+
+                <Line></Line>
+                
+				<div>
+					{this.props.user.shopOwner ? (
+						<p onClick={this.deleteShop} style={{color: "#F7717D"}}>Delete your shop</p>
 					) : null}
 					{this.state.isDisplayedAddProduct ? <AddProduct /> : null}
 				</div>

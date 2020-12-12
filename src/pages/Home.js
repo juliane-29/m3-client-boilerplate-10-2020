@@ -1,6 +1,7 @@
 import React from 'react'
 import Teaser from './../components/Teaser/Teaser';
 import Category from './../components/Category/Category';
+import EditShop from '../components/EditShop/EditShop';
 import Searchbar from '../components/Searchbar/Searchbar';
 import ShopList from '../components/ShopList/ShopList';
 import ListPage from '../components/ListPage/ListPage'
@@ -11,8 +12,7 @@ const Heading5 = styled.h5 `
 `
 
 
-class Home extends React.Component () {
-  render () {
+function Home() {
   return (
     <div> 
       <Searchbar/>
@@ -31,7 +31,6 @@ class Home extends React.Component () {
 
     </div>
   )
-}
 }
 
 export default Home;
