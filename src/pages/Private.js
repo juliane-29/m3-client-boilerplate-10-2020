@@ -22,8 +22,6 @@ class Private extends Component {
         */}
       <Teaser image="https://static3.depositphotos.com/1000635/120/i/600/depositphotos_1208368-stock-photo-white-paper-seamless-background.jpg"title="Teaser" subtitle="teaser-template" />
       
-
-      <EditShop/>
       <Teaser />
 
       </div>

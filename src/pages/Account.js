@@ -68,7 +68,7 @@ class Account extends Component {
 					{this.state.isDisplayed ? <EditShop /> : null}
 				</div>
 				<Line></Line>
-
+                
 				<div>
 					{this.props.user.shopOwner ? (
 						<p onClick={this.showFormProduct}>Upload Product</p>

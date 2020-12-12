@@ -57,7 +57,7 @@ class Signup extends Component {
 					id="logo"
 					src="/second_chance_logo.png"
 				/>
-				<h1>Let's get started</h1>
+				<h4>Let's get started</h4>
 				<p>Create a new account</p>
 
 				<form onSubmit={this.handleFormSubmit}>

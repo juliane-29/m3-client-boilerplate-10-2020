@@ -44,7 +44,6 @@ class AddShop extends Component {
 	worldwideShipping: "",
 	logo: "",
 	user: this.props.user,
-	isDisplayed: true
 	}
 
 	handleChange = (event) => {
@@ -93,7 +92,7 @@ class AddShop extends Component {
 			userId},{withCredentials: true})
 		.then((createdShop) =>{
 			console.log(createdShop)
-			this.setState({ firstName: "", description: "", logo: "", isDisplayed: !isDisplayed}, () => {
+			this.setState({ firstName: "", description: "", logo: ""}, () => {
 				this.props.me()
 			});	
 		})
@@ -258,7 +257,8 @@ class AddShop extends Component {
 
 		<Button onClick={this.handleFormSubmit}>Submit</Button>
 			</form>
-
+			<br/>
+			<br/>
 			</div>
 		)
 	}

@@ -30,7 +30,10 @@ class ListPage extends Component {
             <img style={{height:"100px"}}src={product.image}/>
             <div>{product.brand}</div>
             <div>{product.description}</div>
-            <div>{product.price}</div>
+            <div>{product.price}€
+            <strike>{product.listPrice}€</strike>
+            </div>
+            <div>{product.condition}</div>
             </Link>
             </div>
             )})}
