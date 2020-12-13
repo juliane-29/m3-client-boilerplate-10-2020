@@ -12,7 +12,7 @@ const Input = styled.input`
 	font-size: 12px;
 	font-weight: regular;
 	border-radius: 5px;
-	margin: 10px 0px 10px 0px;
+	margin: 10px 0px 10px 10px;
 `;
 
 class EditShop extends Component {
@@ -98,7 +98,7 @@ class EditShop extends Component {
         } = this.state
 		return (
 			<div>
-				<h4>Edit Shop</h4>
+				<h3>Edit Shop</h3>
                 <form onSubmit={this.handleFormSubmit}>
                 <Input
 				type="text"

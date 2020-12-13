@@ -1,9 +1,10 @@
 .teaser {
-    width: 90vw;
-    height: 30vh;
-    border-radius: 5%;
+    width: 100vw;
+    height: 20vh;
+    border-radius: 0%;
     margin-left: auto;
     margin-right: auto;
+    opacity: 0.9
 
 }
 

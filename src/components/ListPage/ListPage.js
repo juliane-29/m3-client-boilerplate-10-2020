@@ -47,7 +47,7 @@ class ListPage extends Component {
             <ProductCard key={product._id} className="productCard">
             <Link to={`/products/${product._id}`}>
             <div className="image">
-            <Image style={{width:"35vw"}}src={product.image}/>
+            <Image style={{width:"35vw", height:"20vh"}}src={product.image}/>
             </div>
             <ProductInfo className="content-productCard">
             <Paragraph>{product.brand}</Paragraph>

@@ -41,7 +41,7 @@ class ProductDetail extends Component {
 	render() {
 		const {brand, description, price, listPrice, shippingCost, condition, category, size, color, material, pattern, image, gender, shop, user} = this.state
 		return (<div>
-		<div className="product">
+		<div className="container">
 		<div>
 		<img src={image} alt="prouct-image" style={{width: "80vw", height: "40vh"}}/>
 		</div>

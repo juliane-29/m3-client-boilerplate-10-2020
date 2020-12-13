@@ -11,8 +11,8 @@ const Paragraph = styled.p`
 `
 
 const ShopDetailInfo = styled.div`
-	margin-top: 20px;
-	margin-left: 20px
+	margin-top: 0px;
+	margin-left: 10px
 `
 
 

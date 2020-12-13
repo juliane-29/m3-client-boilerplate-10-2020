@@ -91,7 +91,7 @@ class Account extends Component {
 					) : (
 						<Paragraph onClick={this.showForm}>Open Shop</Paragraph>
 					)}
-					{this.state.isDisplayed ? <EditShop /> : null}
+					{this.state.isDisplayed ? <AddShop /> : null}
 				</div>
 				<Line></Line>
 
@@ -118,6 +118,9 @@ class Account extends Component {
 					) : null}
 					{this.state.isDisplayedAddProduct ? <AddProduct /> : null}
 				</div>
+
+
+				<button onClick={this.props.logout}>Logout</button>
                 
                 <br/>
                 <br/>
