@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import axios from 'axios'; 
 import Searchbar from "../Searchbar/Searchbar"
+import SearchResult from "../SearchResult/SearchResult"
+
 
 
 
@@ -38,8 +40,8 @@ class SearchResults extends Component {
         return (
             <div>
             <Searchbar filterProducts={this.filterProducts}/>
-            <p>{this.state.productsFiltered.map((productObj) =>{
-                return (<p>{productObj.brand}</p>)
+            <p>{this.state.productsFiltered.map((productObj, index) =>{
+                return (<SearchResult key={index} productObj={productObj}/>)
             })}</p>                       
             </div>
         )

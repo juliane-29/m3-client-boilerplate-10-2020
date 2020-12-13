@@ -56,7 +56,7 @@ class Login extends Component {
 				<img
 					style={{ height: "100px" }}
 					alt="logo"
-					id="logo"
+					className="logo"
 					src="/second_chance_logo.png"
 				/>
 				<div className="contentLogin">

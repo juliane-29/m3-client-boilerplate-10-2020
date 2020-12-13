@@ -14,8 +14,7 @@ import styled from "styled-components";
 const Image = styled.p`
 	height: 40px;
 	border-radius: 50%;
-`;
-
+`
 const Line = styled.hr`
 	width: 90vw;
 	color: #ebf0ff;
