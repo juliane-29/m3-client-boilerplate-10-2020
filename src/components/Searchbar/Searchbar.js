@@ -19,11 +19,13 @@ class Searchbar extends Component {
       }
 
 handleInput = (event) => {
-        // const value = event.target.value;
+        //const value = event.target.value;
         const { value, name } = event.target;
-
+        //console.log('value', value)
+        //console.log('name', name)
         this.setState( { [name]: value } )
-
+        
+        this.props.filterProducts(value)
     }
     
 

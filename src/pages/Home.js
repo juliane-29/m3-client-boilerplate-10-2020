@@ -1,10 +1,11 @@
 import React from 'react'
 import Teaser from './../components/Teaser/Teaser';
 import Category from './../components/Category/Category';
-import EditShop from '../components/EditShop/EditShop';
 import Searchbar from '../components/Searchbar/Searchbar';
 import ShopList from '../components/ShopList/ShopList';
 import ListPage from '../components/ListPage/ListPage';
+import SearchResults from '../components/SearchResults/SearchResults';
+
 
 import styled from "styled-components";
 
@@ -16,7 +17,7 @@ const Heading5 = styled.h5 `
 function Home() {
   return (
     <div> 
-      <Searchbar/>
+      <SearchResults/>
       <Teaser image="/splash_screen_image.png" opacity="0.5" title="Streetstyle" subtitle="Shop the new in products" />
       <Heading5>Categories</Heading5>
       <Category />
