@@ -3,17 +3,7 @@ import { Link } from "react-router-dom";
 import { withAuth } from "./../context/auth-context";
 import styled from "styled-components";
 
-const Input = styled.input`
-	border: 2.5px solid #ebf0ff;
-	width: 90vw;
-	height: 5vh;
-	color: #9098b1;
-	font-family: Poppins;
-	font-size: 12px;
-	font-weight: regular;
-	border-radius: 5px;
-	margin: 10px 0px 10px 10px;
-`;
+
 
 const Button = styled.input`
   background-color: #D2D2CF;
@@ -26,11 +16,7 @@ const Button = styled.input`
   margin: 10px 0px 0px 10px
 `
 
-const Paragraph = styled.p `
-  color: #9098B1; 
-  font-weight: regular;
-  margin: 8px 0px 0px 10px
-`
+
 
 class Signup extends Component {
 	state = {
@@ -63,10 +49,10 @@ class Signup extends Component {
 				/>
 				<div className="contentLogin">
 				<h3 style={{marginLeft: "10px"}}>Let's get started</h3>
-				<Paragraph>Create a new account</Paragraph>
+				<p>Create a new account</p>
 				</div>
 				<form onSubmit={this.handleFormSubmit}>
-					<Input
+					<input
 						type="text"
 						name="username"
 						value={username}
@@ -74,7 +60,7 @@ class Signup extends Component {
             placeholder="Your username"
 
 					/>
-					<Input
+					<input
 						type="text"
 						name="email"
 						value={email}
@@ -82,7 +68,7 @@ class Signup extends Component {
             placeholder="Your email"
 
 					/>
-					<Input
+					<input
 						type="password"
 						name="password"
 						value={password}
@@ -95,8 +81,8 @@ class Signup extends Component {
           value="Signup" />
 				</form>
 				<div className="LinkHelp">
-				<Paragraph>Already have account?</Paragraph>
-				<Link to={"/login"}><Paragraph>Login</Paragraph></Link>
+				<p>Already have account?</p>
+				<Link to={"/login"}><p>Login</p></Link>
 				</div>
 			</div>
 		);

@@ -1,9 +1,9 @@
-.search-bar{
-  width: 70vw;
-  margin: 20px; 
+.search{
+  margin: 10px 10px 10px 10px
 }
 
 #logo-icon{
-  height: 14vw
+  height: 14vw;
+  margin-left: 10px
 }
 

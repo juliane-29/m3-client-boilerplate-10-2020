@@ -4,18 +4,10 @@ import Teaser from "../components/Teaser/Teaser";
 import styled from 'styled-components'
 
 
-const Paragraph = styled.p`
-  margin: 0px;
-  color: #9098B1;
-  font-size: 14px;
-`
-
 const ShopDetailInfo = styled.div`
 	margin-top: 0px;
 	margin-left: 10px
 `
-
-
 
 class ShopDetail extends Component {
 	state = {
@@ -61,9 +53,9 @@ class ShopDetail extends Component {
 				<div class="imageContainer">
 				<img style={{height: "40px"}} src={logo} />
 				</div>
-                <Paragraph>{shopOwner.username}</Paragraph>
-                <Paragraph>Email: {shopOwner.email}</Paragraph>
-                <Paragraph>Products: {products.length}</Paragraph>
+                <p>{shopOwner.username}</p>
+                <p>Email: {shopOwner.email}</p>
+                <p>Products: {products.length}</p>
 				</ShopDetailInfo>
 			</div>
 		);

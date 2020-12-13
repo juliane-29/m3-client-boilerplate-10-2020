@@ -73,6 +73,7 @@ p {
   font-size: 12px;
   color: #9098B1; 
   font-weight: regular;
+  margin: 0px
 
 }
 
@@ -93,3 +94,31 @@ strike {
 }
 
 
+input[type=text] {
+  border: 2.5px solid #ebf0ff;
+	width: 90vw;
+	height: 5vh;
+	color: #9098b1;
+	font-family: Poppins;
+	font-size: 12px;
+	font-weight: regular;
+	border-radius: 5px;
+	margin: 10px 0px 10px 10px;
+}
+
+input[type=password] {
+  border: 2.5px solid #ebf0ff;
+	width: 90vw;
+	height: 5vh;
+	color: #9098b1;
+	font-family: Poppins;
+	font-size: 12px;
+	font-weight: regular;
+	border-radius: 5px;
+	margin: 10px 0px 10px 10px;
+}
+
+input.searchbar{
+  width: 75vw;
+	margin: 10px 0px 10px 10px;
+}

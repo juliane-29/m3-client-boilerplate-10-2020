@@ -4,18 +4,6 @@ import { withAuth } from "./../context/auth-context";
 
 import styled from "styled-components";
 
-const Input = styled.input`
-	border: 2.5px solid #ebf0ff;
-	width: 90vw;
-	height: 5vh;
-	color: #9098b1;
-	font-family: Poppins;
-	font-size: 12px;
-	font-weight: regular;
-	border-radius: 5px;
-	margin: 10px 0px 10px 10px;
-`;
-
 const Button = styled.input`
   background-color: #D2D2CF;
   width: 90vw;
@@ -25,12 +13,6 @@ const Button = styled.input`
   color: white; 
   font-family: Poppins; 
   margin: 10px 0px 0px 10px;
-`
-
-const Paragraph = styled.p `
-  color: #9098B1; 
-  font-weight: regular;
-  margin: 8px 0px 0px 10px
 `
 
 class Login extends Component {
@@ -64,14 +46,14 @@ class Login extends Component {
 				<p>Log in to continue</p>
 				</div>
 				<form onSubmit={this.handleFormSubmit}>
-					<Input
+					<input
 						type="text"
 						name="username"
 						value={username}
 						onChange={this.handleChange}
 						placeholder="Your username"
 					/>
-					<Input
+					<input
 						type="password"
 						name="password"
 						value={password}

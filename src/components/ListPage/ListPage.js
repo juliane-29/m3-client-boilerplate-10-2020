@@ -4,10 +4,6 @@ import axios from 'axios';
 import styled from 'styled-components'
 import "./ListPage.css";
 
-
-const Paragraph = styled.p`
-  margin: 0px
-`
 const ProductCard = styled.div`
  border: 0.3px solid #EBF0FF; 
  margin: 0px 10px 20px 10px
@@ -50,10 +46,10 @@ class ListPage extends Component {
             <Image style={{width:"35vw", height:"20vh"}}src={product.image}/>
             </div>
             <ProductInfo className="content-productCard">
-            <Paragraph>{product.brand}</Paragraph>
-            <Paragraph>{product.description}</Paragraph>
-            <Paragraph>{product.price}€ <strike>{product.listPrice}€</strike></Paragraph>
-            <Paragraph>Condition: {product.condition}</Paragraph>
+            <p>{product.brand}</p>
+            <p>{product.description}</p>
+            <p>{product.price}€ <strike>{product.listPrice}€</strike></p>
+            <p>Condition: {product.condition}</p>
             </ProductInfo>
             </Link>
             </ProductCard>

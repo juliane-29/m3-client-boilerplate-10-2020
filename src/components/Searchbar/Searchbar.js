@@ -2,16 +2,6 @@ import React, { Component } from 'react'
 import "./Searchbar.css";
 import styled from 'styled-components'
 
-const Search = styled.input`
-  border: 2.5px solid #EBF0FF;
-  width: 90vw;
-  height: 5vh;
-  color: #9098B1;
-  font-family: Poppins;
-  font-size: 12px;
-  font-weight: regular;
-  border-radius: 5px;
-`
 
 class Searchbar extends Component {
     state = {
@@ -31,12 +21,12 @@ handleInput = (event) => {
 
     render() {
         return (
-            <div className="">
-            <Search
+            <div className="search">
+            <input
                 type="text"
-                className="search-bar"
+                className="searchbar"
                 name="search"
-                placeholder="Search Product"
+                placeholder="🔍    Search for products"
                 value={this.state.search}
                 onChange={this.handleInput}
             />

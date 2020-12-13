@@ -3,17 +3,7 @@ import axios from "axios";
 import { withAuth } from './../context/auth-context';
 import styled from 'styled-components'
 
-const Input = styled.input`
-  border: 2.5px solid #EBF0FF;
-  width: 90vw;
-  height: 5vh;
-  color: #9098B1;
-  font-family: Poppins;
-  font-size: 12px;
-  font-weight: regular;
-  border-radius: 5px;
-  margin: 10px 0px 10px 10px; 
-`
+
 
 const Button = styled.button`
   background-color: #D2D2CF;
@@ -144,28 +134,28 @@ class AddShop extends Component {
 			<div>
 			<h3 style={{marginLeft: "10px"}}>Open a shop</h3>
 			<form onSubmit={this.handleFormSubmit}>
-				<Input
+				<input
 				type="text"
 				placeholder="Name of the shop"
 				name="shopName"
 				value={shopName}
 				onChange={this.handleChange}
 				/>			
-				<Input
+				<input
 				type="text"
 				placeholder="First Name"
 				name="firstName"
 				value={firstName}
 				onChange={this.handleChange}
 				/>
-				<Input
+				<input
 				type="text"
 				placeholder="Last Name"
 				name="lastName"
 				value={lastName}
 				onChange={this.handleChange}
 				/>	
-				<Input
+				<input
 				type="text"
 				placeholder="Email"
 				name="email"
@@ -174,7 +164,7 @@ class AddShop extends Component {
 					/>	
 
 
-				<Input
+				<input
 				type="text"
 				placeholder="Phone Number"
 				name="phoneNumber"
@@ -182,7 +172,7 @@ class AddShop extends Component {
 				onChange={this.handleChange}
 				/>	
 
-				<Input
+				<input
 				type="text"
 				placeholder="Description"
 				name="description"
@@ -190,7 +180,7 @@ class AddShop extends Component {
 				onChange={this.handleChange}
 				/>	
 
-				<Input
+				<input
 				type="text"
 				placeholder="Instagram"
 				name="instagramAccount"
@@ -198,7 +188,7 @@ class AddShop extends Component {
 				onChange={this.handleChange}
 				/>	
 
-				<Input
+				<input
 				type="text"
 				placeholder="Facebook"
 				name="facebookAccount"
@@ -206,7 +196,7 @@ class AddShop extends Component {
 				onChange={this.handleChange}
 				/>	
 
-				<Input
+				<input
 				type="text"
 				placeholder="Type of Shop"
 				name="typeOfShop"
@@ -214,7 +204,7 @@ class AddShop extends Component {
 				onChange={this.handleChange}
 				/>	
 
-				<Input
+				<input
 				type="text"
 				placeholder="Address"
 				name="address"
@@ -222,7 +212,7 @@ class AddShop extends Component {
 				onChange={this.handleChange}
 				/>	
 
-				<Input
+				<input
 				type="text"
 				placeholder="Zip"
 				name="zipCode"
@@ -230,7 +220,7 @@ class AddShop extends Component {
 				onChange={this.handleChange}
 				/>	
 
-				<Input
+				<input
 				type="text"
 				placeholder="City"
 				name="city"
@@ -238,7 +228,7 @@ class AddShop extends Component {
 				onChange={this.handleChange}
 				/>
 				
-				<Input
+				<input
 				type="text"
 				placeholder="Country"
 				name="country"
