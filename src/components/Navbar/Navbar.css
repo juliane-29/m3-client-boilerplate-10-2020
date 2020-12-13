@@ -2,10 +2,6 @@
     height: 30px; 
 }
 
-#container {
-    display: flex;
-}
-
 .home-btn{ 
  margin: 10px; 
 }

@@ -1,0 +1,19 @@
+.container {
+    display: flex;
+    flex-direction: row; 
+    margin: 5px;
+    flex-wrap: wrap; 
+
+
+}
+
+.ShopCard {
+    margin: 5px;
+    border: 1px solid #EBF0FF;
+    border-radius: 5px
+
+}
+
+.ShopContent {
+    margin: 15px
+}

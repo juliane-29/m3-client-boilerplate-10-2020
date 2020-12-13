@@ -6,6 +6,8 @@ import sizes from "../jsonFiles/sizes.json";
 import materials from "../jsonFiles/material.json";
 import patterns from "../jsonFiles/pattern.json";
 import genders from "../jsonFiles/gender.json";
+import categories from "../jsonFiles/categories.json";
+
 import { withAuth } from '../../context/auth-context';
 import styled from 'styled-components'
 import SuccessfullUpload from "../SuccessfulUpload/SuccessfullUpload"
@@ -84,12 +86,14 @@ class AddProduct extends Component {
 		pattern: "",
 		image: "",
 		gender: "",
+		category: "",
 		colors,
 		conditions,
 		sizes,
 		materials,
 		patterns,
 		genders,
+		categories,
 		isDisplayed: true
 	};
 	handleChange = (event) => {
@@ -117,6 +121,7 @@ class AddProduct extends Component {
 			pattern,
 			image,
 			gender,
+			category,
 			isDisplayed
 		} = this.state;
 		axios
@@ -133,6 +138,7 @@ class AddProduct extends Component {
 				pattern,
 				image,
 				gender,
+				category,
 				userId,
 				shopId
 			})
@@ -182,6 +188,7 @@ class AddProduct extends Component {
 			material,
 			pattern,
 			image,
+			category,
 			gender
 		} = this.state;
 		return (
@@ -223,6 +230,23 @@ class AddProduct extends Component {
 						value={shippingCost}
 						onChange={this.handleChange}
 					/>
+
+					<Select
+						name="category"
+						value={category}
+						onChange={this.handleChange}
+					>
+						<option value={category}>{category}</option>
+						{categories.map((categoryObj, index) => {
+							return (
+								<option key={index} value={`${categoryObj.name}`}>
+									{categoryObj.name}
+								</option>
+							);
+						})}
+					</Select>
+
+
 					<Select name="size" value={size} onChange={this.handleChange}>
 						<option value={size}>{size}</option>
 						{sizes.map((sizeObj, index) => {
@@ -248,6 +272,7 @@ class AddProduct extends Component {
 							);
 						})}
 					</Select>
+
 					<Select name="color" value={color} onChange={this.handleChange}>
 						<option value={color}>{color}</option>
 						{colors.map((colorObj, index) => {

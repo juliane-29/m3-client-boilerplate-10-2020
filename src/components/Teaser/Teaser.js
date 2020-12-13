@@ -1,11 +1,9 @@
 import React from 'react';
 import "./Teaser.css";
 
-
-
 function Teaser(props) {
     return (
-    <div id="teaser" className="teaser container" style={{backgroundImage: `url(${props.image})`, opacity: "{props.opactiy}"}}>
+    <div id="teaser" className="teaser container" style={{backgroundImage: `url(${props.image})`}}>
     <div className="teaser-content">
     <h1>{props.title}</h1>
     <p>{props.subtitle}</p>
