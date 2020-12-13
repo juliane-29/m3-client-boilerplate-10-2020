@@ -13,7 +13,7 @@ const Button = styled.button`
   font-size: 14px; 
   color: white; 
   font-family: Poppins; 
-  margin: 10px 0px 0px 10px
+  margin: 10px 0px 0px 0px
 `
 
 class AddShop extends Component {
@@ -131,8 +131,8 @@ class AddShop extends Component {
 			logo,
 		} = this.state;
 		return (
-			<div>
-			<h3 style={{marginLeft: "10px"}}>Open a shop</h3>
+			<div className="uploadform">
+			<h3>Open a shop</h3>
 			<form onSubmit={this.handleFormSubmit}>
 				<input
 				type="text"
@@ -236,9 +236,8 @@ class AddShop extends Component {
 				onChange={this.handleChange}
 				/>	
 
-
-
 				<input
+				className="file"
 				type="file"
 				placeholder="Logo"
 				name="logo"

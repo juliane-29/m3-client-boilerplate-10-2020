@@ -64,7 +64,7 @@ class Account extends Component {
 
 	render() {
 		return (
-			<div>
+			<div className="AccountInfo">
                 <div>
 					{this.props.user && this.props.user.image ? (
 						<Image src={this.props.user.image} />
@@ -113,17 +113,7 @@ class Account extends Component {
 
 
 				<button onClick={this.props.logout}>Logout</button>
-                
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-
-
-                
-
+       
 			</div>
 		);
 	}

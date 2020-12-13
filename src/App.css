@@ -90,7 +90,11 @@ strike {
 }
 
 .LinkHelp {
-  margin: 40px 0px 0px 0px
+  margin: 20px 0px 0px 20px
+}
+
+.LinkHelp Link{
+  font-weight: bold
 }
 
 
@@ -103,7 +107,7 @@ input[type=text] {
 	font-size: 12px;
 	font-weight: regular;
 	border-radius: 5px;
-	margin: 10px 0px 10px 10px;
+	margin: 10px 0px 10px 0px;
 }
 
 input[type=password] {
@@ -115,7 +119,7 @@ input[type=password] {
 	font-size: 12px;
 	font-weight: regular;
 	border-radius: 5px;
-	margin: 10px 0px 10px 10px;
+	margin: 10px 0px 10px 0px;
 }
 
 input[type=number] {
@@ -127,7 +131,7 @@ input[type=number] {
 	font-size: 12px;
 	font-weight: regular;
 	border-radius: 5px;
-	margin: 10px 0px 10px 10px;
+	margin: 10px 0px 10px 0px;
 }
 
 input.searchbar{
@@ -143,7 +147,7 @@ input[type=textarea] {
 	font-weight: regular;
 	font-size: 12px;
 	font-family: Poppins;
-	margin: 10px 0px 10px 10px; 
+	margin: 10px 0px 10px 0px; 
 }
 
 button {
@@ -154,7 +158,6 @@ button {
   font-size: 14px; 
   color: white; 
   font-family: Poppins; 
-  margin-left: 10px; 
   margin-top: 10px
 }
 
@@ -177,5 +180,37 @@ button {
   cursor: pointer;
   text-shadow: 1px 1px #fff;
   font-size: 12px;
-  margin-left: 10px
+  margin-left: 0px
+}
+
+.AccountInfo {
+  margin-top: 20px
+}
+
+.AccountInfo p{
+  margin-left: 20px
+}
+
+.AccountInfo button {
+  margin-left: 20px;
+  margin-top: 40px
+
+}
+
+.contentLogin {
+  margin-left: 20px
+}
+
+form {
+  margin-left: 20px
+}
+
+.logo {
+  height: 100px;
+  margin: 20px 0px 20px 20px;
+  
+}
+
+.uploadform h3 {
+  margin: 20px 0px 0px 20px; 
 }

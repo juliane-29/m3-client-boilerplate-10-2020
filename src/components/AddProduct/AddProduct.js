@@ -20,7 +20,7 @@ const Select = styled.select`
 	font-weight: regular;
 	width: 90vw;
 	height: 5vh;
-	margin: 10px 0px 10px 10px; 
+	margin: 10px 0px 10px 0px; 
   
 	option {
 		font-size: 12px;
@@ -151,7 +151,7 @@ class AddProduct extends Component {
 		} = this.state;
 		return (
 			<div>{this.state.isDisplayed ? 
-				(<div>
+				(<div className="uploadform">
 				<h3>Upload a product</h3>
 				<form onSubmit={this.handleFormSubmit}>
 					<input

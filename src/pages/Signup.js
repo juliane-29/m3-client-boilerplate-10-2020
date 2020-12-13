@@ -13,7 +13,7 @@ const Button = styled.input`
   font-size: 14px; 
   color: white; 
   font-family: Poppins; 
-  margin: 10px 0px 0px 10px
+  margin: 10px 0px 0px 0px
 `
 
 
@@ -48,7 +48,7 @@ class Signup extends Component {
 					src="/second_chance_logo.png"
 				/>
 				<div className="contentLogin">
-				<h3 style={{marginLeft: "10px"}}>Let's get started</h3>
+				<h3>Let's get started</h3>
 				<p>Create a new account</p>
 				</div>
 				<form onSubmit={this.handleFormSubmit}>
@@ -82,7 +82,7 @@ class Signup extends Component {
 				</form>
 				<div className="LinkHelp">
 				<p>Already have account?</p>
-				<Link to={"/login"}><p>Login</p></Link>
+				<Link to={"/login"}><p style={{fontWeight:"bold"}}>Login</p></Link>
 				</div>
 			</div>
 		);

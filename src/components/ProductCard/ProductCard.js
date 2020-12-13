@@ -12,7 +12,7 @@ const Image = styled.img `
   border-radius: 5px
 `
 const ProductInfo = styled.div`
-  margin: 0px 15px 15px 15px
+  margin: 0px 10px 10px 15px
 `
 class ProductCard extends Component {
     render() {
