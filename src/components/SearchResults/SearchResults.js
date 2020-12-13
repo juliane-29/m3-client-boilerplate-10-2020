@@ -40,9 +40,9 @@ class SearchResults extends Component {
         return (
             <div>
             <Searchbar filterProducts={this.filterProducts}/>
-            <p>{this.state.productsFiltered.map((productObj, index) =>{
+            {this.state.productsFiltered.map((productObj, index) =>{
                 return (<SearchResult key={index} productObj={productObj}/>)
-            })}</p>                       
+            })}                      
             </div>
         )
     }

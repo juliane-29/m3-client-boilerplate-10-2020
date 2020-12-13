@@ -52,7 +52,7 @@ class App extends Component {
           			<Route exact path="/products/:id" component={ProductDetail} />
 					<Route exact path="/shop/:id" component={ShopDetail} />
 					<Route exact path="/add-product" component={AddProduct} />
-					<Route exact path="/open-shop" component={AddShop} />
+					<PrivateRoute exact path="/open-shop" component={AddShop} />
 				</Switch>
 			</div>
 		);

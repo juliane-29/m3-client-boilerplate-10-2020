@@ -3,7 +3,7 @@ import "./Searchbar.css";
 import styled from 'styled-components'
 
 const Search = styled.input`
-border: 2.5px solid #EBF0FF;
+  border: 2.5px solid #EBF0FF;
   width: 90vw;
   height: 5vh;
   color: #9098B1;

@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 import { withAuth } from './../context/auth-context';
 import Teaser from './../components/Teaser/Teaser';
-import Category from './../components/Category/Category';
-import EditShop from '../components/EditShop/EditShop';
 
 import styled from "styled-components";
 

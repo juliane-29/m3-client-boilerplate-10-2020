@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import axios from "axios";
 import { withAuth } from './../context/auth-context';
 import styled from 'styled-components'
-import Category from './../components/Category/Category';
 
 const Input = styled.input`
   border: 2.5px solid #EBF0FF;
