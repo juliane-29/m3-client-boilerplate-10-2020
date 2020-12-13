@@ -89,15 +89,15 @@ class Account extends Component {
 
                 <div>
 					{this.props.user.shopOwner ? (
-						<Link to={`/shop/${this.props.user.shop}`}><p>View your shop</p></Link>
+						<Link to={`/shop/${this.props.user.shop}`}><p>View your shop</p><Line></Line></Link>
 					) : (null
 					)}
 				</div>
-				<Line></Line>
                 
 				<div>
 					{this.props.user.shopOwner ? (
-						<p onClick={this.showFormProduct}>Upload Product</p>
+						<p onClick={this.showFormProduct}>Upload Product</p> 
+
 					) : null}
 					{this.state.isDisplayedAddProduct ? <AddProduct /> : null}
 				</div>

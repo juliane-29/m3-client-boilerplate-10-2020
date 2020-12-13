@@ -1,6 +1,24 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom';                // <== IMPORT
 import axios from 'axios'; 
+import styled from 'styled-components'
+
+
+const Paragraph = styled.p`
+  margin: 0px
+`
+
+const ShopInfo = styled.div`
+  margin-left: 25px; 
+  margin-bottom: 15px;
+  border: 0.2px solid #EBF0FF;
+  border-radius: 5px;
+  width: 80vw;
+`
+
+const ShopContent = styled.div`
+    margin: 10px
+`
 
 class ShopList extends Component {
     state = {
@@ -28,9 +46,13 @@ class ShopList extends Component {
             return(
             <div key={shopObj._id} className="ShopCard">
             <Link to={`/shop/${shopObj._id}`}>
-            <div>{shopObj.shopName}</div>
-            <div>{shopObj.logo}</div>
-            <div>{shopObj.products.length}</div>
+            <ShopInfo className="ShopInfo">
+            <ShopContent className="ShopContent">
+            <img style={{height: "40px"}} src={shopObj.logo}/>
+            <Paragraph>{shopObj.shopName}</Paragraph>
+            <Paragraph>{shopObj.products.length} Products</Paragraph>
+            </ShopContent>
+            </ShopInfo>
             </Link>
             </div>
             )

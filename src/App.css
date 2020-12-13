@@ -73,3 +73,10 @@ p {
   color: #223263;
 
 }
+
+strike {
+  font-size: 12px;
+  font-family: Poppins; 
+  color: black;
+  margin: 0px
+}
