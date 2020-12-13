@@ -11,30 +11,7 @@ import categories from "../jsonFiles/categories.json";
 import { withAuth } from '../../context/auth-context';
 import styled from 'styled-components'
 import SuccessfullUpload from "../SuccessfulUpload/SuccessfullUpload"
-
 import "./AddProduct.css";
-
-const Input = styled.input`
-  border: 2.5px solid #EBF0FF;
-  width: 90vw;
-  height: 5vh;
-  color: #9098B1;
-  font-family: Poppins;
-  font-size: 12px;
-  font-weight: regular;
-  border-radius: 5px;
-  margin: 10px 0px 10px 10px; 
-`
-
-const Textarea = styled.textarea`
-	border: 2.5px solid #EBF0FF;
-	width: 90vw;
-	color: #9098B1;
-	font-weight: regular;
-	font-size: 12px;
-	font-family: Poppins;
-	margin: 10px 0px 10px 10px; 
-`
 
 const Select = styled.select`
 	border: 2.5px solid #EBF0FF;
@@ -51,25 +28,6 @@ const Select = styled.select`
 		color: #9098B1;
 		font-weight: regular;
 	}
-`
-
-const Button = styled.button`
-  background-color: #D2D2CF;
-  width: 90vw;
-  height: 6vh;
-  border: 1px solid #D2D2CF; 
-  font-size: 14px; 
-  color: white; 
-  font-family: Poppins; 
-  margin-left: 10px; 
-  margin-top: 10px
-`
-
-const Paragraph = styled.p`
- margin: 20px 0px 20px 20px; 
- color: #9098B1;
- font-size: 12px; 
- font-weight: bold
 `
 
 class AddProduct extends Component {
@@ -196,34 +154,35 @@ class AddProduct extends Component {
 				(<div>
 				<h3>Upload a product</h3>
 				<form onSubmit={this.handleFormSubmit}>
-					<Input
+					<input
 						type="text"
 						placeholder="Brand"
 						name="brand"
 						value={brand}
 						onChange={this.handleChange}
 					/>
-					<Textarea
+					<input
+						type="textarea"
 						placeholder="Description"
 						name="description"
 						value={description}
 						onChange={this.handleChange}
 					/>
-					<Input
+					<input
 						type="number"
 						placeholder="Price"
 						name="price"
 						value={price}
 						onChange={this.handleChange}
 					/>
-					<Input
+					<input
 						type="number"
 						placeholder="List Price"
 						name="listPrice"
 						value={listPrice}
 						onChange={this.handleChange}
 					/>
-					<Input
+					<input
 						type="number"
 						placeholder="Shipping"
 						name="shippingCost"
@@ -318,7 +277,7 @@ class AddProduct extends Component {
 						placeholder="Image"
 						onChange={this.handleFileUpload}
 					/>
-					<Button onClick={this.handleFormSubmit}>Submit</Button>
+					<button onClick={this.handleFormSubmit}>Submit</button>
 				</form>
 				</div>) : (<SuccessfullUpload type="Product" verb="uploaded"/>)}
 			<br/>

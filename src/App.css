@@ -118,7 +118,42 @@ input[type=password] {
 	margin: 10px 0px 10px 10px;
 }
 
+input[type=number] {
+  border: 2.5px solid #ebf0ff;
+	width: 90vw;
+	height: 5vh;
+	color: #9098b1;
+	font-family: Poppins;
+	font-size: 12px;
+	font-weight: regular;
+	border-radius: 5px;
+	margin: 10px 0px 10px 10px;
+}
+
 input.searchbar{
   width: 75vw;
 	margin: 10px 0px 10px 10px;
+}
+
+input[type=textarea] {
+  border: 2.5px solid #EBF0FF;
+  width: 90vw;
+  height: 10vh;
+	color: #9098B1;
+	font-weight: regular;
+	font-size: 12px;
+	font-family: Poppins;
+	margin: 10px 0px 10px 10px; 
+}
+
+button {
+  background-color: #D2D2CF;
+  width: 90vw;
+  height: 6vh;
+  border: 1px solid #D2D2CF; 
+  font-size: 14px; 
+  color: white; 
+  font-family: Poppins; 
+  margin-left: 10px; 
+  margin-top: 10px
 }
