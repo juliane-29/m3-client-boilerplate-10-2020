@@ -157,3 +157,25 @@ button {
   margin-left: 10px; 
   margin-top: 10px
 }
+
+.file::-webkit-file-upload-button {
+  visibility: hidden;
+}
+
+.file::before {
+  content: 'Upload an image';
+  display: inline-block;
+  background: linear-gradient(top, #ebf0ff, #ebf0ff);
+  background-color: #ebf0ff ;
+  border: 1px solid #ebf0ff;
+  border-radius: 5px;
+  font-family: Poppins;
+  padding: 5px 8px;
+  outline: none;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  cursor: pointer;
+  text-shadow: 1px 1px #fff;
+  font-size: 12px;
+  margin-left: 10px
+}

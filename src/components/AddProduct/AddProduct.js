@@ -272,6 +272,7 @@ class AddProduct extends Component {
 						})}
 					</Select>
 					<input
+						className="file"
 						type="file"
 						name="image"
 						placeholder="Image"
