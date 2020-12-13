@@ -19,7 +19,15 @@ const Image = styled.p`
 const Line = styled.hr`
 	width: 90vw;
 	color: #ebf0ff;
+	margin-left: 20px
 `;
+
+const Paragraph = styled.p`
+ margin: 20px 0px 20px 20px; 
+ color: #9098B1;
+ font-size: 12px; 
+ font-weight: bold
+`
 
 class Account extends Component {
 	state = {
@@ -71,17 +79,17 @@ class Account extends Component {
 					) : null}
 					
 				</div>
-				<p>{this.props.user && this.props.user.username}</p>
+				<Paragraph>{this.props.user && this.props.user.username}</Paragraph>
 				<Line></Line>
-				<p onClick={this.showAccountDetails}>Edit Profile</p>
+				<Paragraph onClick={this.showAccountDetails}>Edit Profile</Paragraph>
 				{this.state.isDisplayedAccountDetails ? <p>Product</p> : null}
 				<Line></Line>
 
 				<div>
 					{this.props.user.shopOwner ? (
-						<p onClick={this.showForm}>Edit my shop</p>
+						<Paragraph onClick={this.showForm}>Edit my shop</Paragraph>
 					) : (
-						<p onClick={this.showForm}>Open Shop</p>
+						<Paragraph onClick={this.showForm}>Open Shop</Paragraph>
 					)}
 					{this.state.isDisplayed ? <EditShop /> : null}
 				</div>
@@ -89,14 +97,14 @@ class Account extends Component {
 
                 <div>
 					{this.props.user.shopOwner ? (
-						<Link to={`/shop/${this.props.user.shop}`}><p>View your shop</p><Line></Line></Link>
+						<Link to={`/shop/${this.props.user.shop}`}><Paragraph>View your shop</Paragraph><Line></Line></Link>
 					) : (null
 					)}
 				</div>
                 
 				<div>
 					{this.props.user.shopOwner ? (
-						<p onClick={this.showFormProduct}>Upload Product</p> 
+						<Paragraph onClick={this.showFormProduct}>Upload Product</Paragraph> 
 
 					) : null}
 					{this.state.isDisplayedAddProduct ? <AddProduct /> : null}
@@ -106,7 +114,7 @@ class Account extends Component {
                 
 				<div>
 					{this.props.user.shopOwner ? (
-						<p onClick={this.deleteShop} style={{color: "#F7717D"}}>Delete your shop</p>
+						<Paragraph onClick={this.deleteShop} style={{color: "#F7717D"}}>Delete your shop</Paragraph>
 					) : null}
 					{this.state.isDisplayedAddProduct ? <AddProduct /> : null}
 				</div>

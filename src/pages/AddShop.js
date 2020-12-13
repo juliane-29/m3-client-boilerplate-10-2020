@@ -5,7 +5,7 @@ import styled from 'styled-components'
 import Category from './../components/Category/Category';
 
 const Input = styled.input`
-  border: 0.5px solid #EBF0FF;
+  border: 2.5px solid #EBF0FF;
   width: 90vw;
   height: 5vh;
   color: #9098B1;
@@ -13,7 +13,7 @@ const Input = styled.input`
   font-size: 12px;
   font-weight: regular;
   border-radius: 5px;
-  margin: 10px 0px 10px 0px; 
+  margin: 10px 0px 10px 10px; 
 `
 
 const Button = styled.button`
@@ -24,6 +24,7 @@ const Button = styled.button`
   font-size: 14px; 
   color: white; 
   font-family: Poppins; 
+  margin: 10px 0px 0px 10px
 `
 
 class AddShop extends Component {
@@ -142,7 +143,7 @@ class AddShop extends Component {
 		} = this.state;
 		return (
 			<div>
-			<h4>Open a shop</h4>
+			<h3 style={{marginLeft: "10px"}}>Open a shop</h3>
 			<form onSubmit={this.handleFormSubmit}>
 				<Input
 				type="text"

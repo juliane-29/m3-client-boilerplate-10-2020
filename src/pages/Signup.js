@@ -12,7 +12,7 @@ const Input = styled.input`
 	font-size: 12px;
 	font-weight: regular;
 	border-radius: 5px;
-	margin: 10px 0px 10px 0px;
+	margin: 10px 0px 10px 10px;
 `;
 
 const Button = styled.input`
@@ -23,9 +23,14 @@ const Button = styled.input`
   font-size: 14px; 
   color: white; 
   font-family: Poppins; 
+  margin: 10px 0px 0px 10px
 `
 
-
+const Paragraph = styled.p `
+  color: #9098B1; 
+  font-weight: regular;
+  margin: 8px 0px 0px 10px
+`
 
 class Signup extends Component {
 	state = {
@@ -52,21 +57,21 @@ class Signup extends Component {
 		return (
 			<div>
 				<img
-					style={{ height: "90px" }}
 					alt="logo"
-					id="logo"
+					className="logo"
 					src="/second_chance_logo.png"
 				/>
-				<h4>Let's get started</h4>
-				<p>Create a new account</p>
-
+				<div className="contentLogin">
+				<h3 style={{marginLeft: "10px"}}>Let's get started</h3>
+				<Paragraph>Create a new account</Paragraph>
+				</div>
 				<form onSubmit={this.handleFormSubmit}>
 					<Input
 						type="text"
 						name="username"
 						value={username}
 						onChange={this.handleChange}
-            placeholder="Username"
+            placeholder="Your username"
 
 					/>
 					<Input
@@ -74,7 +79,7 @@ class Signup extends Component {
 						name="email"
 						value={email}
 						onChange={this.handleChange}
-            placeholder="Email"
+            placeholder="Your email"
 
 					/>
 					<Input
@@ -82,16 +87,17 @@ class Signup extends Component {
 						name="password"
 						value={password}
 						onChange={this.handleChange}
-            placeholder="Password"
+            placeholder="Your password"
 
 					/>
 					<Button 
           type="submit" 
           value="Signup" />
 				</form>
-
-				<p>Already have account?</p>
-				<Link to={"/login"}> Login</Link>
+				<div className="LinkHelp">
+				<Paragraph>Already have account?</Paragraph>
+				<Link to={"/login"}><Paragraph>Login</Paragraph></Link>
+				</div>
 			</div>
 		);
 	}

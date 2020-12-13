@@ -40,9 +40,10 @@ h2 {
 }
 
 h3 {
-  font-size: 20px;
+  font-size: 18px;
   font-family: Poppins;
-  color: #223263
+  color: #9098B1;
+  font-weight: bold;
 }
 
 h4 {
@@ -69,8 +70,8 @@ h6 {
 
 p {
   font-size: 12px;
-  font-family: Poppins; 
-  color: #223263;
+  color: #9098B1; 
+  font-weight: regular;
 
 }
 
@@ -80,3 +81,14 @@ strike {
   color: black;
   margin: 0px
 }
+
+.contentLogin {
+  margin: 20px 0px 20px 0px; 
+
+}
+
+.LinkHelp {
+  margin: 40px 0px 0px 0px
+}
+
+

@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import "./App.css";
 import { Switch, Route } from "react-router-dom";
-import 'bootstrap/dist/css/bootstrap.min.css';
 
 import Navbar from "./components/Navbar/Navbar";
 import AddProduct from "./components/AddProduct/AddProduct";

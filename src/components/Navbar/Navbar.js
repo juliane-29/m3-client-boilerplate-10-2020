@@ -31,7 +31,6 @@ class Navbar extends Component {
         {this.props.user && this.props.user.shopOwner ? 
         (<Link to={'/add-product'} id="home-btn"><img className="icon-nav" alt="user-icon" src="/upload.png"/><NavLinkText>Add Product</NavLinkText></Link>) 
         : (<Link to={'/open-shop'} id="home-btn"><img className="icon-nav" alt="user-icon" src="/cart_icon.png"/><NavLinkText>Open Shop</NavLinkText></Link>)}
-        <button onClick={this.props.logout}>Logout</button>
 
 
       </nav>
@@ -41,3 +40,6 @@ class Navbar extends Component {
 
 // makes it into a consumer
 export default withAuth(Navbar);
+
+
+//        <button onClick={this.props.logout}>Logout</button>

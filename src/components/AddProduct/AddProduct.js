@@ -21,7 +21,7 @@ const Input = styled.input`
   font-size: 12px;
   font-weight: regular;
   border-radius: 5px;
-  margin: 10px 0px 10px 0px; 
+  margin: 10px 0px 10px 10px; 
 `
 
 const Textarea = styled.textarea`
@@ -31,7 +31,7 @@ const Textarea = styled.textarea`
 	font-weight: regular;
 	font-size: 12px;
 	font-family: Poppins;
-	margin: 10px 0px 10px 0px; 
+	margin: 10px 0px 10px 10px; 
 `
 
 const Select = styled.select`
@@ -41,7 +41,7 @@ const Select = styled.select`
 	font-weight: regular;
 	width: 90vw;
 	height: 5vh;
-	margin: 10px 0px 10px 0px; 
+	margin: 10px 0px 10px 10px; 
   
 	option {
 		font-size: 12px;
@@ -59,10 +59,15 @@ const Button = styled.button`
   font-size: 14px; 
   color: white; 
   font-family: Poppins; 
+  margin-left: 10px; 
+  margin-top: 10px
 `
 
-const Heading5 = styled.h5 `
- margin: 20px 25px
+const Paragraph = styled.p`
+ margin: 20px 0px 20px 20px; 
+ color: #9098B1;
+ font-size: 12px; 
+ font-weight: bold
 `
 
 class AddProduct extends Component {
@@ -182,7 +187,7 @@ class AddProduct extends Component {
 		return (
 			<div>{this.state.isDisplayed ? 
 				(<div>
-				<h4>Upload a product</h4>
+				<h3>Upload a product</h3>
 				<form onSubmit={this.handleFormSubmit}>
 					<Input
 						type="text"
