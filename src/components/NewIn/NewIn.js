@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import ProductCard from "../ProductCard/ProductCard";
 
-class ListPage extends Component {
+class NewIn extends Component {
 	state = {
 		listOfProducts: [],
 	};
@@ -32,4 +32,4 @@ class ListPage extends Component {
 	}
 }
 
-export default ListPage;
+export default NewIn;

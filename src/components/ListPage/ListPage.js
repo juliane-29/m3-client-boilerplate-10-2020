@@ -1,62 +1,34 @@
-import React, { Component } from 'react'
-import { Link } from 'react-router-dom';                // <== IMPORT
-import axios from 'axios'; 
-import styled from 'styled-components'
-import "./ListPage.css";
-
-const ProductCard = styled.div`
- border: 0.3px solid #EBF0FF; 
- margin: 0px 10px 20px 10px
-`
-const Image = styled.img `
-  margin: 8px;
-  border-radius: 5px
-`
-const ProductInfo = styled.div`
-  margin: 0px 15px 15px 15px
-`
-
+import React, { Component } from "react";
+import axios from "axios";
+import ProductCard from "../ProductCard/ProductCard";
 
 class ListPage extends Component {
-    state = {
-        listOfProducts: []
-    };
+	state = {
+		listOfProducts: [],
+	};
 
-    getAllProducts = () =>{
-        axios.get(`http://localhost:5000/api/products`)
-        .then((apiResponse) => {
-          this.setState({ listOfProducts: apiResponse.data })
-        })
-      }
-    
-    componentDidMount = () =>{
-        this.getAllProducts(); 
-    }
+	getAllProducts = () => {
+		axios.get(`http://localhost:5000/api/products`).then((apiResponse) => {
+			this.setState({ listOfProducts: apiResponse.data });
+		});
+	};
 
-    render() {
+	componentDidMount = () => {
+		this.getAllProducts();
+	};
 
-    const {listOfProducts} = this.state
-        return (
+	render() {
+		const { listOfProducts } = this.state;
+
+		return (
             <div className="container">
-            {listOfProducts.map((product) => {
-            return( 
-            <ProductCard key={product._id} className="productCard">
-            <Link to={`/products/${product._id}`}>
-            <div className="image">
-            <Image style={{width:"35vw", height:"20vh"}}src={product.image}/>
-            </div>
-            <ProductInfo className="content-productCard">
-            <p>{product.brand}</p>
-            <p>{product.description}</p>
-            <p>{product.price}€ <strike>{product.listPrice}€</strike></p>
-            <p>Condition: {product.condition}</p>
-            </ProductInfo>
-            </Link>
-            </ProductCard>
-            )})}
-            </div>
-        )
-    }
+              {listOfProducts.map((product, index) => {
+                return <ProductCard product={product} />
+              })}
+          </div>
+
+		);
+	}
 }
 
-export default ListPage; 
+export default ListPage;
