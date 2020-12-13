@@ -10,8 +10,8 @@ function Category() {
 					<div key={index} className="icon-box">
 						<div
 							style={{
-								height: "70px",
-								width: "70px",
+								height: "60px",
+								width: "60px",
 								borderRadius: "70px",
 								border: "1px solid #EBF0FF",
 							}}

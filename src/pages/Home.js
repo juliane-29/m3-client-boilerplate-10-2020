@@ -16,7 +16,7 @@ function Home() {
   return (
     <div> 
       <Searchbar/>
-      <Teaser image="/splash_screen_image.png" title="Streetstyle" subtitle="Shop the new in products" />
+      <Teaser image="/splash_screen_image.png" opacity="0.5" title="Streetstyle" subtitle="Shop the new in products" />
       <Heading5>Categories</Heading5>
       <Category />
       <Heading5>New in</Heading5>
