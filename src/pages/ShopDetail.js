@@ -1,24 +1,21 @@
 import React, { Component } from "react";
 import axios from "axios";
 import Teaser from "../components/Teaser/Teaser";
-import styled from 'styled-components'
+import ProductCard from '../components/ProductCard/ProductCard';
 
-
-const ShopDetailInfo = styled.div`
-	margin-top: 0px;
-	margin-left: 10px
-`
 
 class ShopDetail extends Component {
 	state = {
         shopName: "",
         products: "",
 		shopOwner: "",
-		logo: ""
+		logo: "",
+		listOfProducts: []
 	};
 
 	componentDidMount = () => {
 		this.getShopDetails();
+		this.getAllProducts();
 	};
 
 	getShopDetails = () => {
@@ -39,8 +36,14 @@ class ShopDetail extends Component {
 			});
 	};
 
+	getAllProducts = () => {
+		axios.get(`http://localhost:5000/api/products`).then((apiResponse) => {
+			this.setState({ listOfProducts: apiResponse.data });
+		});
+	};
+
 	render() {
-        const {shopName, products, shopOwner, logo } = this.state
+        const {shopName, products, shopOwner, logo, listOfProducts } = this.state
 		return (
 			<div>
 				<p>Go Back</p>
@@ -49,14 +52,20 @@ class ShopDetail extends Component {
 					title={shopName}
 					subtitle=""
 				/>
-				<ShopDetailInfo className="ShopDetailInfo">
+				<div className="container">
 				<div class="imageContainer">
 				<img style={{height: "40px"}} src={logo} />
 				</div>
                 <p>{shopOwner.username}</p>
                 <p>Email: {shopOwner.email}</p>
                 <p>Products: {products.length}</p>
-				</ShopDetailInfo>
+				</div>
+				<div className="container">
+              {listOfProducts.map((product, index) => {
+				if(product.shop === shopOwner.shop)
+                return <ProductCard product={product} />
+              })}
+          </div>
 			</div>
 		);
 	}
