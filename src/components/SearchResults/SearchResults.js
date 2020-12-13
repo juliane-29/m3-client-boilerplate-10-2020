@@ -39,7 +39,7 @@ class SearchResults extends Component {
             <div>
             <Searchbar filterProducts={this.filterProducts}/>
             <p>{this.state.productsFiltered.map((productObj) =>{
-                console.log('productObj.brand', productObj.brand)
+                return (<p>{productObj.brand}</p>)
             })}</p>                       
             </div>
         )

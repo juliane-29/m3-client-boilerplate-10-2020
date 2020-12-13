@@ -18,11 +18,28 @@ import AddShop from "./pages/AddShop";
 
 import AnonRoute from "./components/AnonRoute";
 import PrivateRoute from "./components/PrivateRoute";
+import SplashScreen from "./components/SplashScreen/SplashScreen";
 
 
 class App extends Component {
+	state = {
+		timePassed: false
+	}
+
+	componentDidMount () {
+		setTimeout(() => {
+			this.setTimePassed();
+		}, 2000)
+	}
+
+	setTimePassed() {
+		this.setState({timePassed: true})
+	}
 
 	render() {
+		if (!this.state.timePassed) {
+			return <SplashScreen/>
+		} else {
 		return (
 			<div>
 				<Navbar/>
@@ -36,11 +53,11 @@ class App extends Component {
 					<Route exact path="/shop/:id" component={ShopDetail} />
 					<Route exact path="/add-product" component={AddProduct} />
 					<Route exact path="/open-shop" component={AddShop} />
-
 				</Switch>
 			</div>
 		);
 	}
+}
 }
 
 export default App;
