@@ -96,7 +96,7 @@ class AddShop extends Component {
 		const uploadData = new FormData();
 		// image => this name has to be the same as in the model since we pass
 		// req.body to .create() method when creating a new project in '/api/projects' POST route
-		uploadData.append("image", file);
+		uploadData.append("logo", file);
 	
 		axios
 		  .post("http://localhost:5000/api/upload", uploadData, {
@@ -128,7 +128,7 @@ class AddShop extends Component {
 			city,
 			country,
 			backgroundImage,
-			logo,
+			logo
 		} = this.state;
 		return (
 			<div className="uploadform">

@@ -17,7 +17,7 @@ class Navbar extends Component {
 	render() {
 		// const { user, logout, isLoggedin } = this.props;
 		return (
-			<nav className="navbar fixed-bottom navbar-light bg-light container">
+			<nav className="navbar fixed-bottom navbar-light bg-light bottomNav">
 				<Link to={"/"} className="home-btn">
 					<div>
 						<img

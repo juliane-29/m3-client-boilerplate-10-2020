@@ -4,12 +4,9 @@ import axios from 'axios';
 import styled from 'styled-components'
 import "./ShopList.css";
 
-
-
 const Paragraph = styled.p`
   margin: 0px
 `
-
 
 class ShopList extends Component {
     state = {

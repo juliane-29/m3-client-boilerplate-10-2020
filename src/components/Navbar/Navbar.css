@@ -6,9 +6,7 @@
 	margin: 10px;
 }
 
-
-
-nav .container {
+.bottomNav {
 	display: flex;
 	justify-content: space-evenly;
 }
