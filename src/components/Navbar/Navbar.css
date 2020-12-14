@@ -1,12 +1,14 @@
 .icon-nav {
-    height: 30px; 
+	height: 30px;
 }
 
-.home-btn{ 
- margin: 10px; 
+.home-btn {
+	margin: 10px;
 }
 
-.container{
-    margin: 0px
-}
 
+
+nav .container {
+	display: flex;
+	justify-content: space-evenly;
+}

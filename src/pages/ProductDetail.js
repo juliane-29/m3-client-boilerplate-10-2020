@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { withAuth } from "./../context/auth-context";
+import EditProduct from "../components/EditProduct/EditProduct";
 
 
 class ProductDetail extends Component {
@@ -121,7 +122,7 @@ class ProductDetail extends Component {
 						</div>
 						<button>Add to Cart</button>
 						{this.props.user.shop === shop ? <button onClick={this.showForm}>Edit Product</button> : null}
-						{isDisplayed ? <p>Edit Product Component</p> : null}
+						{isDisplayed ? <EditProduct/> : null}
 
 					</div>
 				</div>
