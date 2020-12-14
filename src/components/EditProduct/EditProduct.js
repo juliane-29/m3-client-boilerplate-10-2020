@@ -77,7 +77,7 @@ class EditProduct extends Component {
 			category
 		} = this.state;
 		axios
-			.put(`http://localhost:5000/api/products/${id}`, {
+			.put(`${process.env.REACT_APP_API_URL}/api/products/${id}`, {
 				brand,
 				description,
 				price,

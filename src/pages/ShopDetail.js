@@ -28,7 +28,7 @@ class ShopDetail extends Component {
 	getShopDetails = () => {
 		const { id } = this.props.match.params;
 		axios
-			.get(`http://localhost:5000/api/shops/${id}`)
+			.get(`${process.env.REACT_APP_API_URL}/api/shops/${id}`)
 			.then((response) => {
 				console.log("response", response);
 				const shopInfo = response.data;

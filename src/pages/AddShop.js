@@ -64,7 +64,7 @@ class AddShop extends Component {
 			worldwideShipping,
 		} = this.state;
 		axios
-		.post("http://localhost:5000/api/shops", 
+		.post(`${process.env.REACT_APP_API_URL}/api/shops`, 
 			{shopName,
 			firstName,
 			lastName, 
@@ -99,7 +99,7 @@ class AddShop extends Component {
 		uploadData.append("logo", file);
 	
 		axios
-		  .post("http://localhost:5000/api/upload", uploadData, {
+		  .post(`${process.env.REACT_APP_API_URL}/api/upload`, uploadData, {
 			withCredentials: true,
 		  })
 		  .then((response) => {

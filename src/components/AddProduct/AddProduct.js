@@ -83,7 +83,7 @@ class AddProduct extends Component {
 			isDisplayed
 		} = this.state;
 		axios
-			.post("http://localhost:5000/api/products", {
+			.post(`${process.env.REACT_APP_API_URL}/api/products`, {
 				brand,
 				description,
 				price,
@@ -119,7 +119,7 @@ class AddProduct extends Component {
 		uploadData.append("image", file);
 	
 		axios
-		  .post("http://localhost:5000/api/upload", uploadData, {
+		  .post(`${process.env.REACT_APP_API_URL}/api/upload`, uploadData, {
 			withCredentials: true,
 		  })
 		  .then((response) => {

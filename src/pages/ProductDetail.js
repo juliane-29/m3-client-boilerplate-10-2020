@@ -33,7 +33,7 @@ class ProductDetail extends Component {
 		const { id } = this.props.match.params;
 		console.log("id", id);
 		axios
-			.get(`http://localhost:5000/api/products/${id}`)
+			.get(`${process.env.REACT_APP_API_URL}/api/products/${id}`)
 			.then((response) => {
 				const productInfo = response.data;
 				console.log('productInfo', productInfo)

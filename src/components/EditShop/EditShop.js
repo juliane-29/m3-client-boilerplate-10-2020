@@ -54,7 +54,7 @@ class EditShop extends Component {
         
 
 		axios
-			.put(`http://localhost:5000/api/shops/${id}`, {
+			.put(`${process.env.REACT_APP_API_URL}/api/shops/${id}`, {
 				shopName,
 				firstName,
                 lastName,
