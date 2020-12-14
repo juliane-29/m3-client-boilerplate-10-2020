@@ -36,6 +36,7 @@ class ProductDetail extends Component {
 			.get(`http://localhost:5000/api/products/${id}`)
 			.then((response) => {
 				const productInfo = response.data;
+				console.log('productInfo', productInfo)
 				const {
 					brand,
 					description,
@@ -51,7 +52,8 @@ class ProductDetail extends Component {
 					image,
 					gender,
 					shop,
-					user
+					user,
+					_id
 				} = productInfo;
 				this.setState({
 					brand,
@@ -69,6 +71,7 @@ class ProductDetail extends Component {
 					gender,
 					shop,
 					user,
+					_id
 				});
 			})
 			.catch((err) => {

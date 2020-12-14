@@ -1,6 +1,10 @@
 import React, { Component } from "react";
 import { withAuth } from './../context/auth-context';
 import Teaser from './../components/Teaser/Teaser';
+import Category from './../components/Category/Category';
+import NewIn from './../components/NewIn/NewIn';
+
+
 
 import styled from "styled-components";
 
@@ -14,14 +18,14 @@ class Private extends Component {
     return (
       <div>
         <h3></h3>
-        <Heading5>Welcome back, {this.props.user && this.props.user.username}</Heading5>
         {/* 
         <h2>Welcome {this.props.user ? this.props.user.username : null }</h2> 
         */}
-      <Teaser image="https://static3.depositphotos.com/1000635/120/i/600/depositphotos_1208368-stock-photo-white-paper-seamless-background.jpg"title="Teaser" subtitle="teaser-template" />
-      
-      <Teaser />
-
+      <Teaser image="https://res.cloudinary.com/daj2fsogl/image/upload/v1607942856/bag-red-heart-product_1_xbn6gb.jpg"title="Welcome back" subtitle={this.props.user && this.props.user.username} />
+      <Heading5>Your favourite categories</Heading5>
+      <Category />
+      <Heading5>New in</Heading5>
+      <NewIn />
       </div>
     );
   }

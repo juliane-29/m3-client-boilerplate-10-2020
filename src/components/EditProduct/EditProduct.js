@@ -10,8 +10,6 @@ import categories from "../jsonFiles/categories.json";
 import styled from 'styled-components';
 import axios from "axios";
 
-
-
 const Select = styled.select`
 	border: 2.5px solid #EBF0FF;
    	font-family: Poppins;
@@ -59,8 +57,8 @@ class EditProduct extends Component {
 	};
 
     handleFormSubmit = (event) => {
-        event.preventDefault();
-        const { id } = this.props.match.params;
+		event.preventDefault();
+        const  id  = this.props.match.params.id;
 
 		const {
 			brand,
@@ -75,7 +73,7 @@ class EditProduct extends Component {
 			pattern,
 			image,
 			gender,
-            category    
+			category
 		} = this.state;
 		axios
 			.put(`http://localhost:5000/api/products/${id}`, {
