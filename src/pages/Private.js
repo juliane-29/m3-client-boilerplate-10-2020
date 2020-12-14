@@ -17,7 +17,7 @@ class Private extends Component {
   render() {
     return (
       <div>
-				<p id="goback" onClick={this.props.history.goBack}>Go Back</p>
+				<p id="goback" onClick={this.props.history.goBack}> ← Go Back</p>
         {/* 
         <h2>Welcome {this.props.user ? this.props.user.username : null }</h2> 
         */}

@@ -44,7 +44,7 @@ h3 {
   font-size: 18px;
   font-family: Poppins;
   color: #9098B1;
-  font-weight: bold;
+  font-weight: bold
 }
 
 h4 {
@@ -192,7 +192,7 @@ button {
 }
 
 .AccountInfo button {
-  margin-left: 20px;
+  margin-left: 0px;
   margin-top: 40px
 
 }
@@ -216,6 +216,62 @@ form {
 }
 
 #goback {
-  font-size: 20px;
+  font-size: 15px;
   font-weight: bold; 
+  margin: 20px
+}
+
+input[type=submit] {
+  background-color: #D2D2CF;
+  width: 90vw;
+  height: 6vh;
+  border: 1px solid #D2D2CF; 
+  font-size: 14px; 
+  color: white; 
+  font-family: Poppins; 
+  margin-top: 10px
+}
+
+label {
+  font-size: 12px; 
+  color: #9098B1;
+  margin: 0px 0px 0px 3px
+}
+
+.Product{
+  flex: 1
+}
+
+.containerShopInfo {
+  display: flex; 
+  flex-direction: column;
+  margin: 20px
+}
+
+.containerShopInfo p {
+  font-size: 16px
+}
+
+.shopLogo {
+  width: 10vw
+}
+
+.pdp {
+  display:flex; 
+  flex-direction: column;
+  margin-left: 20px
+}
+
+.product-info p, strike {
+  font-size: 16px
+}
+
+.searchResult {
+  display: flex; 
+  flex-direction: row;
+  margin-left: 20px
+}
+
+.content-productCard strike {
+  font-size: 12px
 }

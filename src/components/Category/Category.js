@@ -6,6 +6,7 @@ function Category() {
 	return (
 		<div className="container">
 			{categories.map((categoryObj, index) => {
+				if (index <= 4)
 				return (
 					<div key={index} className="icon-box">
 						<div

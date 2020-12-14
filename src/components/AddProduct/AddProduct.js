@@ -20,7 +20,8 @@ const Select = styled.select`
 	font-weight: regular;
 	width: 90vw;
 	height: 5vh;
-	margin: 10px 0px 10px 0px; 
+	margin: 6px 0px 10px 0px; 
+	background-color: white; 
   
 	option {
 		font-size: 12px;
@@ -189,7 +190,7 @@ class AddProduct extends Component {
 						value={shippingCost}
 						onChange={this.handleChange}
 					/>
-
+					<label>Category</label>
 					<Select
 						name="category"
 						value={category}
@@ -205,6 +206,7 @@ class AddProduct extends Component {
 						})}
 					</Select>
 
+					<label>Size</label>
 
 					<Select name="size" value={size} onChange={this.handleChange}>
 						<option value={size}>{size}</option>
@@ -217,6 +219,7 @@ class AddProduct extends Component {
 						})}
 					</Select>
 
+					<label>Condition</label>
 					<Select
 						name="condition"
 						value={condition}
@@ -232,6 +235,8 @@ class AddProduct extends Component {
 						})}
 					</Select>
 
+					<label>Color</label>
+
 					<Select name="color" value={color} onChange={this.handleChange}>
 						<option value={color}>{color}</option>
 						{colors.map((colorObj, index) => {
@@ -240,6 +245,8 @@ class AddProduct extends Component {
 							);
 						})}
 					</Select>
+
+					<label>Material</label>
 
 					<Select name="material" value={material} onChange={this.handleChange}>
 						<option value={material}>{material}</option>
@@ -252,6 +259,8 @@ class AddProduct extends Component {
 						})}
 					</Select>
 
+					<label>Pattern</label>
+
 					<Select name="pattern" value={pattern} onChange={this.handleChange}>
 						<option value={pattern}>{pattern}</option>
 						{patterns.map((patternObj, index) => {
@@ -262,6 +271,8 @@ class AddProduct extends Component {
 							);
 						})}
 					</Select>
+
+					<label>Gender</label>
 
 					<Select name="gender" value={gender} onChange={this.handleChange}>
 						<option value={gender}>{gender}</option>

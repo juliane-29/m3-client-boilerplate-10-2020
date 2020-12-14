@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import axios from "axios";
 import { withAuth } from "./../context/auth-context";
 import EditProduct from "../components/EditProduct/EditProduct";
+import ListPage from "../components/ListPage/ListPage";
+
 
 
 class ProductDetail extends Component {
@@ -114,9 +116,9 @@ class ProductDetail extends Component {
 		} = this.state;
 		return (
 			<div>
-			<p id="goback" onClick={this.props.history.goBack}>Go Back</p>
+			<p id="goback" onClick={this.props.history.goBack}> ← Go Back</p>
 
-				<div className="container">
+				<div className="pdp">
 					<div>
 						<img
 							src={image}
@@ -125,17 +127,14 @@ class ProductDetail extends Component {
 						/>
 					</div>
 					<div className="product-info">
-						<h3>{brand}</h3>
-						<h4>{description}</h4>
-						<p>{listPrice}€</p>
-						<strike>{price}€</strike>
+						<p>Brand : <b>{brand}</b></p>
+						<p>Desciption: <b>{description}</b></p>
+						<p>Price:{listPrice}€     <strike style={{fontWeight: "bold"}}>{price}€</strike></p>						
 						<div>
-							<p>{shippingCost}€</p>
-							<p>{condition}</p>
-							<p>{size}</p>
+							<p>Shipping Cost: {shippingCost}€</p>
+							<p>Condition: {condition}</p>
+							<p>Size: {size}</p>
 							<p>{color}</p>
-							<p>{_id}</p>
-
 						</div>
 						<button>Add to Cart</button>
 						{this.props.user.shop === shop ? <button onClick={this.showForm}>Edit Product</button> : null}
@@ -143,6 +142,7 @@ class ProductDetail extends Component {
 						{this.props.user.shop === shop ? <button style={{backgroundColor: "#F7717D", borderRadius: "1px solid #F7717D"}} onClick={this.deleteProduct}>Delete Product</button> : null}
 					</div>
 				</div>
+				<h5 style={{marginLeft: "20px", marginTop: "20px"}}>You may also like</h5>
 			</div>
 		);
 	}

@@ -18,5 +18,18 @@
       {
         "name": "Jackets",
         "icon": "https://www.flaticon.com/svg/static/icons/svg/3126/3126039.svg"
+      },
+      {
+        "name": "Trousers",
+        "icon": "https://www.flaticon.com/svg/static/icons/svg/88/88823.svg"
+      },
+      {
+        "name": "Jumpers",
+        "icon": "https://www.flaticon.com/svg/static/icons/svg/2580/2580762.svg"
+      },
+      {
+        "name": "Skirts",
+        "icon": "https://www.flaticon.com/svg/static/icons/svg/976/976228.svg"
       }
+
   ]

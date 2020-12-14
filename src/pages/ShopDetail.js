@@ -54,7 +54,7 @@ class ShopDetail extends Component {
 		const { id } = this.props.match.params;
 		return (
 			<div>
-				<p id="goback" onClick={this.props.history.goBack}>Go Back</p>
+				<p id="goback" onClick={this.props.history.goBack}>  ← Go Back</p>
 				<Teaser
 					image="https://res.cloudinary.com/daj2fsogl/image/upload/v1607550394/second-hand/Screenshot_2020-12-09_at_22.46.16_web6iw.png"
 					title={shopName}
@@ -62,14 +62,12 @@ class ShopDetail extends Component {
 				/>
 				
 				{this.props.match.params.id == this.props.user.shop ? (
-					<button onClick={this.showForm}>Edit Shop</button>
+					<button style={{marginLeft: "10px"}}onClick={this.showForm}>Edit Shop</button>
 				) : null}
 				{this.state.isDisplayed ? <EditShop /> : null}
 
-				<div className="container">
-					<div class="imageContainer">
-						<img style={{ height: "40px" }} src={logo} />
-					</div>
+				<div className="containerShopInfo">
+					<img className="shopLogo" src={logo} />
 					<p>{shopOwner.username}</p>
 					<p>Email: {shopOwner.email}</p>
 					<p>Products: {products.length}</p>
