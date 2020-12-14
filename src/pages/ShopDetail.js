@@ -54,7 +54,7 @@ class ShopDetail extends Component {
 		const { id } = this.props.match.params;
 		return (
 			<div>
-				<p>Go Back</p>
+				<p id="goback" onClick={this.props.history.goBack}>Go Back</p>
 				<Teaser
 					image="https://res.cloudinary.com/daj2fsogl/image/upload/v1607550394/second-hand/Screenshot_2020-12-09_at_22.46.16_web6iw.png"
 					title={shopName}

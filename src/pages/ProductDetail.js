@@ -82,6 +82,15 @@ class ProductDetail extends Component {
 	showForm = () => {
 		this.setState({isDisplayed: !this.state.isDisplayed})
 	}
+
+	deleteProduct = () =>{
+		const { id } = this.props.match.params;
+
+		axios.delete(`http://localhost:5000/api/products/${id}`)
+		.then( () => this.props.history.push('/account') )
+    	.catch( (err) => console.log(err));
+	}
+
 	render() {
 		const {
 			brand,
@@ -100,10 +109,13 @@ class ProductDetail extends Component {
 			shop,
 			user,
 			isDisplayed,
-			showForm
+			showForm,
+			_id
 		} = this.state;
 		return (
 			<div>
+			<p id="goback" onClick={this.props.history.goBack}>Go Back</p>
+
 				<div className="container">
 					<div>
 						<img
@@ -122,11 +134,13 @@ class ProductDetail extends Component {
 							<p>{condition}</p>
 							<p>{size}</p>
 							<p>{color}</p>
+							<p>{_id}</p>
+
 						</div>
 						<button>Add to Cart</button>
 						{this.props.user.shop === shop ? <button onClick={this.showForm}>Edit Product</button> : null}
-						{isDisplayed ? <EditProduct/> : null}
-
+						{isDisplayed ? <EditProduct id={_id} /> : null}
+						{this.props.user.shop === shop ? <button style={{backgroundColor: "#F7717D", borderRadius: "1px solid #F7717D"}} onClick={this.deleteProduct}>Delete Product</button> : null}
 					</div>
 				</div>
 			</div>

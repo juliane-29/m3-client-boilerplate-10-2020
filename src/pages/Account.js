@@ -65,6 +65,7 @@ class Account extends Component {
 	render() {
 		return (
 			<div className="AccountInfo">
+				<p id="goback" onClick={this.props.history.goBack}>Go Back</p>
                 <div>
 					{this.props.user && this.props.user.image ? (
 						<Image src={this.props.user.image} />
@@ -83,7 +84,7 @@ class Account extends Component {
 					) : (
 						<p onClick={this.showForm}>Open Shop</p>
 					)}
-					{this.state.isDisplayed ? <AddShop /> : null}
+					{this.state.isDisplayed ? <EditShop /> : null}
 				</div>
 				<Line></Line>
 

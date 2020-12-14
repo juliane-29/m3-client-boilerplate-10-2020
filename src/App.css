@@ -214,3 +214,8 @@ form {
 .uploadform h3 {
   margin: 20px 0px 0px 20px; 
 }
+
+#goback {
+  font-size: 20px;
+  font-weight: bold; 
+}
