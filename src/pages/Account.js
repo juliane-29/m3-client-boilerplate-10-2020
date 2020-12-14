@@ -51,7 +51,7 @@ class Account extends Component {
         const id  = this.props.user.shop
         console.log('id', id)
 
-        axios.delete(`http://localhost:5000/api/shops/${id}`)
+        axios.delete(`${process.env.REACT_APP_API_URL}/api/shops/${id}`)
         .then((foundShop) => {
             this.props.history.push('/')
             console.log('Successfully deleted', foundShop)

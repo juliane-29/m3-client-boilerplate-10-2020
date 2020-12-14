@@ -17,7 +17,7 @@ class EditProfile extends Component {
         const {username, email, fistName, lastName, image, bio} = this.state
         const { userId } = this.props.user._id
 
-        axios.put("http://localhost:5000/api/auth/user", 
+        axios.put(`${process.env.REACT_APP_API_URL}/api/user`, 
 
         )
     }

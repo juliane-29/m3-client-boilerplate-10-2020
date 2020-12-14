@@ -86,7 +86,7 @@ class ProductDetail extends Component {
 	deleteProduct = () =>{
 		const { id } = this.props.match.params;
 
-		axios.delete(`http://localhost:5000/api/products/${id}`)
+		axios.delete(`${process.env.REACT_APP_API_URL}/api/products/${id}`)
 		.then( () => this.props.history.push('/account') )
     	.catch( (err) => console.log(err));
 	}

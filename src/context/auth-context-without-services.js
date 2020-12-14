@@ -19,7 +19,7 @@ class AuthProvider extends React.Component {
   // providing the input and sending them with axios
   signup = (username, password, email) => {
     axios.post(
-      'http://localhost:5000/auth/signup', 
+      `${process.env.REACT_APP_API_URL}/auth/signup`, 
       { username, password, email },  // sending the req.body
       { withCredentials: true }
     )
@@ -35,7 +35,7 @@ class AuthProvider extends React.Component {
 
   login = (username, password) => {
     axios.post(
-      'http://localhost:5000/auth/login', 
+      `${process.env.REACT_APP_API_URL}/auth/login`, 
       { username, password }, 
       { withCredentials: true }
     )
@@ -50,7 +50,7 @@ class AuthProvider extends React.Component {
   }
 
   logout = () => {
-    axios.get('http://localhost:5000/auth/logout', { withCredentials: true })
+    axios.get(`${process.env.REACT_APP_API_URL}/auth/logout`, { withCredentials: true })
       .then( (data) => {
         this.setState({ isLoggedIn: false, user: null })
       })
@@ -58,7 +58,7 @@ class AuthProvider extends React.Component {
   }
 
    me = () => {
-    axios.get('http://localhost:5000/auth/me', { withCredentials: true } )
+    axios.get(`${process.env.REACT_APP_API_URL}/auth/me`, { withCredentials: true } )
     .then( (response) => {
       const user = response.data;
       console.log('user', user)

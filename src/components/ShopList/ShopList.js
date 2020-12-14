@@ -18,7 +18,7 @@ class ShopList extends Component {
     }
 
     getAllShops = () => {
-    axios.get(`http://localhost:5000/api/shops`)
+    axios.get(`${process.env.REACT_APP_API_URL}/api/shops`)
     .then((apiResponse) => {
     this.setState({listOfAllShops: apiResponse.data})
     })
