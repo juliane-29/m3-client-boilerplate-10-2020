@@ -26,21 +26,18 @@ class ShopList extends Component {
 
         const {listOfAllShops} = this.state; 
 
-        return (
-            <div  className="container">
+        return (<div className="shopcontent">
             {listOfAllShops.map((shopObj) =>{
             return(
-            <div key={shopObj._id} className="ShopCard">
             <Link to={`/shop/${shopObj._id}`}>
-            <div className="ShopInfo">
-            <div className="ShopContent">
-            <img style={{height: "40px"}} src={shopObj.image}/>
+            <div key={shopObj._id}>
+            <img src={shopObj.image}/>
+            <div className="content">
             <p>{shopObj.shopName}</p>
             <p>{shopObj.products.length} Products</p>
             </div>
             </div>
             </Link>
-            </div>
             )
             })}    
             </div>
