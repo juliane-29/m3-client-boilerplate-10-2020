@@ -3,10 +3,11 @@ import "./Teaser.css";
 
 function Teaser(props) {
     return (
-    <div id="teaser" className="teaser container" style={{backgroundImage: `url(${props.image})`, opacity: "0.9"}}>
+    <div className="teaser" style={{backgroundImage: `url(${props.image})`, opacity: props.opacity}}>
     <div className="teaser-content">
-    <h1 style={{color: "white"}}>{props.title}</h1>
-    <p style={{color: "white"}}>{props.subtitle}</p>
+    <h1 style={{color: props.color, fontSize: props.fontSizeh1}}>{props.title}</h1>
+    <p style={{color: props.color}}>{props.subtitle}</p>
+    <img src={props.logo} />
     </div>
     </div> 
     )

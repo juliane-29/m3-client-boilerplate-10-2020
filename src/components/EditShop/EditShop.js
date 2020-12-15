@@ -205,6 +205,14 @@ handleFormSubmit = (event) => {
 				onChange={this.handleChange}
 				/>
 
+				<Input
+				type="text"
+				placeholder="Country"
+				name="country"
+				value={country}
+				onChange={this.handleChange}
+				/>	
+
                 <input type="submit" value="Edit Shop" />
 
                 </form>

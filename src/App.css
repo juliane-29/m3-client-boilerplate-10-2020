@@ -59,6 +59,7 @@ h5 {
   font-family: Poppins;
   color: #9098B1;
   font-weight: bold; 
+  margin: 15px 25px
 
 }
 
@@ -162,6 +163,7 @@ button {
 }
 
 .file::-webkit-file-upload-button {
+  display: none;  
   visibility: hidden;
 }
 

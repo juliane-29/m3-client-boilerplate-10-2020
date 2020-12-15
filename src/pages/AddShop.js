@@ -45,7 +45,6 @@ class AddShop extends Component {
 	handleFormSubmit = (event) => {
 		event.preventDefault();
 		const userId= this.props.user._id
-		//console.log('userId', userId)
 		const {
 			shopName,
 			firstName,
@@ -93,12 +92,10 @@ class AddShop extends Component {
 	handleFileUpload = (e) => {
 		console.log("The file to be uploaded is: ", e.target.files);
 		const file = e.target.files[0];
-	
 		const uploadData = new FormData();
 		// image => this name has to be the same as in the model since we pass
 		// req.body to .create() method when creating a new project in '/api/projects' POST route
 		uploadData.append("image", file);
-	
 		axios
 		  .post(`${process.env.REACT_APP_API_URL}/api/upload`, uploadData, {
 			withCredentials: true,

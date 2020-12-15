@@ -56,9 +56,11 @@ class ShopDetail extends Component {
 			<div>
 				<p id="goback" onClick={this.props.history.goBack}>  ← Go Back</p>
 				<Teaser
-					image="https://res.cloudinary.com/daj2fsogl/image/upload/v1607550394/second-hand/Screenshot_2020-12-09_at_22.46.16_web6iw.png"
+					image="https://res.cloudinary.com/daj2fsogl/image/upload/v1608064012/teaser_image_shop_vtivd2.png"
 					title={shopName}
 					subtitle=""
+					logo={image}
+					color="white"
 				/>
 				
 

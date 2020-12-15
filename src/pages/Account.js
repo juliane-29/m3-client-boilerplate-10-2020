@@ -5,7 +5,6 @@ import axios from "axios";
 import AddProduct from "../components/AddProduct/AddProduct";
 import EditShop from "../components/EditShop/EditShop";
 
-
 class Account extends Component {
 	state = {
 		isDisplayed: false,
@@ -56,6 +55,7 @@ class Account extends Component {
 		return (
 			<div className="AccountInfo">
 				<p id="goback" onClick={this.props.history.goBack}>
+					{" "}
 					← Go Back
 				</p>
 				<div>
@@ -66,7 +66,7 @@ class Account extends Component {
 				<p>{this.props.user && this.props.user.username}</p>
 				<hr></hr>
 				<p onClick={this.showAccountDetails}>Profile Info</p>
-				{this.state.isDisplayedAccountDetails ? (<p>Edit Profile</p>) : null}
+				{this.state.isDisplayedAccountDetails ? <p>Edit Profile</p> : null}
 				<hr></hr>
 
 				<div>
