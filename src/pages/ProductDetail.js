@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import { withAuth } from "./../context/auth-context";
 import EditProduct from "../components/EditProduct/EditProduct";
-import ListPage from "../components/ListPage/ListPage";
+import SimilarProducts from "../components/SimilarProducts/SimilarProducts";
 
 
 
@@ -145,6 +145,7 @@ class ProductDetail extends Component {
 					</div>
 				</div>
 				<h5 style={{marginLeft: "20px", marginTop: "20px"}}>You may also like</h5>
+			<SimilarProducts brand={brand}/>
 			</div>
 		);
 	}
