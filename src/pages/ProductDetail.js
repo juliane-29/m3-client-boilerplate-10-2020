@@ -127,7 +127,7 @@ class ProductDetail extends Component {
 						<img
 							src={image}
 							alt="product-image"
-							style={{ width: "80vw", height: "40vh" }}
+							style={{ width: "80vw" }}
 						/>
 					</div>
 					<div className="product-info">

@@ -83,7 +83,8 @@ class AddShop extends Component {
 		isDisplayed
 	},{withCredentials: true})
 		.then((createdShop) =>{
-			console.log(createdShop)
+			console.log('createdShop', createdShop)
+			console.log('createdShop.image', createdShop.image)
 			this.setState({ firstName: "", description: "", image: "", isDisplayed: !isDisplayed}, () => {
 				this.props.me()
 			});	
@@ -107,7 +108,7 @@ class AddShop extends Component {
 		  .then((response) => {
 			console.log("response is: ", response);
 			// after the console.log we can see that response carries 'secure_url' which we can use to update the state
-			this.setState({ image: response.data.secure_url_logo });
+			this.setState({ image: response.data.secure_url });
 		  })
 		  .catch((err) => {
 			console.log("Error while uploading the file: ", err);
@@ -129,9 +130,7 @@ class AddShop extends Component {
 			zipCode,
 			city,
 			country,
-			image,
-			backgroundImage,
-			logo
+			image
 		} = this.state;
 		return (<div>{this.state.isDisplayed ? 
 			(<div className="uploadform">
