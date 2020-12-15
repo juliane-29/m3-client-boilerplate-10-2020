@@ -148,14 +148,24 @@ class ProductDetail extends Component {
 							<p>Size: {size}</p>
 							<p>{color}</p>
 						</div>
+
+						<Link to={`/shop/${shop._id}`}>
+						<div className="seller">
+							<img src={shop.image} />
+							<div>
+							<p>Shop: {shop.shopName}</p>
+							<p>Email: {shop.email}</p>
+							</div>
+						</div></Link>
+
 						<button>Add to Cart</button>
 
-						{this.props.user.shop === shop ? (
+						{this.props.user.shop === shop._id ? (
 							<Link to={`/edit-product/${_id}`}><button>
 								Edit Product</button>
 							</Link>
 						) : null}
-						{this.props.user.shop === shop ? (
+						{this.props.user.shop === shop._id ? (
 							<button
 								style={{
 									backgroundColor: "#F7717D",

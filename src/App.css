@@ -293,3 +293,19 @@ label {
   font-family: Poppins; 
   margin-top: 10px
 }
+
+.seller {
+  display: flex;
+  flex-direction: row;
+  margin: 10px 0px 10px 0px
+}
+
+.seller div {
+  margin-left: 10px
+}
+
+.seller img {
+  height: 10vh;
+  border-radius: 50%
+
+}
