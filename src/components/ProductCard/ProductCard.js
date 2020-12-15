@@ -20,7 +20,7 @@ class ProductCard extends Component {
             <Product className="Product "key={this.props.product._id}>
             <Link to={`/products/${this.props.product._id}`}>
             <div className="image">
-            <Image style={{width:"35vw", height:"20vh"}} src={this.props.product.image}/>
+            <Image style={{width:"35vw", height:"22vh"}} src={this.props.product.image}/>
             </div>
             <ProductInfo className="content-productCard">
             <p>{this.props.product.brand}</p>

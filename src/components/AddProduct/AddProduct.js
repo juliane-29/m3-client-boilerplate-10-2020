@@ -151,7 +151,8 @@ class AddProduct extends Component {
 			gender
 		} = this.state;
 		return (
-			<div>{this.state.isDisplayed ? 
+			<div>
+			{this.state.isDisplayed ? 
 				(<div className="uploadform">
 				<h3>Upload a product</h3>
 				<form onSubmit={this.handleFormSubmit}>

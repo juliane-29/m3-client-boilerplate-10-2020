@@ -4,9 +4,6 @@ import { withAuth } from './../context/auth-context';
 import styled from 'styled-components';
 import SuccessfullUpload from "../components/SuccessfulUpload/SuccessfullUpload"
 
-
-
-
 const Button = styled.button`
   background-color: #D2D2CF;
   width: 90vw;
@@ -34,7 +31,7 @@ class AddShop extends Component {
 	city: "",
 	country: "",
 	worldwideShipping: "",
-	logo: "",
+	image: "",
 	user: this.props.user,
 	isDisplayed: true
 	}
@@ -63,8 +60,7 @@ class AddShop extends Component {
 			zipCode,
 			city,
 			country,
-			logo, 
-			worldwideShipping,
+			image, 
 			isDisplayed
 		} = this.state;
 		axios
@@ -82,13 +78,13 @@ class AddShop extends Component {
 			zipCode,
 			city,
 			country,
-			logo,
+			image,
 			userId,
 		isDisplayed
 	},{withCredentials: true})
 		.then((createdShop) =>{
 			console.log(createdShop)
-			this.setState({ firstName: "", description: "", logo: "", isDisplayed: !isDisplayed}, () => {
+			this.setState({ firstName: "", description: "", image: "", isDisplayed: !isDisplayed}, () => {
 				this.props.me()
 			});	
 		})
@@ -102,7 +98,7 @@ class AddShop extends Component {
 		const uploadData = new FormData();
 		// image => this name has to be the same as in the model since we pass
 		// req.body to .create() method when creating a new project in '/api/projects' POST route
-		uploadData.append("logo", file);
+		uploadData.append("image", file);
 	
 		axios
 		  .post(`${process.env.REACT_APP_API_URL}/api/upload`, uploadData, {
@@ -111,7 +107,7 @@ class AddShop extends Component {
 		  .then((response) => {
 			console.log("response is: ", response);
 			// after the console.log we can see that response carries 'secure_url' which we can use to update the state
-			this.setState({ logo: response.data.secure_url });
+			this.setState({ image: response.data.secure_url_logo });
 		  })
 		  .catch((err) => {
 			console.log("Error while uploading the file: ", err);
@@ -133,6 +129,7 @@ class AddShop extends Component {
 			zipCode,
 			city,
 			country,
+			image,
 			backgroundImage,
 			logo
 		} = this.state;
@@ -246,7 +243,7 @@ class AddShop extends Component {
 				className="file"
 				type="file"
 				placeholder="Logo"
-				name="logo"
+				name="image"
 				onChange={this.handleFileUpload}
 				/>	
 

@@ -2,24 +2,14 @@ import React, { Component } from "react";
 import { withAuth } from "./../context/auth-context";
 import { Link } from "react-router-dom";
 import axios from "axios";
-
 import AddProduct from "../components/AddProduct/AddProduct";
 import EditShop from "../components/EditShop/EditShop";
-import AddShop from "./AddShop";
-import ShopDetail from "./ShopDetail";
-
 import styled from "styled-components";
 
 const Image = styled.p`
 	height: 40px;
 	border-radius: 50%;
 `;
-const Line = styled.hr`
-	width: 90vw;
-	color: #ebf0ff;
-	margin-left: 20px;
-`;
-
 class Account extends Component {
 	state = {
 		isDisplayed: false,
@@ -79,8 +69,8 @@ class Account extends Component {
 				</div>
 				<p>{this.props.user && this.props.user.username}</p>
 				<hr></hr>
-				<p onClick={this.showAccountDetails}>Edit Profile</p>
-				{this.state.isDisplayedAccountDetails ? <p>Product</p> : null}
+				<p onClick={this.showAccountDetails}>Profile Info</p>
+				{this.state.isDisplayedAccountDetails ? (<p>Edit Profile</p>) : null}
 				<hr></hr>
 
 				<div>
@@ -116,7 +106,6 @@ class Account extends Component {
 							Delete your shop
 						</p>
 					) : null}
-					{this.state.isDisplayedAddProduct ? <AddProduct /> : null}
 				</div>
 
 				<button style={{ marginLeft: "20px" }} onClick={this.props.logout}>

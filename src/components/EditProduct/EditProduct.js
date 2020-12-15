@@ -9,6 +9,8 @@ import genders from "../jsonFiles/gender.json";
 import categories from "../jsonFiles/categories.json";
 import styled from 'styled-components';
 import axios from "axios";
+import SuccessfullUpload from "../SuccessfulUpload/SuccessfullUpload"
+
 
 const Select = styled.select`
 	border: 2.5px solid #EBF0FF;
@@ -49,6 +51,7 @@ class EditProduct extends Component {
 		patterns,
 		genders,
 		categories,
+		isDisplayed: true
     }
 
 	handleChange = (event) => {
@@ -96,7 +99,7 @@ class EditProduct extends Component {
 			} )
 			.then(() => {
 				console.log("Product was changed");
-				this.setState({ brand: "", description: ""});			
+				this.setState({ brand: "", description: "", isDisplayed: !this.state.isDisplayed});			
 			})
 			.catch((error) => console.log(error));
 
@@ -120,8 +123,8 @@ class EditProduct extends Component {
         return (
             <div><p id="goback" onClick={this.props.history.goBack}>
 			← Go Back
-		</p>
-               <div className="uploadform">
+		</p>{this.state.isDisplayed ?
+               (<div className="uploadform">
 				<h3>Edit a product</h3>
 				<form onSubmit={this.handleFormSubmit}>
 					<input
@@ -250,7 +253,7 @@ class EditProduct extends Component {
 					/>
 					<button onClick={this.handleFormSubmit}>Submit</button>
 				</form>
-				</div> 
+				</div>) : (<SuccessfullUpload type="Product" verb="edited"/>)} 
             </div>
         )
     }

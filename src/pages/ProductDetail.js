@@ -126,7 +126,7 @@ class ProductDetail extends Component {
 					<div>
 						<img
 							src={image}
-							alt="prouct-image"
+							alt="product-image"
 							style={{ width: "80vw", height: "40vh" }}
 						/>
 					</div>
@@ -151,8 +151,8 @@ class ProductDetail extends Component {
 						<button>Add to Cart</button>
 
 						{this.props.user.shop === shop ? (
-							<Link to={`/edit-product/${_id}`}>
-								Edit Product
+							<Link to={`/edit-product/${_id}`}><button>
+								Edit Product</button>
 							</Link>
 						) : null}
 						{this.props.user.shop === shop ? (

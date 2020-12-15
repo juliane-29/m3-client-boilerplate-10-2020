@@ -33,11 +33,11 @@ class ShopDetail extends Component {
 				console.log("response", response);
 				const shopInfo = response.data;
 				console.log('shopInfo', shopInfo)
-				const { shopName, products, owner, logo, firstName } = shopInfo;
+				const { shopName, description, products, owner, logo, firstName, email, lastName } = shopInfo;
 				console.log("shopInfo", shopInfo);
 				console.log("products", products);
 				console.log("owner", owner);
-				this.setState({ shopName, products, shopOwner: owner, logo, firstName });
+				this.setState({ shopName, products, shopOwner: owner, logo, firstName, description, email, lastName });
 			})
 			.catch((err) => {
 				console.log(err);
@@ -51,7 +51,7 @@ class ShopDetail extends Component {
 	};
 
 	render() {
-		const { shopName, products, shopOwner, logo, listOfProducts, firstName } = this.state;
+		const { shopName, products, shopOwner, logo, listOfProducts, firstName, description, email, lastName } = this.state;
 		const { id } = this.props.match.params;
 		return (
 			<div>
@@ -65,14 +65,16 @@ class ShopDetail extends Component {
 
 
 				{this.props.match.params.id == this.props.user.shop ? (
-					<p>Your shop </p>
+					<p>This is your shop, click on your products to edit or delete them</p>
 				) : null}
 				
 
 				<div className="containerShopInfo">
 					<img className="shopLogo" src={logo} />
-					<p>{firstName}</p>
-					<p>Email: {shopOwner.email}</p>
+					<p>{shopName}</p>
+					<p>{description}</p>
+					<p>{firstName} {lastName}</p>
+					<p>Email: {email}</p>
 					<p>Products: {products.length}</p>
 				</div>
 				<div className="container">

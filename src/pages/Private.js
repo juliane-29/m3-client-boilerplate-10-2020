@@ -21,7 +21,7 @@ class Private extends Component {
         {/* 
         <h2>Welcome {this.props.user ? this.props.user.username : null }</h2> 
         */}
-      <Teaser image="https://res.cloudinary.com/daj2fsogl/image/upload/v1607942856/bag-red-heart-product_1_xbn6gb.jpg"title="Welcome back" subtitle={this.props.user && this.props.user.username} />
+      <Teaser image="https://res.cloudinary.com/daj2fsogl/image/upload/v1608032830/Untitled_design_7_mrotxr.png" title="Welcome back" subtitle={this.props.user && this.props.user.username} />
       <Heading5>Your favourite categories</Heading5>
       <Category />
       <Heading5>New in</Heading5>

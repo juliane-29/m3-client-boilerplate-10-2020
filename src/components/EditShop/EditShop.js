@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import axios from "axios";
 import { withAuth } from '../../context/auth-context';
 import styled from "styled-components";
+import SuccessfullUpload from "../SuccessfulUpload/SuccessfullUpload"
+
 
 const Input = styled.input`
 	border: 0.5px solid #ebf0ff;
@@ -30,10 +32,13 @@ class EditShop extends Component {
 		zipCode: "",
 		city: "",
 		country: "",
-        user: this.props.user
+		user: this.props.user,
+		isDisplayed: true
 	};
 
-	handleFormSubmit = (event) => {
+
+
+handleFormSubmit = (event) => {
 		event.preventDefault();
 		const {
 			shopName,
@@ -72,6 +77,7 @@ class EditShop extends Component {
 				}
 			)
 			.then(() => {
+				this.setState({isDisplayed: !this.state.isDisplayed})
                 console.log('Shop was edited')
 			})
 			.catch((err) => console.log(err));
@@ -96,10 +102,10 @@ class EditShop extends Component {
 			address,
 			zipCode,
 			city,
-			country
+			country, 
         } = this.state
-		return (
-			<div>
+		return (<div>{this.state.isDisplayed ? 
+			(<div>
 				<h3>Edit Shop</h3>
                 <form onSubmit={this.handleFormSubmit}>
                 <Input
@@ -202,6 +208,7 @@ class EditShop extends Component {
                 <input type="submit" value="Edit Shop" />
 
                 </form>
+			</div>) : (<SuccessfullUpload type="Shop" verb="edited"/>)}
 			</div>
 		);
 	}
