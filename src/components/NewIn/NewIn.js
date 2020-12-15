@@ -9,7 +9,8 @@ class NewIn extends Component {
 
 	getAllProducts = () => {
 		axios.get(`${process.env.REACT_APP_API_URL}/api/products`).then((apiResponse) => {
-			this.setState({ listOfProducts: apiResponse.data });
+			let latestProducts = apiResponse.data.slice(-4)
+			this.setState({ listOfProducts: latestProducts });
 		});
 	};
 
@@ -22,6 +23,7 @@ class NewIn extends Component {
 
 		return (
             <div className="container">
+			
               {listOfProducts.map((product, index) => {
                 if(index <= 3)
                 return <ProductCard product={product} />

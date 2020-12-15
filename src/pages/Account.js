@@ -6,10 +6,7 @@ import AddProduct from "../components/AddProduct/AddProduct";
 import EditShop from "../components/EditShop/EditShop";
 import styled from "styled-components";
 
-const Image = styled.p`
-	height: 40px;
-	border-radius: 50%;
-`;
+
 class Account extends Component {
 	state = {
 		isDisplayed: false,
@@ -64,7 +61,7 @@ class Account extends Component {
 				</p>
 				<div>
 					{this.props.user && this.props.user.image ? (
-						<Image src={this.props.user.image} />
+						<img src={this.props.user.image} />
 					) : null}
 				</div>
 				<p>{this.props.user && this.props.user.username}</p>

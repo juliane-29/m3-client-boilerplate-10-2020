@@ -4,9 +4,7 @@ import axios from 'axios';
 import styled from 'styled-components'
 import "./ShopList.css";
 
-const Paragraph = styled.p`
-  margin: 0px
-`
+
 
 class ShopList extends Component {
     state = {
@@ -37,8 +35,8 @@ class ShopList extends Component {
             <div className="ShopInfo">
             <div className="ShopContent">
             <img style={{height: "40px"}} src={shopObj.image}/>
-            <Paragraph>{shopObj.shopName}</Paragraph>
-            <Paragraph>{shopObj.products.length} Products</Paragraph>
+            <p>{shopObj.shopName}</p>
+            <p>{shopObj.products.length} Products</p>
             </div>
             </div>
             </Link>
