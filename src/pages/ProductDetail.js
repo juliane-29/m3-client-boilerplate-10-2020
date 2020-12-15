@@ -137,6 +137,8 @@ class ProductDetail extends Component {
 							<p>{color}</p>
 						</div>
 						<button>Add to Cart</button>
+						<button className="wishlistbutton">Add to Wishlist</button>
+
 						{this.props.user.shop === shop ? <button onClick={this.showForm}>Edit Product</button> : null}
 						{isDisplayed ? <EditProduct id={_id} /> : null}
 						{this.props.user.shop === shop ? <button style={{backgroundColor: "#F7717D", borderRadius: "1px solid #F7717D"}} onClick={this.deleteProduct}>Delete Product</button> : null}

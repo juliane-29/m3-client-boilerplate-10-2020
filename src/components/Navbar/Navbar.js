@@ -53,7 +53,7 @@ class Navbar extends Component {
 						<img 
               className="icon-nav" 
               alt="user-icon" 
-              src="/upload.png" 
+              src="/upload_icon.png" 
               />
 						<NavLinkText>Add Product</NavLinkText>
 					</Link>

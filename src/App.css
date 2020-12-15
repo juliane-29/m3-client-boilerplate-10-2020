@@ -275,3 +275,18 @@ label {
 .content-productCard strike {
   font-size: 12px
 }
+
+.successfullUpload {
+  display: flex;
+}
+
+.wishlistbutton {
+  background-color: #EBF0FF;
+  width: 90vw;
+  height: 6vh;
+  border: 1px solid #EBF0FF; 
+  font-size: 14px; 
+  color: white; 
+  font-family: Poppins; 
+  margin-top: 10px
+}

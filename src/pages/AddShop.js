@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
 import axios from "axios";
 import { withAuth } from './../context/auth-context';
-import styled from 'styled-components'
+import styled from 'styled-components';
+import SuccessfullUpload from "../components/SuccessfulUpload/SuccessfullUpload"
+
 
 
 
@@ -34,6 +36,7 @@ class AddShop extends Component {
 	worldwideShipping: "",
 	logo: "",
 	user: this.props.user,
+	isDisplayed: true
 	}
 
 	handleChange = (event) => {
@@ -62,6 +65,7 @@ class AddShop extends Component {
 			country,
 			logo, 
 			worldwideShipping,
+			isDisplayed
 		} = this.state;
 		axios
 		.post(`${process.env.REACT_APP_API_URL}/api/shops`, 
@@ -79,10 +83,12 @@ class AddShop extends Component {
 			city,
 			country,
 			logo,
-			userId},{withCredentials: true})
+			userId,
+		isDisplayed
+	},{withCredentials: true})
 		.then((createdShop) =>{
 			console.log(createdShop)
-			this.setState({ firstName: "", description: "", logo: ""}, () => {
+			this.setState({ firstName: "", description: "", logo: "", isDisplayed: !isDisplayed}, () => {
 				this.props.me()
 			});	
 		})
@@ -130,8 +136,8 @@ class AddShop extends Component {
 			backgroundImage,
 			logo
 		} = this.state;
-		return (
-			<div className="uploadform">
+		return (<div>{this.state.isDisplayed ? 
+			(<div className="uploadform">
 			<h3>Open a shop</h3>
 			<form onSubmit={this.handleFormSubmit}>
 				<input
@@ -246,9 +252,8 @@ class AddShop extends Component {
 
 		<Button onClick={this.handleFormSubmit}>Submit</Button>
 			</form>
-			<br/>
-			<br/>
-			</div>
+			</div>) : (<SuccessfullUpload type="Shop" verb="uploaded"/>)}
+			</div> 
 		)
 	}
 }
