@@ -3,8 +3,7 @@ import axios from "axios";
 import { withAuth } from "./../context/auth-context";
 import EditProduct from "../components/EditProduct/EditProduct";
 import SimilarProducts from "../components/SimilarProducts/SimilarProducts";
-
-
+import { Link } from "react-router-dom";
 
 class ProductDetail extends Component {
 	state = {
@@ -24,7 +23,8 @@ class ProductDetail extends Component {
 		shop: "",
 		user: "",
 		quantity: 1,
-		isDisplayed: false
+		isDisplayed: false,
+		id: "",
 	};
 
 	componentDidMount = () => {
@@ -38,7 +38,7 @@ class ProductDetail extends Component {
 			.get(`${process.env.REACT_APP_API_URL}/api/products/${id}`)
 			.then((response) => {
 				const productInfo = response.data;
-				console.log('productInfo', productInfo)
+				console.log("productInfo", productInfo);
 				const {
 					brand,
 					description,
@@ -55,7 +55,7 @@ class ProductDetail extends Component {
 					gender,
 					shop,
 					user,
-					_id
+					_id,
 				} = productInfo;
 				this.setState({
 					brand,
@@ -73,7 +73,7 @@ class ProductDetail extends Component {
 					gender,
 					shop,
 					user,
-					_id
+					_id,
 				});
 			})
 			.catch((err) => {
@@ -82,16 +82,17 @@ class ProductDetail extends Component {
 	};
 
 	showForm = () => {
-		this.setState({isDisplayed: !this.state.isDisplayed})
-	}
+		this.setState({ isDisplayed: !this.state.isDisplayed });
+	};
 
-	deleteProduct = () =>{
+	deleteProduct = () => {
 		const { id } = this.props.match.params;
 
-		axios.delete(`${process.env.REACT_APP_API_URL}/api/products/${id}`)
-		.then( () => this.props.history.push('/account') )
-    	.catch( (err) => console.log(err));
-	}
+		axios
+			.delete(`${process.env.REACT_APP_API_URL}/api/products/${id}`)
+			.then(() => this.props.history.push("/account"))
+			.catch((err) => console.log(err));
+	};
 
 	render() {
 		const {
@@ -112,11 +113,14 @@ class ProductDetail extends Component {
 			user,
 			isDisplayed,
 			showForm,
-			_id
+			_id,
 		} = this.state;
 		return (
 			<div>
-			<p id="goback" onClick={this.props.history.goBack}> ← Go Back</p>
+				<p id="goback" onClick={this.props.history.goBack}>
+					{" "}
+					← Go Back
+				</p>
 
 				<div className="pdp">
 					<div>
@@ -127,9 +131,17 @@ class ProductDetail extends Component {
 						/>
 					</div>
 					<div className="product-info">
-						<p>Brand : <b>{brand}</b></p>
-						<p>Desciption: <b>{description}</b></p>
-						<p>Price:{listPrice}€     <strike style={{fontWeight: "bold"}}>{price}€</strike></p>						
+						<p>{_id}</p>
+						<p>
+							Brand : <b>{brand}</b>
+						</p>
+						<p>
+							Desciption: <b>{description}</b>
+						</p>
+						<p>
+							Price:{listPrice}€{" "}
+							<strike style={{ fontWeight: "bold" }}>{price}€</strike>
+						</p>
 						<div>
 							<p>Shipping Cost: {shippingCost}€</p>
 							<p>Condition: {condition}</p>
@@ -138,13 +150,28 @@ class ProductDetail extends Component {
 						</div>
 						<button>Add to Cart</button>
 
-						{this.props.user.shop === shop ? <button onClick={this.showForm}>Edit Product</button> : null}
-						{isDisplayed ? <EditProduct id={_id} /> : null}
-						{this.props.user.shop === shop ? <button style={{backgroundColor: "#F7717D", borderRadius: "1px solid #F7717D"}} onClick={this.deleteProduct}>Delete Product</button> : null}
+						{this.props.user.shop === shop ? (
+							<Link to={`/edit-product/${_id}`}>
+								Edit Product
+							</Link>
+						) : null}
+						{this.props.user.shop === shop ? (
+							<button
+								style={{
+									backgroundColor: "#F7717D",
+									borderRadius: "1px solid #F7717D",
+								}}
+								onClick={this.deleteProduct}
+							>
+								Delete Product
+							</button>
+						) : null}
 					</div>
 				</div>
-				<h5 style={{marginLeft: "20px", marginTop: "20px"}}>You may also like</h5>
-			<SimilarProducts brand={brand}/>
+				<h5 style={{ marginLeft: "20px", marginTop: "20px" }}>
+					You may also like
+				</h5>
+				<SimilarProducts brand={brand} />
 			</div>
 		);
 	}

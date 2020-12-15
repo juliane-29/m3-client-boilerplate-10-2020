@@ -19,6 +19,7 @@ import AddShop from "./pages/AddShop";
 import AnonRoute from "./components/AnonRoute";
 import PrivateRoute from "./components/PrivateRoute";
 import SplashScreen from "./components/SplashScreen/SplashScreen";
+import EditProduct from "./components/EditProduct/EditProduct";
 
 
 class App extends Component {
@@ -52,6 +53,7 @@ class App extends Component {
           			<Route exact path="/products/:id" component={ProductDetail} />
 					<Route exact path="/shop/:id" component={ShopDetail} />
 					<Route exact path="/add-product" component={AddProduct} />
+					<Route exact path="/edit-product/:id" component={EditProduct} />
 					<PrivateRoute exact path="/open-shop" component={AddShop} />
 				</Switch>
 			</div>

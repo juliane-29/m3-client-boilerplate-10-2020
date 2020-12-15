@@ -48,7 +48,7 @@ class EditProduct extends Component {
 		materials,
 		patterns,
 		genders,
-		categories
+		categories,
     }
 
 	handleChange = (event) => {
@@ -58,9 +58,9 @@ class EditProduct extends Component {
 
     handleFormSubmit = (event) => {
 		event.preventDefault();
-		const  id  = this.props.id;
+		const { id } = this.props.match.params;
+		//const  id = "5fd898da3555d5f4ba847f87";
 		console.log('id', id)
-
 		const {
 			brand,
 			description,
@@ -74,7 +74,7 @@ class EditProduct extends Component {
 			pattern,
 			image,
 			gender,
-			category
+			category,
 		} = this.state;
 		axios
 			.put(`${process.env.REACT_APP_API_URL}/api/products/${id}`, {
@@ -96,9 +96,7 @@ class EditProduct extends Component {
 			} )
 			.then(() => {
 				console.log("Product was changed");
-				this.setState({ brand: "", description: ""});
-	
-				
+				this.setState({ brand: "", description: ""});			
 			})
 			.catch((error) => console.log(error));
 
@@ -120,9 +118,11 @@ class EditProduct extends Component {
         category,
     } = this.state
         return (
-            <div>
+            <div><p id="goback" onClick={this.props.history.goBack}>
+			← Go Back
+		</p>
                <div className="uploadform">
-				<h3>Upload a product</h3>
+				<h3>Edit a product</h3>
 				<form onSubmit={this.handleFormSubmit}>
 					<input
 						type="text"
