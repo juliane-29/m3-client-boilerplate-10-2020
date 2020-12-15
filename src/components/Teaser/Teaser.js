@@ -6,7 +6,7 @@ function Teaser(props) {
     <div className="teaser" style={{backgroundImage: `url(${props.image})`, opacity: props.opacity}}>
     <div className="teaser-content">
     <h1 style={{color: props.color, fontSize: props.fontSizeh1}}>{props.title}</h1>
-    <p style={{color: props.color}}>{props.subtitle}</p>
+    <h2 style={{color: props.color}}>{props.subtitle}</h2>
     <img src={props.logo} />
     </div>
     </div> 

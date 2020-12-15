@@ -33,7 +33,7 @@ class Navbar extends Component {
 						<img 
               className="icon-nav" 
               alt="user-icon" 
-              src="/user_icon.png" 
+              src="/konto.png" 
               />
 					</div>
 					<NavLinkText>Account</NavLinkText>
