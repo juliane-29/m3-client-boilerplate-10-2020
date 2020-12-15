@@ -39,7 +39,7 @@ class Login extends Component {
 					style={{ height: "100px" }}
 					alt="logo"
 					className="logo"
-					src="/second_chance_logo.png"
+					src="/second_chance_blue.png"
 				/>
 				<div className="contentLogin">
 				<h3>Welcome to 2nd chance</h3>

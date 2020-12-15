@@ -6,7 +6,7 @@ class SplashScreen extends Component {
 		return (
 			<div className="container">
 				<img alt="splashscreen "id="splashimage" src="/splash_screen_image.png" />
-				<img alt="logo" id="logo" src="/second_chance_logo.png" />
+				<img alt="logo" id="logo" src="/second_chance_blue.png" />
 			</div>
 		);
 	}

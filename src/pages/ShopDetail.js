@@ -33,11 +33,11 @@ class ShopDetail extends Component {
 				console.log("response", response);
 				const shopInfo = response.data;
 				console.log('shopInfo', shopInfo)
-				const { shopName, description, products, owner, logo, firstName, email, lastName } = shopInfo;
+				const { shopName, description, products, owner, image, firstName, email, lastName } = shopInfo;
 				console.log("shopInfo", shopInfo);
 				console.log("products", products);
 				console.log("owner", owner);
-				this.setState({ shopName, products, shopOwner: owner, logo, firstName, description, email, lastName });
+				this.setState({ shopName, products, shopOwner: owner, image, firstName, description, email, lastName });
 			})
 			.catch((err) => {
 				console.log(err);
@@ -51,7 +51,7 @@ class ShopDetail extends Component {
 	};
 
 	render() {
-		const { shopName, products, shopOwner, logo, listOfProducts, firstName, description, email, lastName } = this.state;
+		const { shopName, products, shopOwner, image, listOfProducts, firstName, description, email, lastName } = this.state;
 		const { id } = this.props.match.params;
 		return (
 			<div>
@@ -70,7 +70,7 @@ class ShopDetail extends Component {
 				
 
 				<div className="containerShopInfo">
-					<img className="shopLogo" src={logo} />
+					<img className="shopLogo" src={image} />
 					<p>{shopName}</p>
 					<p>{description}</p>
 					<p>{firstName} {lastName}</p>

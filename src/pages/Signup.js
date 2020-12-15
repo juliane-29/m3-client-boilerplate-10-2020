@@ -45,7 +45,7 @@ class Signup extends Component {
 				<img
 					alt="logo"
 					className="logo"
-					src="/second_chance_logo.png"
+					src="/second_chance_blue.png"
 				/>
 				<div className="contentLogin">
 				<h3>Let's get started</h3>

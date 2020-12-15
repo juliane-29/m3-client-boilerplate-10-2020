@@ -30,7 +30,7 @@ handleInput = (event) => {
                 value={this.state.search}
                 onChange={this.handleInput}
             />
-            <img id="logo-icon" src="/second_chance_logo.png" />
+            <img id="logo-icon" src="/second_chance_blue.png" />
             </div>
         )
     }

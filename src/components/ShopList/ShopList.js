@@ -36,7 +36,7 @@ class ShopList extends Component {
             <Link to={`/shop/${shopObj._id}`}>
             <div className="ShopInfo">
             <div className="ShopContent">
-            <img style={{height: "40px"}} src={shopObj.logo}/>
+            <img style={{height: "40px"}} src={shopObj.image}/>
             <Paragraph>{shopObj.shopName}</Paragraph>
             <Paragraph>{shopObj.products.length} Products</Paragraph>
             </div>
