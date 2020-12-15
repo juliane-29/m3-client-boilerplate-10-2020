@@ -276,8 +276,11 @@ label {
   font-size: 12px
 }
 
-.successfullUpload {
+.successfulUpload {
   display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 50px
 }
 
 .wishlistbutton {

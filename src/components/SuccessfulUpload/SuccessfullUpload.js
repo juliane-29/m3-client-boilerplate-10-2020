@@ -5,8 +5,8 @@ import "./SuccessfullUpload.css";
 function SuccessfullUpload (props)  {
         return (
             <div className="successfulUpload">
-            <p>{props.type} has been {props.verb} successfully!</p>
             <img alt="checkmark" style={{height: "60px"}} src="/verified.png" />
+            <p style={{marginLeft: "10px"}}>{props.type} has been {props.verb} successfully!</p>
             </div>
         )
 }
