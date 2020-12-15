@@ -65,7 +65,7 @@ class ShopDetail extends Component {
 
 
 				{this.props.match.params.id == this.props.user.shop ? (
-					<p>This is your shop, click on your products to edit or delete them</p>
+					<p style={{margin: "10px"}}>You are viewing your shop, click on your products to edit or delete them</p>
 				) : null}
 				
 
