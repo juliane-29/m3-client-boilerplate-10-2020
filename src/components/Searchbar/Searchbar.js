@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import "./Searchbar.css";
-import styled from 'styled-components'
 
 
 class Searchbar extends Component {
@@ -30,7 +29,7 @@ handleInput = (event) => {
                 value={this.state.search}
                 onChange={this.handleInput}
             />
-            <img id="logo-icon" src="/second_chance_blue.png" />
+            <img alt="logo-searchbar" id="logo-icon" src="/second_chance_blue.png" />
             </div>
         )
     }

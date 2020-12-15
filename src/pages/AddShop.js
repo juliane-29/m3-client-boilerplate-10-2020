@@ -83,8 +83,6 @@ class AddShop extends Component {
 		isDisplayed
 	},{withCredentials: true})
 		.then((createdShop) =>{
-			console.log('createdShop', createdShop)
-			console.log('createdShop.image', createdShop.image)
 			this.setState({ firstName: "", description: "", image: "", isDisplayed: !isDisplayed}, () => {
 				this.props.me()
 			});	
@@ -129,8 +127,7 @@ class AddShop extends Component {
 			address,
 			zipCode,
 			city,
-			country,
-			image
+			country
 		} = this.state;
 		return (<div>{this.state.isDisplayed ? 
 			(<div className="uploadform">

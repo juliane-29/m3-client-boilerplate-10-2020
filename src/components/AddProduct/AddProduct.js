@@ -78,7 +78,6 @@ class AddProduct extends Component {
 			color,
 			material,
 			pattern,
-			image,
 			gender,
 			category,
 			isDisplayed
@@ -95,7 +94,6 @@ class AddProduct extends Component {
 				color,
 				material,
 				pattern,
-				image,
 				gender,
 				category,
 				userId,
@@ -146,7 +144,6 @@ class AddProduct extends Component {
 			color,
 			material,
 			pattern,
-			image,
 			category,
 			gender
 		} = this.state;

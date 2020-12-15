@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import AddProduct from "../components/AddProduct/AddProduct";
 import EditShop from "../components/EditShop/EditShop";
-import styled from "styled-components";
 
 
 class Account extends Component {
@@ -61,7 +60,7 @@ class Account extends Component {
 				</p>
 				<div>
 					{this.props.user && this.props.user.image ? (
-						<img src={this.props.user.image} />
+						<img alt="user" src={this.props.user.image} />
 					) : null}
 				</div>
 				<p>{this.props.user && this.props.user.username}</p>

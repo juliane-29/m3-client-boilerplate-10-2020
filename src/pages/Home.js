@@ -4,11 +4,7 @@ import Category from './../components/Category/Category';
 import ShopList from '../components/ShopList/ShopList';
 import SearchResults from '../components/SearchResults/SearchResults';
 import NewIn from '../components/NewIn/NewIn';
-
-
-
 import styled from "styled-components";
-import ListPage from '../components/ListPage/ListPage';
 
 const Heading5 = styled.h5 `
  margin: 15px 25px

@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import axios from "axios";
 import Teaser from "../components/Teaser/Teaser";
 import ProductCard from "../components/ProductCard/ProductCard";
-import EditShop from "../components/EditShop/EditShop";
 
 import { withAuth } from "./../context/auth-context";
 
@@ -52,7 +51,7 @@ class ShopDetail extends Component {
 
 	render() {
 		const { shopName, products, shopOwner, image, listOfProducts, firstName, description, email, lastName } = this.state;
-		const { id } = this.props.match.params;
+		//const { id } = this.props.match.params;
 		return (
 			<div>
 				<p id="goback" onClick={this.props.history.goBack}>  ← Go Back</p>
@@ -64,13 +63,13 @@ class ShopDetail extends Component {
 				
 
 
-				{this.props.match.params.id == this.props.user.shop ? (
+				{this.props.match.params.id === this.props.user.shop ? (
 					<p style={{margin: "10px"}}>You are viewing your shop, click on your products to edit or delete them</p>
 				) : null}
 				
 
 				<div className="containerShopInfo">
-					<img className="shopLogo" src={image} />
+					<img alt="shopLogo" className="shopLogo" src={image} />
 					<div>
 					<p>{shopName}</p>
 					<p>{description}</p>

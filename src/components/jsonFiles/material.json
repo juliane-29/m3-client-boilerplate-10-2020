@@ -14,5 +14,9 @@
       {
         "name": "polyester",
         "icon": ""
+      },
+      {
+        "name": "leather",
+        "icon": ""
       }
 ]

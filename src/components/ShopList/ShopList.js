@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom';                // <== IMPORT
 import axios from 'axios'; 
-import styled from 'styled-components'
 import "./ShopList.css";
 
 
@@ -31,7 +30,7 @@ class ShopList extends Component {
             return(
             <Link to={`/shop/${shopObj._id}`}>
             <div key={shopObj._id}>
-            <img src={shopObj.image}/>
+            <img alt="logo-shop" src={shopObj.image}/>
             <div className="content">
             <p>{shopObj.shopName}</p>
             <p>{shopObj.products.length} Products</p>

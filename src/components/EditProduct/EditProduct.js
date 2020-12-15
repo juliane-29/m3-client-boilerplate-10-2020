@@ -140,7 +140,6 @@ class EditProduct extends Component {
         color,
         material,
         pattern,
-        image,
         gender,
         category,
     } = this.state

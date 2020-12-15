@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { withAuth } from "./../context/auth-context";
-import EditProduct from "../components/EditProduct/EditProduct";
 import SimilarProducts from "../components/SimilarProducts/SimilarProducts";
 import { Link } from "react-router-dom";
 
@@ -23,8 +22,7 @@ class ProductDetail extends Component {
 		shop: "",
 		user: "",
 		quantity: 1,
-		isDisplayed: false,
-		id: "",
+		id: ""
 	};
 
 	componentDidMount = () => {
@@ -81,10 +79,6 @@ class ProductDetail extends Component {
 			});
 	};
 
-	showForm = () => {
-		this.setState({ isDisplayed: !this.state.isDisplayed });
-	};
-
 	deleteProduct = () => {
 		const { id } = this.props.match.params;
 
@@ -105,15 +99,9 @@ class ProductDetail extends Component {
 			category,
 			size,
 			color,
-			material,
-			pattern,
 			image,
-			gender,
 			shop,
-			user,
-			isDisplayed,
-			showForm,
-			_id,
+			_id
 		} = this.state;
 		return (
 			<div>
@@ -124,14 +112,10 @@ class ProductDetail extends Component {
 
 				<div className="pdp">
 					<div>
-						<img
-							src={image}
-							alt="product-image"
-							style={{ width: "80vw" }}
-						/>
+						<img src={image} alt="product" style={{ width: "80vw" }} />
 					</div>
 					<div className="product-info">
-						<p>{_id}</p>
+						
 						<p>
 							Brand : <b>{brand}</b>
 						</p>
@@ -147,22 +131,22 @@ class ProductDetail extends Component {
 							<p>Condition: {condition}</p>
 							<p>Size: {size}</p>
 							<p>Color: {color}</p>
+							<p>Category: {category}</p>
 						</div>
 
 						<Link to={`/shop/${shop._id}`}>
-						<div className="seller">
-							<img src={shop.image} />
-							<div>
-							<p>Shop: {shop.shopName}</p>
-							<p>Email: {shop.email}</p>
+							<div className="seller">
+								<img alt="shoplogo" src={shop.image} />
+								<div>
+									<p>Shop: {shop.shopName}</p>
+									<p>Email: {shop.email}</p>
+								</div>
 							</div>
-						</div></Link>
-
+						</Link>
 						<button>Add to Cart</button>
-
 						{this.props.user.shop === shop._id ? (
-							<Link to={`/edit-product/${_id}`}><button>
-								Edit Product</button>
+							<Link to={`/edit-product/${_id}`}>
+								<button>Edit Product</button>
 							</Link>
 						) : null}
 						{this.props.user.shop === shop._id ? (

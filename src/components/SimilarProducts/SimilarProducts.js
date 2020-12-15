@@ -23,7 +23,7 @@ class SimilarProducts extends Component {
 		return (
             <div className="container">
               {listOfProducts.map((product, index) => {
-                if(product.brand == this.props.brand)
+                if(product.brand === this.props.brand)
                 return <ProductCard product={product} />
               })}
           </div>
