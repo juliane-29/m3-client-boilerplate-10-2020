@@ -146,7 +146,7 @@ class ProductDetail extends Component {
 							<p>Shipping Cost: {shippingCost}€</p>
 							<p>Condition: {condition}</p>
 							<p>Size: {size}</p>
-							<p>{color}</p>
+							<p>Color: {color}</p>
 						</div>
 
 						<Link to={`/shop/${shop._id}`}>

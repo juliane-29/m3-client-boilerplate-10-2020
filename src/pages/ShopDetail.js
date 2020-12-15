@@ -71,11 +71,13 @@ class ShopDetail extends Component {
 
 				<div className="containerShopInfo">
 					<img className="shopLogo" src={image} />
+					<div>
 					<p>{shopName}</p>
 					<p>{description}</p>
 					<p>{firstName} {lastName}</p>
 					<p>Email: {email}</p>
 					<p>Products: {products.length}</p>
+					</div>
 				</div>
 				<div className="container">
 					{listOfProducts.map((product, index) => {
