@@ -32,11 +32,12 @@ class ShopDetail extends Component {
 			.then((response) => {
 				console.log("response", response);
 				const shopInfo = response.data;
-				const { shopName, products, owner, logo } = shopInfo;
+				console.log('shopInfo', shopInfo)
+				const { shopName, products, owner, logo, firstName } = shopInfo;
 				console.log("shopInfo", shopInfo);
 				console.log("products", products);
 				console.log("owner", owner);
-				this.setState({ shopName, products, shopOwner: owner, logo });
+				this.setState({ shopName, products, shopOwner: owner, logo, firstName });
 			})
 			.catch((err) => {
 				console.log(err);
@@ -50,7 +51,7 @@ class ShopDetail extends Component {
 	};
 
 	render() {
-		const { shopName, products, shopOwner, logo, listOfProducts } = this.state;
+		const { shopName, products, shopOwner, logo, listOfProducts, firstName } = this.state;
 		const { id } = this.props.match.params;
 		return (
 			<div>
@@ -61,14 +62,16 @@ class ShopDetail extends Component {
 					subtitle=""
 				/>
 				
+
+
 				{this.props.match.params.id == this.props.user.shop ? (
-					<button style={{marginLeft: "10px"}}onClick={this.showForm}>Edit Shop</button>
+					<p>Your shop </p>
 				) : null}
-				{this.state.isDisplayed ? <EditShop /> : null}
+				
 
 				<div className="containerShopInfo">
 					<img className="shopLogo" src={logo} />
-					<p>{shopOwner.username}</p>
+					<p>{firstName}</p>
 					<p>Email: {shopOwner.email}</p>
 					<p>Products: {products.length}</p>
 				</div>

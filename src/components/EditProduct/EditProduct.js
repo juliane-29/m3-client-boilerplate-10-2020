@@ -97,6 +97,7 @@ class EditProduct extends Component {
 			.then(() => {
 				console.log("Product was changed");
 				this.setState({ brand: "", description: ""});
+	
 				
 			})
 			.catch((error) => console.log(error));

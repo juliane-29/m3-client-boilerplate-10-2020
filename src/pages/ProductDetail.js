@@ -137,7 +137,6 @@ class ProductDetail extends Component {
 							<p>{color}</p>
 						</div>
 						<button>Add to Cart</button>
-						<button className="wishlistbutton">Add to Wishlist</button>
 
 						{this.props.user.shop === shop ? <button onClick={this.showForm}>Edit Product</button> : null}
 						{isDisplayed ? <EditProduct id={_id} /> : null}
