@@ -80,7 +80,8 @@ class AddProduct extends Component {
 			pattern,
 			gender,
 			category,
-			isDisplayed
+			isDisplayed,
+			image
 		} = this.state;
 		axios
 			.post(`${process.env.REACT_APP_API_URL}/api/products`, {
@@ -97,11 +98,12 @@ class AddProduct extends Component {
 				gender,
 				category,
 				userId,
-				shopId
+				shopId,
+				image
 			})
 			.then((createdProduct) => {
 				console.log("createdProduct", createdProduct);
-				this.setState({ brand: "", description: "", isDisplayed: !isDisplayed});
+				this.setState({ brand: "", description: "", image: "", isDisplayed: !isDisplayed});
 				
 			})
 			.catch((error) => console.log(error));
@@ -145,7 +147,8 @@ class AddProduct extends Component {
 			material,
 			pattern,
 			category,
-			gender
+			gender,
+			image
 		} = this.state;
 		return (
 			<div>
