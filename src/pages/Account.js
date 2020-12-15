@@ -51,10 +51,11 @@ class Account extends Component {
 		console.log("id", id);
 
 		axios
-			.delete(`${process.env.REACT_APP_API_URL}/api/shops/${id}`, {withCredentials: true})
+			.delete(`${process.env.REACT_APP_API_URL}/api/shops/${id}`, {
+				withCredentials: true,
+			})
 			.then((foundShop) => {
-				
-				this.props.me()
+				this.props.me();
 				//.then(() => {
 				//	this.props.history.push("/");
 				//})
@@ -69,7 +70,7 @@ class Account extends Component {
 		return (
 			<div className="AccountInfo">
 				<p id="goback" onClick={this.props.history.goBack}>
-				← Go Back
+					← Go Back
 				</p>
 				<div>
 					{this.props.user && this.props.user.image ? (
@@ -77,38 +78,37 @@ class Account extends Component {
 					) : null}
 				</div>
 				<p>{this.props.user && this.props.user.username}</p>
-				<Line></Line>
+				<hr></hr>
 				<p onClick={this.showAccountDetails}>Edit Profile</p>
 				{this.state.isDisplayedAccountDetails ? <p>Product</p> : null}
-				<Line></Line>
+				<hr></hr>
 
 				<div>
 					{this.props.user.shopOwner ? (
-						<p onClick={this.showForm}>Edit my shop</p>
-					) : (
-						<p onClick={this.showForm}>Open Shop</p>
-					)}
+						<p onClick={this.showForm}>
+							Edit my shop<hr></hr>
+						</p>
+					) : null}
 					{this.state.isDisplayed ? <EditShop /> : null}
 				</div>
-				<Line></Line>
 
 				<div>
 					{this.props.user.shopOwner ? (
 						<Link to={`/shop/${this.props.user.shop}`}>
 							<p>View your shop</p>
-							<Line></Line>
+							<hr></hr>
 						</Link>
 					) : null}
 				</div>
 
 				<div>
 					{this.props.user.shopOwner ? (
-						<p onClick={this.showFormProduct}>Upload Product</p>
+						<p onClick={this.showFormProduct}>
+							Upload Product<hr></hr>
+						</p>
 					) : null}
 					{this.state.isDisplayedAddProduct ? <AddProduct /> : null}
 				</div>
-
-				<Line></Line>
 
 				<div>
 					{this.props.user.shopOwner ? (
@@ -119,7 +119,9 @@ class Account extends Component {
 					{this.state.isDisplayedAddProduct ? <AddProduct /> : null}
 				</div>
 
-				<button style={{marginLeft: "20px"}}onClick={this.props.logout}>Logout</button>
+				<button style={{ marginLeft: "20px" }} onClick={this.props.logout}>
+					Logout
+				</button>
 			</div>
 		);
 	}

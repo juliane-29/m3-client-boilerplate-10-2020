@@ -91,7 +91,9 @@ class EditProduct extends Component {
 				image,
 				gender,
                 category
-			})
+			}, {
+				withCredentials: true,
+			} )
 			.then(() => {
 				console.log("Product was changed");
 				this.setState({ brand: "", description: ""});

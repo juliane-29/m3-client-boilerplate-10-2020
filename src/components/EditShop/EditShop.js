@@ -67,8 +67,10 @@ class EditShop extends Component {
 			    address,
 			    zipCode,
 			    city,
-			    country
-			})
+			    country}, {
+					withCredentials: true,
+				}
+			)
 			.then(() => {
                 console.log('Shop was edited')
 			})
