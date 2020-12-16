@@ -4,6 +4,8 @@ import Teaser from './../components/Teaser/Teaser';
 import Category from './../components/Category/Category';
 import styled from "styled-components";
 import ListPage from "../components/ListPage/ListPage";
+import Header from "../components/Header/Header";
+
 
 
 const Heading5 = styled.h5 `
