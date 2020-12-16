@@ -42,7 +42,7 @@ class Login extends Component {
 					src="/second_chance_blue.png"
 				/>
 				<div className="contentLogin">
-				<h3>Welcome to 2nd chance</h3>
+				<h3 style={{marginLeft: "0px"}}>Welcome to 2nd chance</h3>
 				<p>Log in to continue</p>
 				</div>
 				<form onSubmit={this.handleFormSubmit}>

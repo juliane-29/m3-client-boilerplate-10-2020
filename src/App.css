@@ -51,7 +51,8 @@ h3 {
 h4 {
   font-size: 18px;
   font-family: Poppins;
-  color: #223263
+  color: #223263;
+  margin-left: 20px
 
 }
 
@@ -334,4 +335,12 @@ label {
 
 hr {
   margin-left: 20px
+}
+
+@media (min-width: 768px) {
+
+  h5 {
+    font-size: 34px; 
+  }
+  
 }

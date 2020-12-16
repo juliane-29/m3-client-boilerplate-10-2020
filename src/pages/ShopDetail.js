@@ -118,7 +118,7 @@ class ShopDetail extends Component {
 				{this.props.match.params.id === this.props.user.shop ? (
 					<button style={{margin: "0px 0px 10px 20px"}} onClick={this.showForm}>Edit Shop</button>
 				) : null}
-				{this.state.isDisplayed ? (<EditShop shopName={shopName} firstName={firstName}></EditShop>) : null}
+				{this.state.isDisplayed ? (<EditShop shopName={shopName} firstName={firstName} lastName={lastName} description={description} email={email}></EditShop>) : null}
 
 				<div className="containerShopInfo">
 					<img alt="shopLogo" className="shopLogo" src={image} />
