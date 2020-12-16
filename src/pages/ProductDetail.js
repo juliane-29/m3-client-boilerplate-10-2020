@@ -121,7 +121,7 @@ class ProductDetail extends Component {
 							Brand : <b>{brand}</b>
 						</p>
 						<p>
-							Desciption: <b>{description}</b>
+							Description: <b>{description}</b>
 						</p>
 						<p>
 							Price:{listPrice}€{" "}
