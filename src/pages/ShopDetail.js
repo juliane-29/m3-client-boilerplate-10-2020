@@ -63,12 +63,9 @@ class ShopDetail extends Component {
 					color="white"
 				/>
 				
-
-
 				{this.props.match.params.id === this.props.user.shop ? (
 					<p style={{margin: "10px"}}>You are viewing your shop, click on your products to edit or delete them</p>
 				) : null}
-				
 
 				<div className="containerShopInfo">
 					<img alt="shopLogo" className="shopLogo" src={image} />
@@ -81,7 +78,7 @@ class ShopDetail extends Component {
 					</div>
 				</div>
 				<div className="productList">
-					{listOfProducts.map((product, index) => {
+					{listOfProducts.map((product) => {
 						if (product.shop === shopOwner.shop)
 							return <ProductCard product={product} />;
 					})}

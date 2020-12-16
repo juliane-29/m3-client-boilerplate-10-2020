@@ -58,22 +58,19 @@ class Account extends Component {
 					{" "}
 					← Go Back
 				</p>
-				<div>
-					{this.props.user && this.props.user.image ? (
-						<img alt="user" src={this.props.user.image} />
-					) : null}
-				</div>
+				
 				<p>{this.props.user && this.props.user.username}</p>
 				<hr></hr>
 				<p onClick={this.showAccountDetails}>Profile Info</p>
-				{this.state.isDisplayedAccountDetails ? <p>Edit Profile</p> : null}
+				{this.state.isDisplayedAccountDetails ? (<p>{this.props.user ? <h5>{this.props.user.username}<br/>{this.props.user.email}</h5> : null}</p>) : null}
 				<hr></hr>
 
 				<div>
 					{this.props.user.shopOwner ? (
 						<p onClick={this.showForm}>
-							Edit my shop<hr></hr>
+							Edit my shop<hr style={{marginLeft:"0px"}}></hr>
 						</p>
+						
 					) : null}
 					{this.state.isDisplayed ? <EditShop /> : null}
 				</div>
@@ -90,7 +87,7 @@ class Account extends Component {
 				<div>
 					{this.props.user.shopOwner ? (
 						<p onClick={this.showFormProduct}>
-							Upload Product<hr></hr>
+							Upload Product<hr ></hr>
 						</p>
 					) : null}
 					{this.state.isDisplayedAddProduct ? <AddProduct /> : null}

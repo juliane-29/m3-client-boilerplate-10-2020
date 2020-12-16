@@ -44,7 +44,8 @@ h3 {
   font-size: 18px;
   font-family: Poppins;
   color: #9098B1;
-  font-weight: bold
+  font-weight: bold;
+  margin-left: 20px;
 }
 
 h4 {
@@ -329,4 +330,8 @@ label {
     margin-right: 0; 
     flex-direction: row; 
     flex-wrap: wrap; 
+}
+
+hr {
+  margin-left: 20px
 }

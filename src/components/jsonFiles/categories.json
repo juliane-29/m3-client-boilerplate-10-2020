@@ -30,6 +30,17 @@
       {
         "name": "Skirts",
         "icon": "https://www.flaticon.com/svg/static/icons/svg/976/976228.svg"
+      },
+      {
+        "name": "Accessoires",
+        "icon": "https://www.flaticon.com/svg/static/icons/svg/976/976228.svg"
+      },
+      {
+        "name": "Sunglasses",
+        "icon": "https://www.flaticon.com/svg/static/icons/svg/976/976228.svg"
+      },
+      {
+        "name": "Sneakers",
+        "icon": "https://www.flaticon.com/svg/static/icons/svg/976/976228.svg"
       }
-
   ]
