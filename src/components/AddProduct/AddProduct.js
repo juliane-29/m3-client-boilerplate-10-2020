@@ -235,9 +235,7 @@ class AddProduct extends Component {
 							);
 						})}
 					</Select>
-
 					<label>Color</label>
-
 					<Select name="color" value={color} onChange={this.handleChange}>
 						<option value={color}>{color}</option>
 						{colors.map((colorObj, index) => {

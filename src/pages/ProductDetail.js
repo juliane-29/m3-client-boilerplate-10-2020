@@ -101,7 +101,8 @@ class ProductDetail extends Component {
 			color,
 			image,
 			shop,
-			_id
+			_id,
+			productInfo
 		} = this.state;
 		return (
 			<div>
@@ -145,7 +146,10 @@ class ProductDetail extends Component {
 						</Link>
 						<button>Add to Cart</button>
 						{this.props.user.shop === shop._id ? (
-							<Link to={`/edit-product/${_id}`}>
+							<Link to={{pathname:`/edit-product/${_id}`,
+							state: {
+								productInfo: productInfo
+							}}} >
 								<button>Edit Product</button>
 							</Link>
 						) : null}

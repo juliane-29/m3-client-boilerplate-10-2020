@@ -19,8 +19,8 @@ const Input = styled.input`
 
 class EditShop extends Component {
 	state = {
-		shopName: "",
-		firstName: "",
+		shopName: this.props.shopName,
+		firstName: this.props.firstName,
         lastName: "", 
         email: "", 
 	    phoneNumber: "",
@@ -73,7 +73,7 @@ handleFormSubmit = (event) => {
 			    zipCode,
 			    city,
 			    country}, {
-					withCredentials: true,
+				withCredentials: true,
 				}
 			)
 			.then(() => {

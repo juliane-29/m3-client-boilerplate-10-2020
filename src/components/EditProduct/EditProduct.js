@@ -19,6 +19,7 @@ const Select = styled.select`
 	width: 90vw;
 	height: 5vh;
 	margin: 10px 0px 10px 0px;
+	background-color: white;
 
 	option {
 		font-size: 12px;
@@ -51,11 +52,66 @@ class EditProduct extends Component {
 		genders,
 		categories,
 		isDisplayed: true,
+		productInfo: this.props.location.state
 	};
 
 	handleChange = (event) => {
 		const { name, value } = event.target;
 		this.setState({ [name]: value });
+	};
+
+	componentDidMount  ()  {
+		this.getProductDetails()
+	}
+
+	getProductDetails = () => {
+		const { id } = this.props.match.params;
+		console.log("id", id);
+		axios
+			.get(`${process.env.REACT_APP_API_URL}/api/products/${id}`)
+			.then((response) => {
+				const productInfo = response.data;
+				console.log("productInfo", productInfo);
+				const {
+					brand,
+					description,
+					price,
+					listPrice,
+					shippingCost,
+					condition,
+					category,
+					size,
+					color,
+					material,
+					pattern,
+					image,
+					gender,
+					shop,
+					user,
+					_id,
+				} = productInfo;
+				this.setState({
+					brand,
+					description,
+					price,
+					listPrice,
+					shippingCost,
+					condition,
+					category,
+					size,
+					color,
+					material,
+					pattern,
+					image,
+					gender,
+					shop,
+					user,
+					_id,
+				});
+			})
+			.catch((err) => {
+				console.log(err);
+			});
 	};
 
 	handleFormSubmit = (event) => {
@@ -174,14 +230,14 @@ class EditProduct extends Component {
 							/>
 							<input
 								type="number"
-								placeholder="Price"
+								placeholder="Original Price"
 								name="price"
 								value={price}
 								onChange={this.handleChange}
 							/>
 							<input
 								type="number"
-								placeholder="List Price"
+								placeholder="Price to sell the item for"
 								name="listPrice"
 								value={listPrice}
 								onChange={this.handleChange}
@@ -193,7 +249,7 @@ class EditProduct extends Component {
 								value={shippingCost}
 								onChange={this.handleChange}
 							/>
-
+							<label>Category</label>
 							<Select
 								name="category"
 								value={category}
@@ -208,7 +264,7 @@ class EditProduct extends Component {
 									);
 								})}
 							</Select>
-
+							<label>Size</label>
 							<Select name="size" value={size} onChange={this.handleChange}>
 								<option value={size}>{size}</option>
 								{sizes.map((sizeObj, index) => {
@@ -219,7 +275,7 @@ class EditProduct extends Component {
 									);
 								})}
 							</Select>
-
+							<label>Condition</label>
 							<Select
 								name="condition"
 								value={condition}
@@ -234,7 +290,7 @@ class EditProduct extends Component {
 									);
 								})}
 							</Select>
-
+							<label>Color</label>
 							<Select name="color" value={color} onChange={this.handleChange}>
 								<option value={color}>{color}</option>
 								{colors.map((colorObj, index) => {
@@ -245,6 +301,7 @@ class EditProduct extends Component {
 									);
 								})}
 							</Select>
+							<label>Material</label>
 
 							<Select
 								name="material"
@@ -260,6 +317,7 @@ class EditProduct extends Component {
 									);
 								})}
 							</Select>
+							<label>Pattern</label>
 
 							<Select
 								name="pattern"
@@ -275,6 +333,7 @@ class EditProduct extends Component {
 									);
 								})}
 							</Select>
+							<label>Gender</label>
 
 							<Select name="gender" value={gender} onChange={this.handleChange}>
 								<option value={gender}>{gender}</option>

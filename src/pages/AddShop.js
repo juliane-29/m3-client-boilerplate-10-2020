@@ -15,6 +15,7 @@ const Button = styled.button`
   margin: 10px 0px 0px 0px
 `
 
+
 class AddShop extends Component {
 	state = {
 	shopName: "", 
