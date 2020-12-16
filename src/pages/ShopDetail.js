@@ -12,9 +12,22 @@ class ShopDetail extends Component {
 		shopName: "",
 		products: "",
 		shopOwner: "",
-		logo: "",
+		image: "",
 		listOfProducts: [],
 		isDisplayed: false,
+		description: "",
+		email: "",
+		lastName: "",
+		firstName: "",
+		phoneNumber: "",
+		instagramAccount: "",
+		facebookAccount: "",
+		typeOfShop: "",
+		address: "",
+		zipCode: "",
+		city: "",
+		country: "",
+		worldwideShipping: "",
 	};
 
 	componentDidMount = () => {
@@ -34,13 +47,13 @@ class ShopDetail extends Component {
 				const shopInfo = response.data;
 				const {
 					shopName,
+					firstName,
+					lastName,
 					description,
 					products,
 					owner,
 					image,
-					firstName,
-					email,
-					lastName,
+					email
 				} = shopInfo;
 				this.setState({
 					shopName,
@@ -48,9 +61,11 @@ class ShopDetail extends Component {
 					shopOwner: owner,
 					image,
 					firstName,
+					lastName,
 					description,
 					email,
-					lastName,
+
+					
 				});
 			})
 			.catch((err) => {
@@ -101,7 +116,7 @@ class ShopDetail extends Component {
 				) : null}
 
 				{this.props.match.params.id === this.props.user.shop ? (
-					<button style={{marginLeft: "20px"}} onClick={this.showForm}>Edit Shop</button>
+					<button style={{margin: "0px 0px 10px 20px"}} onClick={this.showForm}>Edit Shop</button>
 				) : null}
 				{this.state.isDisplayed ? (<EditShop shopName={shopName} firstName={firstName}></EditShop>) : null}
 
@@ -114,6 +129,7 @@ class ShopDetail extends Component {
 							{firstName} {lastName}
 						</p>
 						<p>Email: {email}</p>
+						
 						<p>Products: {products.length}</p>
 					</div>
 				</div>
