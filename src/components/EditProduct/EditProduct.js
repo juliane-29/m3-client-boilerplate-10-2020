@@ -59,8 +59,8 @@ class EditProduct extends Component {
 		this.setState({ [name]: value });
 	};
 
-	componentDidMount  ()  {
-		this.getProductDetails()
+	componentDidMount() {
+		this.getProductDetails();
 	}
 
 	getProductDetails = () => {
