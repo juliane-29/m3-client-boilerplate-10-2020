@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';  
 import styled from 'styled-components'
 
-
 const Product = styled.div`
  border: 0.3px solid #EBF0FF; 
  margin: 0px 10px 20px 10px
@@ -16,18 +15,19 @@ const ProductInfo = styled.div`
 `
 
 class ProductCard extends Component {
-    render() {
+    render() { 
+        const {product} = this.props
         return (
-            <Product className="Product "key={this.props.product._id}>
-            <Link to={`/products/${this.props.product._id}`}>
+            <Product className="Product "key={product._id}>
+            <Link to={`/products/${product._id}`}>
             <div className="image">
-            <Image style={{maxWidth: "35vw", maxHeight: "20vh"}}src={this.props.product.image}/>
+            <Image style={{maxWidth: "35vw", maxHeight: "20vh"}}src={product.image}/>
             </div>
             <ProductInfo className="content-productCard">
-            <p>{this.props.product.brand}</p>
-            <p>{this.props.product.description}</p>
-            <p>{this.props.product.price}€ <strike>{this.props.product.listPrice}€</strike></p>
-            <p>Condition: {this.props.product.condition}</p>
+            <p>{product.brand}</p>
+            <p>{product.description}</p>
+            <p>{product.price}€ <strike>{product.listPrice}€</strike></p>
+            <p>Condition: {product.condition}</p>
             </ProductInfo>
             </Link>
             </Product>

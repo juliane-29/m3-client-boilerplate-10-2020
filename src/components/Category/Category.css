@@ -1,19 +1,16 @@
 #icon {
     height: 30px
 }
-
 #circle {
     height: "70px";
     width: "70px";
     border-radius:"50%"; 
     border: "1px solid #EBF0FF"
 }
-
 .container {
     display: flex;
     flex-direction: row; 
     flex-wrap: wrap; 
-
 }
 
 .icon {

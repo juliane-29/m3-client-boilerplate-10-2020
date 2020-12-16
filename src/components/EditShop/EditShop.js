@@ -36,8 +36,6 @@ class EditShop extends Component {
 		isDisplayed: true
 	};
 
-
-
 handleFormSubmit = (event) => {
 		event.preventDefault();
 		const {
@@ -56,8 +54,6 @@ handleFormSubmit = (event) => {
 			country
 		} = this.state;
         const  id  = this.props.user.shop; // made available by withRouter()
-        
-
 		axios
 			.put(`${process.env.REACT_APP_API_URL}/api/shops/${id}`, {
 				shopName,
@@ -77,8 +73,7 @@ handleFormSubmit = (event) => {
 				}
 			)
 			.then(() => {
-				this.setState({isDisplayed: !this.state.isDisplayed})
-                console.log('Shop was edited')
+			this.setState({isDisplayed: !this.state.isDisplayed})
 			})
 			.catch((err) => console.log(err));
 	};
@@ -103,8 +98,9 @@ handleFormSubmit = (event) => {
 			zipCode,
 			city,
 			country, 
+			isDisplayed,
         } = this.state
-		return (<div>{this.state.isDisplayed ? 
+		return (<div>{isDisplayed ? 
 			(<div>
 				<h3>Edit Shop</h3>
                 <form onSubmit={this.handleFormSubmit}>

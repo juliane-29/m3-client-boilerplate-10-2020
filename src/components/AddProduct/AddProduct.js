@@ -113,7 +113,6 @@ class AddProduct extends Component {
 	handleFileUpload = (e) => {
 		console.log("The file to be uploaded is: ", e.target.files);
 		const file = e.target.files[0];
-	
 		const uploadData = new FormData();
 		// image => this name has to be the same as in the model since we pass
 		// req.body to .create() method when creating a new project in '/api/projects' POST route

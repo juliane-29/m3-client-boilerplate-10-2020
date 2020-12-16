@@ -116,8 +116,6 @@ class EditProduct extends Component {
 	handleFormSubmit = (event) => {
 		event.preventDefault();
 		const { id } = this.props.match.params;
-		//const  id = "5fd898da3555d5f4ba847f87";
-		console.log("id", id);
 		const {
 			brand,
 			description,

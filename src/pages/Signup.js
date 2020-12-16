@@ -3,8 +3,6 @@ import { Link } from "react-router-dom";
 import { withAuth } from "./../context/auth-context";
 import styled from "styled-components";
 
-
-
 const Button = styled.input`
   background-color: #D2D2CF;
   width: 90vw;
@@ -15,8 +13,6 @@ const Button = styled.input`
   font-family: Poppins; 
   margin: 10px 0px 0px 0px
 `
-
-
 
 class Signup extends Component {
 	state = {
