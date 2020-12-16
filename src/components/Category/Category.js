@@ -1,7 +1,6 @@
 import React from "react";
 import categories from "../jsonFiles/categories.json";
 import "./Category.css";
-import { Link } from "react-router-dom";
 
 
 

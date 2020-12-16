@@ -13,8 +13,6 @@ class ShopDetail extends Component {
 		products: "",
 		shopOwner: "",
 		image: "",
-		listOfProducts: [],
-		isDisplayed: false,
 		description: "",
 		email: "",
 		lastName: "",
@@ -28,6 +26,8 @@ class ShopDetail extends Component {
 		city: "",
 		country: "",
 		worldwideShipping: "",
+		listOfProducts: [],
+		isDisplayed: false,
 	};
 
 	componentDidMount = () => {

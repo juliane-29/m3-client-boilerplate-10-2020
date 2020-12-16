@@ -14,6 +14,7 @@ const Image = styled.img `
 const ProductInfo = styled.div`
   margin: 0px 10px 10px 15px
 `
+
 class ProductCard extends Component {
     render() {
         return (

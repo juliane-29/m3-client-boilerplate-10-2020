@@ -21,7 +21,6 @@ class ProductDetail extends Component {
 		gender: "",
 		shop: "",
 		user: "",
-		quantity: 1,
 		id: ""
 	};
 
@@ -81,7 +80,6 @@ class ProductDetail extends Component {
 
 	deleteProduct = () => {
 		const { id } = this.props.match.params;
-
 		axios
 			.delete(`${process.env.REACT_APP_API_URL}/api/products/${id}`)
 			.then(() => this.props.history.push("/account"))

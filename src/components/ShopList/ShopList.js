@@ -3,8 +3,6 @@ import { Link } from 'react-router-dom';                // <== IMPORT
 import axios from 'axios'; 
 import "./ShopList.css";
 
-
-
 class ShopList extends Component {
     state = {
         listOfAllShops: []

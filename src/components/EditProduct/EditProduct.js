@@ -52,7 +52,6 @@ class EditProduct extends Component {
 		genders,
 		categories,
 		isDisplayed: true,
-		productInfo: this.props.location.state
 	};
 
 	handleChange = (event) => {

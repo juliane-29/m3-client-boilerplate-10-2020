@@ -7,7 +7,7 @@ function Teaser(props) {
     <div className="teaser-content">
     <h1 style={{color: props.color, fontSize: props.fontSizeh1}}>{props.title}</h1>
     <h2 style={{color: props.color}}>{props.subtitle}</h2>
-    <img src={props.logo} />
+    <img alt="logo" src={props.logo} />
     </div>
     </div> 
     )

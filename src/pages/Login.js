@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { withAuth } from "./../context/auth-context";
-
 import styled from "styled-components";
 
 const Button = styled.input`

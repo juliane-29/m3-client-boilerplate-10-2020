@@ -57,28 +57,26 @@ class Signup extends Component {
 						name="username"
 						value={username}
 						onChange={this.handleChange}
-            placeholder="Your username"
-
+            			placeholder="Your username"
 					/>
 					<input
 						type="text"
 						name="email"
 						value={email}
 						onChange={this.handleChange}
-            placeholder="Your email"
-
+            			placeholder="Your email"
 					/>
 					<input
 						type="password"
 						name="password"
 						value={password}
 						onChange={this.handleChange}
-            placeholder="Your password"
-
+            			placeholder="Your password"
 					/>
 					<Button 
-          type="submit" 
-          value="Sign up" />
+          				type="submit" 
+          				value="Sign up" 
+					/>
 				</form>
 				<div className="LinkHelp">
 				<p>Already have account?</p>
