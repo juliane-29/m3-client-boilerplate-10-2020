@@ -80,7 +80,7 @@ class ShopDetail extends Component {
 					<p>Products: {products.length}</p>
 					</div>
 				</div>
-				<div className="container">
+				<div className="productList">
 					{listOfProducts.map((product, index) => {
 						if (product.shop === shopOwner.shop)
 							return <ProductCard product={product} />;

@@ -1,6 +1,9 @@
 import React from "react";
 import categories from "../jsonFiles/categories.json";
 import "./Category.css";
+import { Link } from "react-router-dom";
+
+
 
 function Category() {
 	return (
@@ -9,7 +12,7 @@ function Category() {
 				if (index <= 4)
 				return (
 					<div key={index} className="icon-box">
-						<div
+					<div
 							style={{
 								height: "60px",
 								width: "60px",

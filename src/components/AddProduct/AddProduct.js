@@ -172,14 +172,14 @@ class AddProduct extends Component {
 					/>
 					<input
 						type="number"
-						placeholder="Price"
+						placeholder="Original Price"
 						name="price"
 						value={price}
 						onChange={this.handleChange}
 					/>
 					<input
 						type="number"
-						placeholder="List Price"
+						placeholder="Price to sell the item for"
 						name="listPrice"
 						value={listPrice}
 						onChange={this.handleChange}
