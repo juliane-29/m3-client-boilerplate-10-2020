@@ -19,8 +19,8 @@ const Input = styled.input`
 
 class EditShop extends Component {
 	state = {
-		shopName: this.props.shopName,
-		firstName: this.props.firstName,
+		shopName: "",
+		firstName: "",
         lastName: "", 
         email: "", 
 	    phoneNumber: "",
@@ -35,7 +35,7 @@ class EditShop extends Component {
 		user: this.props.user,
 		isDisplayed: true
 	};
-
+	
 handleFormSubmit = (event) => {
 		event.preventDefault();
 		const {
@@ -78,7 +78,7 @@ handleFormSubmit = (event) => {
 			.catch((err) => console.log(err));
 	};
 
-	handleChange = (event) => {
+handleChange = (event) => {
 		const { name, value } = event.target;
 		this.setState({ [name]: value });
 	};
@@ -135,7 +135,6 @@ handleFormSubmit = (event) => {
 				value={email}
 				onChange={this.handleChange}
 				/>	
-
 
 				<Input
 				type="text"

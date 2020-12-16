@@ -65,7 +65,6 @@ class EditProduct extends Component {
 
 	getProductDetails = () => {
 		const { id } = this.props.match.params;
-		console.log("id", id);
 		axios
 			.get(`${process.env.REACT_APP_API_URL}/api/products/${id}`)
 			.then((response) => {
@@ -156,8 +155,6 @@ class EditProduct extends Component {
 			.then(() => {
 				console.log("Product was changed");
 				this.setState({
-					brand: "",
-					description: "",
 					isDisplayed: !this.state.isDisplayed,
 				});
 			})
