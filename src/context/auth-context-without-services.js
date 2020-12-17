@@ -61,7 +61,7 @@ class AuthProvider extends React.Component {
     axios.get(`${process.env.REACT_APP_API_URL}/auth/me`, { withCredentials: true } )
     .then( (response) => {
       const user = response.data;
-      console.log('user', user)
+      //console.log('user', user)
       this.setState( { isLoggedIn: true, user: user, isLoading: false } )
     })
     .catch( (err) => {

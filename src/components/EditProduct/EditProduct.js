@@ -69,7 +69,7 @@ class EditProduct extends Component {
 			.get(`${process.env.REACT_APP_API_URL}/api/products/${id}`)
 			.then((response) => {
 				const productInfo = response.data;
-				console.log("productInfo", productInfo);
+				//console.log("productInfo", productInfo);
 				const {
 					brand,
 					description,
@@ -153,7 +153,7 @@ class EditProduct extends Component {
 				}
 			)
 			.then(() => {
-				console.log("Product was changed");
+				//console.log("Product was changed");
 				this.setState({
 					isDisplayed: !this.state.isDisplayed,
 				});

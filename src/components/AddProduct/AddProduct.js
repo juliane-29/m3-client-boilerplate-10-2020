@@ -64,9 +64,9 @@ class AddProduct extends Component {
 	handleFormSubmit = (event) => {
 		event.preventDefault();
 		const userId= this.props.user._id
-		console.log('userId', userId)
+		//console.log('userId', userId)
 		const shopId= this.props.user.shop
-		console.log('shopId', shopId)
+		//console.log('shopId', shopId)
 		const {
 			brand,
 			description,
@@ -128,7 +128,7 @@ class AddProduct extends Component {
 			this.setState({ image: response.data.secure_url });
 		  })
 		  .catch((err) => {
-			console.log("Error while uploading the file: ", err);
+			//console.log("Error while uploading the file: ", err);
 		  });
 	  };
 	

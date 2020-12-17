@@ -91,7 +91,7 @@ class AddShop extends Component {
 	}
 
 	handleFileUpload = (e) => {
-		console.log("The file to be uploaded is: ", e.target.files);
+		//console.log("The file to be uploaded is: ", e.target.files);
 		const file = e.target.files[0];
 		const uploadData = new FormData();
 		// image => this name has to be the same as in the model since we pass
