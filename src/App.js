@@ -21,13 +21,11 @@ class App extends Component {
 	state = {
 		timePassed: false
 	}
-
 	componentDidMount () {
 		setTimeout(() => {
 			this.setTimePassed();
 		}, 2000)
 	}
-
 	setTimePassed() {
 		this.setState({timePassed: true})
 	}

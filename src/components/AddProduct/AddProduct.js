@@ -102,7 +102,7 @@ class AddProduct extends Component {
 				image
 			})
 			.then((createdProduct) => {
-				console.log("createdProduct", createdProduct);
+				//console.log("createdProduct", createdProduct);
 				this.setState({ brand: "", description: "", image: "", isDisplayed: !isDisplayed});
 				
 			})
