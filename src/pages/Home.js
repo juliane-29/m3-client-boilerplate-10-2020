@@ -6,7 +6,6 @@ import SearchResults from '../components/SearchResults/SearchResults';
 import NewIn from '../components/NewIn/NewIn';
 import Header from '../components/Header/Header';
 
-
 function Home() {
   return (
     <div> 

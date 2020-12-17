@@ -6,8 +6,6 @@ import ListPage from "../components/ListPage/ListPage";
 
 class Private extends Component {
 
-  
-
   render() {
     return (
       <div>

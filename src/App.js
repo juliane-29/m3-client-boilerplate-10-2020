@@ -1,11 +1,8 @@
 import React, { Component } from "react";
 import "./App.css";
 import { Switch, Route } from "react-router-dom";
-
 import Navbar from "./components/Navbar/Navbar";
 import AddProduct from "./components/AddProduct/AddProduct";
-
-
 import Home from "./pages/Home";
 import Signup from "./pages/Signup";
 import Login from "./pages/Login";
@@ -13,9 +10,7 @@ import Private from "./pages/Private";
 import Account from "./pages/Account";
 import ProductDetail from "./pages/ProductDetail";
 import ShopDetail from "./pages/ShopDetail";
-
 import AddShop from "./pages/AddShop";
-
 import AnonRoute from "./components/AnonRoute";
 import PrivateRoute from "./components/PrivateRoute";
 import SplashScreen from "./components/SplashScreen/SplashScreen";
